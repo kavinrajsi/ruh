@@ -1,0 +1,85 @@
+//_blog.scss
+@use "../mixin/interpolate";
+
+.error404 {
+  .site-header {
+    .site-header__logo {
+      svg path {
+        fill: #fff2dd;
+      }
+    }
+    .site-header__toggle-line {
+      border-color: #fff2dd;
+    }
+  }
+  .site-main {
+    background-color: #913412;
+    .page__title {
+      font-family: "ps-aelynregular";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 36px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff2dd;
+      -webkit-text-stroke: 1px #fff2dd;
+      padding-bottom: 28px;
+    }
+    .page__subtitle {
+      font-family: caustenmedium;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 36px;
+      text-align: center;
+      color: #fff2dd;
+      padding-bottom: 48px;
+    }
+    .page__text {
+      font-family: caustenmedium;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      color: #fff2dd;
+      padding-bottom: 86px;
+    }
+    .page__separator {
+      /* Base Offwhite */
+    }
+    .page__contact {
+      border-top: 3px solid #fff2dd;
+    }
+    .page__address {
+      text-align: center;
+      font-family: caustenregular;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      color: #fff2dd;
+      padding-top: 29px;
+      padding-bottom: 22px;
+    }
+    .page__phone {
+      text-align: center;
+      font-family: caustenmedium;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 36px;
+      color: #fff2dd;
+      padding-bottom: 36px;
+    }
+    .page__social-media {
+      text-align: center;
+      padding-bottom: 68px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+    }
+  }
+}

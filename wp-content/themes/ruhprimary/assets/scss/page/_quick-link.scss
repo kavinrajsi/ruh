@@ -1,0 +1,74 @@
+//_blog.scss
+@use "../mixin/interpolate";
+
+.page-cambridge-py,
+.page-cambridge-clsp,
+.page-ibdp-diploma,
+.page-ibcp {
+  background-color: #FFF2DD;
+  .site-header {
+    .site-header__logo {
+      svg path {
+        fill: #913412;
+      }
+    }
+    .site-header__toggle-line {
+      border-color: #913412;
+    }
+  }
+}
+
+.quick-links-widget {
+  @include interpolate.interpolate(padding-top, 576px, 32px, 992px, 115px);
+  @include interpolate.interpolate(padding-bottom, 576px, 32px, 992px, 253px);
+  h1 {
+    font-family: caustenbold;
+    font-style: normal;
+    font-weight: 700;
+    color: #913412;
+    padding-bottom: 17px;
+    @include interpolate.interpolate(font-size, 576px, 32px, 992px, 64px);
+    @include interpolate.interpolate(line-height, 576px, 84px, 992px, 84px);
+  }
+  h2 {
+    font-family: caustenbold;
+    font-style: normal;
+    font-weight: 700;
+    color: #913412;
+    @include interpolate.interpolate(font-size, 576px, 16px, 992px, 32px);
+    @include interpolate.interpolate(line-height, 576px, 20px, 992px, 33px);
+    @include interpolate.interpolate(padding-top, 576px, 36px, 992px, 64px);
+    @include interpolate.interpolate(padding-bottom, 576px, 20px, 992px, 42px);
+  }
+  p,
+  li {
+    font-family: caustenregular;
+    font-style: normal;
+    font-weight: 400;
+    color: #913412;
+    @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+    @include interpolate.interpolate(line-height, 576px, 23px, 992px, 33px);
+  }
+  ul {
+    padding-left: 14px;
+    list-style: disc;
+    li {
+      color: #913412;
+      &::marker {
+        color: #913412;
+      }
+      a {
+        list-style: dot;
+        font-family: caustenregular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 33px;
+        text-decoration-line: underline;
+        color: #913412;
+        @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+        @include interpolate.interpolate(line-height, 576px, 20px, 992px, 33px);
+      }
+    }
+  }
+}

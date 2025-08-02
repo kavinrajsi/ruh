@@ -1,0 +1,342 @@
+//_blog.scss
+@use "../mixin/interpolate";
+
+.page-sports-co-curricular {
+  background-color: #fff2dd;
+  .site-main & {
+    padding-top: 0;
+  }
+  .site-header {
+    .site-header__logo {
+      svg path {
+        fill: #913412;
+      }
+    }
+    .site-header__toggle-line {
+      border-color: #913412;
+    }
+  }
+
+  .entry-content {
+    .ruh_life-section__detail {
+      background-color: #fff2dd;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+    h1 {
+      text-align: center;
+      font-family: "ps-aelynregular";
+      font-style: normal;
+      font-weight: 400;
+      color: #fff2dd;
+      -webkit-text-stroke: 2px #fff2dd;
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+      @include interpolate.interpolate(font-size, 576px, 36px, 992px, 64px);
+      @include interpolate.interpolate(line-height, 576px, 33px, 992px, 33px);
+      strong {
+        font-family: "caustenbold";
+        font-style: normal;
+        font-weight: 700;
+        color: #fff2dd;
+        display: block;
+        -webkit-text-stroke: 0px;
+        padding-top: 7px;
+        padding-bottom: 16px;
+        @include interpolate.interpolate(font-size, 576px, 20px, 992px, 32px);
+        @include interpolate.interpolate(line-height, 576px, 33px, 992px, 33px);
+      }
+    }
+    h2:not(.info-section__title) {
+      font-family: "caustenbold";
+      font-style: normal;
+      font-weight: 700;
+      color: #913412;
+      padding-bottom: 16px;
+      @media (min-width: 768px) {
+        padding-bottom: 42px;
+      }
+      @include interpolate.interpolate(font-size, 576px, 32px, 992px, 58px);
+      @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
+    }
+    p {
+      font-family: "caustenregular";
+      font-style: normal;
+      font-weight: 400;
+      color: #000000;
+      @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+      @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
+      strong {
+        display: block;
+        font-family: "caustenbold";
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        color: #913412;
+        @include interpolate.interpolate(font-size, 576px, 20px, 992px, 32px);
+        @include interpolate.interpolate(line-height, 576px, 28px, 992px, 41px);
+      }
+    }
+  }
+
+  .hero {
+    position: relative;
+    .hero__image {
+      width: 100%;
+    }
+    .hero__text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      .hero__subtext {
+        font-family: "ps-aelynregular";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 33px;
+        /* identical to box height, or 82% */
+        text-align: center;
+        /* Base Offwhite */
+        color: #fff2dd;
+        -webkit-text-stroke: 1px #fff2dd;
+        /* Base Offwhite */
+      }
+    }
+  }
+  .sports-arena {
+    padding-top: 43px;
+
+    @media (min-width: 768px) {
+      padding-top: 126px;
+    }
+    .sports-arena__title {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .sports-arena__logo {
+      @include interpolate.interpolate(width, 576px, 153px, 992px, 426px);
+      @include interpolate.interpolate(height, 576px, 123px, 992px, 342px);
+    }
+  }
+  .sports-arena__content {
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sports-arena__description {
+      font-family: caustenregular;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 33px;
+      /* or 138% */
+      text-align: center;
+      color: #000000;
+      max-width: 862px;
+      padding-top: 120px;
+    }
+    .sports-arena__mission {
+      font-family: caustenbold;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 41px;
+      /* or 128% */
+      text-align: center;
+      /* Primary Brown */
+      color: #913412;
+      max-width: 862px;
+      padding-top: 45px;
+    }
+
+    .sports-arena__group-photo {
+      padding-top: 46px;
+      padding-bottom: 60px;
+      @media (min-width: 768px) {
+        padding-top: 102px;
+        padding-bottom: 175px;
+      }
+    }
+  }
+  .art-studio {
+    padding-bottom: 102px;
+    @media (min-width: 768px) {
+      padding-bottom: 158px;
+    }
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .art-studio__gallery {
+      padding-bottom: 12px;
+      @media (min-width: 768px) {
+        padding-bottom: 32px;
+      }
+    }
+    .art-studio__title {
+      font-family: caustenbold;
+      font-style: normal;
+      font-weight: 700;
+      text-align: center;
+      /* Primary Green */
+      color: #505c44;
+      max-width: 746px;
+      @include interpolate.interpolate(font-size, 576px, 32px, 992px, 58px);
+      @include interpolate.interpolate(line-height, 576px, 33px, 992px, 33px);
+    }
+    .art-studio__description {
+      font-family: caustenregular;
+      font-style: normal;
+      font-weight: 400;
+      /* or 138% */
+      text-align: center;
+      color: #000000;
+      max-width: 746px;
+      padding-bottom: 44px;
+      @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+      @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
+    }
+    .art-studio__note {
+      font-family: caustenbold;
+      font-style: normal;
+      font-weight: 700;
+      text-align: center;
+      /* Primary Brown */
+      color: #913412;
+      max-width: 746px;
+      @include interpolate.interpolate(font-size, 576px, 20px, 992px, 32px);
+      @include interpolate.interpolate(line-height, 576px, 28px, 992px, 41px);
+    }
+  }
+  .afterschool-programs__container {
+    padding-bottom: 186px;
+    &.container {
+      flex-direction: column;
+    }
+    .afterschool-programs__title {
+      font-family: caustenbold;
+      font-style: normal;
+      font-weight: 700;
+      /* Primary Brown */
+      color: #913412;
+      @include interpolate.interpolate(font-size, 576px, 32px, 992px, 64px);
+      @include interpolate.interpolate(line-height, 576px, 33px, 992px, 33px);
+    }
+    .afterschool-programs__subtitle {
+      max-width: 770px;
+      font-family: caustensemi_bold;
+      font-style: normal;
+      font-weight: 600;
+      color: #dc602a;
+      padding-bottom: 58px;
+      @media (min-width: 992px) {
+        padding-bottom: 98px;
+      }
+      @include interpolate.interpolate(font-size, 576px, 20px, 992px, 36px);
+      @include interpolate.interpolate(line-height, 576px, 28px, 992px, 33px);
+    }
+    .afterschool-programs__list {
+      width: 100%;
+    }
+    .afterschool-programs__item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #000000;
+      position: relative;
+      align-items: flex-end;
+      display: grid;
+      gap: 0 16px;
+      grid-template-areas:
+        "title  icon"
+        "desc   icon";
+      grid-template-columns: calc(100% - 128px - 16px) 128px;
+      padding-top: 16px;
+      @media (min-width: 768px) {
+        padding-top: 36px;
+      }
+      @media (min-width: 992px) {
+        align-items: center;
+        padding-bottom: 36px;
+        grid-template-areas: "title  icon  desc";
+        grid-template-columns: 410px 1fr 420px;
+      }
+
+      .afterschool-programs__item-title {
+        grid-area: title;
+        grid-column: 1;
+        font-family: caustenbold;
+        font-style: normal;
+        font-weight: 700;
+        text-align: left;
+        color: #505c44;
+        @include interpolate.interpolate(font-size, 576px, 20px, 992px, 48px);
+        @include interpolate.interpolate(line-height, 576px, 33px, 992px, 33px);
+      }
+      .afterschool-programs__item-icon {
+        grid-area: icon;
+        grid-column: 2;
+        max-width: 128px;
+        // margin-bottom: -29px;
+        @media (min-width: 768px) {
+          // margin-bottom: -29px;
+        }
+        @media (min-width: 992px) {
+          margin-bottom: -36px;
+          margin-inline: auto;
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+      @media (min-width: 992px) {
+        &:hover {
+          .afterschool-programs__item-icon {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+      .afterschool-programs__item-desc {
+        grid-area: desc;
+        font-family: caustenregular;
+        font-style: normal;
+        font-weight: 400;
+        /* or 138% */
+        color: #000000;
+        grid-column: 1;
+        padding-top: 8px;
+        padding-bottom: 29px;
+        @media (min-width: 568px) {
+          max-width: 420px;
+        }
+        @media (min-width: 992px) {
+          padding-top: 0px;
+          padding-bottom: 0;
+          grid-column: 3;
+        }
+
+        @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+        @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
+      }
+    }
+  }
+}

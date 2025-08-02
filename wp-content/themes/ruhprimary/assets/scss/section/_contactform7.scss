@@ -1,0 +1,46 @@
+.wpcf7-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .wpcf7-form-control-wrap {
+    display: block;
+  }
+  p {
+    display: flex;
+  }
+  .wpcf7-form-control {
+    width: 100%;
+    padding: 10px 14px;
+    background: #fff8ec;
+    /* Primary Brown */
+    border: 1px solid #913412;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    font-family: caustenregular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* Primary Brown */
+    color: #913412;
+  }
+
+  .wpcf7-submit {
+    width: 100%;
+    background: #913412;
+    border: 1px solid #913412;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    display: inline-block;
+    padding: 10px 18px;
+    font-family: caustenregular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* Base Offwhite */
+    color: #fff2dd;
+  }
+}

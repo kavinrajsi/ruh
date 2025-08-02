@@ -1,0 +1,179 @@
+//_about.scss
+@use "../mixin/interpolate";
+
+.page-about-us {
+    background-color: #fff2dd;
+    .site-main & {
+        padding-top: 0;
+    }
+    .site-header {
+        .site-header__logo {
+            svg path {
+                fill: #fff2dd;
+            }
+        }
+        .site-header__toggle-line {
+            border-color: #913412;
+        }
+    }
+
+    .about-page {
+        // Block styles
+        &__campus {
+            p {
+                max-width: 295.88px;
+
+                font-family: caustenregular;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 33px;
+                /* or 138% */
+                text-align: center;
+
+                color: #000000;
+            }
+        }
+        &__detail {
+            background-color: #913412;
+            padding-top: 46px;
+            padding-bottom: 46px;
+            position: relative;
+
+            @media (min-width: 992px) {
+                padding-top: 66px;
+                padding-bottom: 66px;
+            }
+            &-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            &-image {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+            &-content {
+                max-width: 306px;
+                @media (min-width: 992px) {
+                    max-width: 324px;
+                }
+                p {
+                    font-family: caustenregular;
+                    font-style: normal;
+                    font-weight: 400;
+                    /* Base Offwhite */
+                    color: #fff2dd;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: center;
+                    @media (min-width: 992px) {
+                        font-size: 24px;
+                        line-height: 33px;
+                        text-align: left;
+                    }
+                    + p {
+                        padding-top: 28px;
+                        @media (min-width: 992px) {
+                            padding-top: 45px;
+                        }
+                    }
+                }
+            }
+        }
+        &__classroom {
+            background-color: #fec157;
+            padding-bottom: 0px;
+            margin-top: 116px;
+            position: relative;
+            .container {
+                display: flex;
+                gap: 16px;
+                z-index: 0;
+                flex-direction: column-reverse;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                padding-left: 0;
+                padding-right: 0;
+                @media (min-width: 992px) {
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    flex-direction: row;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                }
+                .about-page__classroom-content {
+                    z-index: 1;
+                    max-width: 388px;
+                    padding-top: 28px;
+                    padding-bottom: 52px;
+                    flex: 0 0 388px;
+                    margin-top: -116px;
+                    @media (min-width: 576px) {
+                        max-width: 480px;
+                    }
+                    @media (min-width: 992px) {
+                        margin-top: 0;
+                        flex: 0 0 388px;
+                        padding-top: 82px;
+                        padding-bottom: 100px;
+                    }
+
+                    p {
+                        font-family: caustenregular;
+                        font-style: normal;
+                        font-weight: 400;
+                        text-align: center;
+                        color: #913412;
+                        @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+                        @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
+
+                        strong {
+                            padding-top: 28px;
+                            display: block;
+                            font-family: caustenbold;
+                            font-style: normal;
+                            font-weight: 700;
+                            color: #505c44;
+                        }
+                    }
+                }
+
+                img {
+                    z-index: -1;
+                    object-fit: cover;
+                    object-position: bottom;
+                    height: auto;
+                    position: relative;
+                    left: 0;
+                    right: 0;
+                    margin-inline: auto;
+                    top: -116px;
+                    @include interpolate.interpolate(width, 340px, 352px, 992px, 656px);
+                    @include interpolate.interpolate(height, 340px, 376px, 992px, 626px);
+                }
+            }
+        }
+        &__gallery {
+            background-color: #505c44;
+            padding-top: 42px;
+            padding-bottom: 60px;
+            @media (min-width: 992px) {
+                padding-top: 72px;
+                padding-bottom: 72px;
+            }
+        }
+
+        &__gallery-title {
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 33px;
+            @media (min-width: 992px) {
+                padding-bottom: 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,289 @@
+//_blog.scss
+@use "../mixin/interpolate";
+
+.page-enquiry-form,
+.page-admission-form,
+.page-admission-process,
+.page-contact {
+
+  background-color: #FFF2DD;
+  .site-header {
+    .site-header__logo {
+      svg path {
+        fill: #913412;
+      }
+    }
+    .site-header__toggle-line {
+      border-color: #913412;
+    }
+  }
+
+  .contact-us-widget {
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      @media (min-width: 768px) {
+        gap: 24px;
+        align-items: flex-start;
+        flex-direction: row;
+      }
+    }
+    .divider-image {
+      opacity: 0;
+      visibility: hidden;
+    }
+    h2 {
+      max-width: 320px;
+      font-family: caustenbold;
+      font-style: normal;
+      font-weight: 700;
+      /* or 107% */
+      text-align: center;
+      /* Primary Brown */
+      color: #913412;
+      @include interpolate.interpolate(font-size, 576px, 24px, 992px, 42px);
+      @include interpolate.interpolate(line-height, 576px, 26px, 992px, 45px);
+      strong {
+        position: relative;
+        display: block;
+        font-family: "ps-aelynregular";
+        font-style: normal;
+        font-weight: 400;
+        /* Primary Green */
+        color: #505c44;
+        /* Primary Green */
+        -webkit-text-stroke: 1px #505c44;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -20px;
+          background-image: url('data:image/svg+xml,<svg width="340" height="15" viewBox="0 0 340 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.47266 11.6411C50.9306 6.88434 108.215 3.23914 173.195 3.36446C235.457 3.48434 290.537 7.0369 336.528 11.6411" stroke="%23DC602A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 18px;
+          margin: 0 auto;
+          text-align: center;
+        }
+      }
+    }
+
+    .wpcf7-form {
+      padding-top: 50px;
+      max-width: 480px;
+      flex-direction: column;
+      gap: 16px 24px;
+      @media (min-width: 768px) {
+        padding-top: 0;
+      }
+      &--title {
+        font-family: caustenbold;
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 14px;
+        @include interpolate.interpolate(font-size, 576px, 24px, 992px, 36px);
+        @include interpolate.interpolate(line-height, 576px, 24px, 992px, 24px);
+      }
+      .wpcf7-form-control-grid {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px 32px;
+        @media (min-width: 528px) {
+          flex-direction: row;
+        }
+        p {
+          width: 100%;
+          flex-direction: column;
+          .wpcf7-form-control-wrap {
+            width: 100%;
+            position: relative;
+            br {
+              display: none;
+            }
+          }
+          label {
+            font-family: caustenmedium;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #913412;
+            + br + span.wpcf7-not-valid-tip {
+              display: none;
+            }
+          }
+          .wpcf7-form-control {
+            margin-top: 6px;
+            box-sizing: border-box;
+            padding: 12px 14px;
+            background: rgba(255, 242, 221, 0.75);
+            border: 1px solid rgba(208, 213, 221, 0.75);
+            box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+            border-radius: 8px;
+            width: 100%;
+            font-family: caustenregular;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #667085;
+          }
+          .wpcf7-not-valid-tip {
+            font-family: caustenmedium;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #dc3232;
+            padding-bottom: 8px;
+            @media (min-width: 768px) {
+              position: absolute;
+              left: 0;
+              padding-bottom: 0;
+            }
+          }
+          .wpcf7-form-control.wpcf7-submit {
+            cursor: pointer;
+            box-sizing: border-box;
+            padding: 23px 14px;
+            background: #913412;
+            border: 1px solid rgba(208, 213, 221, 0.75);
+            box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+            border-radius: 16px;
+            width: 100%;
+            color: #fff2dd;
+            font-family: caustenbold;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 24px;
+          }
+          .wpcf7-spinner {
+            margin-inline: auto;
+            display: none;
+          }
+        }
+      }
+
+      .wpcf7-form-control-hidden {
+        display: none;
+      }
+
+      .wpcf7-response-output {
+        font-family: caustenmedium;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #913412;
+        margin-top: 0;
+      }
+    }
+
+    .admissions-section {
+      position: relative;
+      margin-top: 80px;
+      @media (min-width: 768px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        background-color: #913412;
+      }
+
+      .container {
+        position: relative;
+        justify-content: flex-end;
+        flex-direction: column-reverse;
+        @media (min-width: 768px) {
+          flex-direction: row;
+        }
+      }
+
+      img {
+        bottom: -80px;
+        @media (min-width: 768px) {
+          position: absolute;
+        }
+        @media (min-width: 1200px) {
+          width: auto;
+        }
+        @include interpolate.interpolate(width, 768px, 340px, 1200px, 584px);
+        @include interpolate.interpolate(left, 768px, 0, 1200px, -60px);
+      }
+      .admissions-text {
+        padding-top: 45px;
+        padding-bottom: 45px;
+        background-color: #913412;
+        margin-bottom: 24px;
+        width: calc(100% + 32px);
+        @media (min-width: 768px) {
+          width: auto;
+          max-width: 520px;
+          background-color: transparent;
+          padding: 0;
+          margin: 0;
+          max-width: 570px;
+        }
+        p {
+          font-family: caustenbold;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 24px;
+          /* or 67% */
+          text-align: center;
+          /* Base Offwhite */
+          color: #fff2dd;
+          line-height: 124%;
+          @include interpolate.interpolate(font-size, 576px, 32px, 992px, 36px);
+          br {
+            display: block;
+            @media (min-width: 1992px) {
+              display: none;
+            }
+          }
+          a {
+            display: block;
+            font-family: caustenregular;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 36px;
+            /* identical to box height, or 75% */
+            text-align: center;
+            /* Base Offwhite */
+            color: #fff2dd;
+            margin-top: 14px;
+            @media (min-width: 768px) {
+              margin-top: 27px;
+            }
+            @include interpolate.interpolate(
+              font-size,
+              576px,
+              42px,
+              992px,
+              48px
+            );
+            @include interpolate.interpolate(
+              line-height,
+              576px,
+              36px,
+              992px,
+              36px
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+textarea {
+  resize: none;
+}

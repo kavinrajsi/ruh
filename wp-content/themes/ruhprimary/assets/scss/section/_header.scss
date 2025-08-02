@@ -1,0 +1,222 @@
+//_header.scss
+@use "../mixin/interpolate";
+
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
+}
+
+.site-header {
+  .no-scroll & {
+    position: fixed;
+  }
+  & {
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 44px;
+    z-index: 2;
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__toggle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    padding-top: 6px;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 10000;
+
+    &-line {
+      position: absolute;
+      position: relative;
+      left: 0;
+      right: 0;
+      display: block;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      border: 1px solid #913412;
+      transition: all 0.3s ease-in-out;
+      border-radius: 20px;
+      &:nth-child(1) {
+        top: -6px;
+      }
+      &:nth-child(2) {
+        top: 0px;
+      }
+      &:nth-child(3) {
+        top: 6px;
+      }
+    }
+
+    &.active {
+      .site-header__toggle-line {
+        border-color: #fff2dd !important;
+      }
+      .site-header__toggle-line {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+          top: 5px;
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+          top: 2px;
+        }
+      }
+    }
+  }
+}
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #505c44;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 44px;
+  padding-bottom: 44px;
+  transform: translateY(-200%);
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  will-change: transform, opacity, height;
+  transition: transform 0.4s ease, opacity 0.4s ease, height 0.4s ease;
+  z-index: 9999;
+  overflow-y: scroll;
+
+  &--wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 76px;
+  }
+
+  &.active {
+    transform: translateY(0);
+    height: 100vh;
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+  }
+
+  .site-nav__logo {
+    width: 152px;
+    height: 102px;
+
+    @media (min-width: 768px) {
+      width: 208px;
+      height: 134px;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__group {
+    @include interpolate.interpolate(padding-top, 576px, 48px, 992px, 76px);
+    & {
+      gap: 34px 144px;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 568px) {
+      flex-direction: row;
+    }
+    .menu-item:first-child a,
+    .menu-title {
+      font-family: caustenextra_bold;
+      font-style: normal;
+      font-weight: 800;
+      color: #fff2dd;
+      @include interpolate.interpolate(font-size, 576px, 36px, 992px, 48px);
+      @include interpolate.interpolate(line-height, 576px, 20px, 992px, 20px);
+      @include interpolate.interpolate(
+        padding-bottom,
+        576px,
+        16px,
+        992px,
+        32px
+      );
+    }
+
+    .menu-item a {
+      display: inline-block;
+      font-family: caustenregular;
+      font-style: normal;
+      font-weight: 400;
+      color: #fff2dd;
+      text-transform: lowercase;
+      @include interpolate.interpolate(font-size, 576px, 24px, 992px, 32px);
+      @include interpolate.interpolate(line-height, 576px, 38px, 992px, 38px);
+      @include interpolate.interpolate(margin-bottom, 576px, 8px, 992px, 12px);
+    }
+  }
+}
+
+.site-contact {
+  border-top: 3px solid #fff2dd;
+  @include interpolate.interpolate(margin-top, 576px, 55px, 992px, 72px);
+  @include interpolate.interpolate(padding-top, 576px, 30px, 992px, 30px);
+
+  &__address {
+    font-family: caustenregular;
+    font-style: normal;
+    font-weight: 400;
+    color: #fff2dd;
+    @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+    @include interpolate.interpolate(line-height, 576px, 24px, 992px, 36px);
+  }
+
+  &__phone {
+    padding-top: 22px;
+    display: inline-block;
+    font-family: caustenmedium;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff2dd;
+    @include interpolate.interpolate(font-size, 576px, 24px, 992px, 32px);
+    @include interpolate.interpolate(line-height, 576px, 36px, 992px, 36px);
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding-top: 22px;
+    &-link {
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      @media (min-width: 768px) {
+        width: 42px;
+        height: 42px;
+      }
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

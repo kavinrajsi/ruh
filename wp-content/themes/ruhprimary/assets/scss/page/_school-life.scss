@@ -1,0 +1,297 @@
+//_blog.scss
+@use "../mixin/interpolate";
+
+.page-school-life {
+  background-color: #FFF2DD;
+  .site-header {
+    .site-header__logo {
+      svg path {
+        fill: #fff2dd;
+      }
+    }
+    .site-header__toggle-line {
+      border-color: #fff2dd;
+    }
+  }
+  .entry-content {
+    .ruh_life-section__detail {
+      background-color: #913412;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+    h1 {
+      text-align: center;
+      font-family: "ps-aelynregular";
+      font-style: normal;
+      font-weight: 400;
+      color: #fff2dd;
+      -webkit-text-stroke: 2px #fff2dd;
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+      @include interpolate.interpolate(font-size, 576px, 36px, 992px, 64px);
+      @include interpolate.interpolate(line-height, 576px, 33px, 992px, 33px);
+      strong {
+        font-family: "caustenbold";
+        font-style: normal;
+        font-weight: 700;
+        color: #fff2dd;
+        display: block;
+        -webkit-text-stroke: 0px;
+        padding-top: 7px;
+        padding-bottom: 16px;
+        @include interpolate.interpolate(font-size, 576px, 20px, 992px, 32px);
+        @include interpolate.interpolate(line-height, 576px, 33px, 992px, 33px);
+      }
+    }
+    h2:not(.info-section__title) {
+      font-family: "caustenbold";
+      font-style: normal;
+      font-weight: 700;
+      color: #913412;
+      padding-bottom: 16px;
+      @media (min-width: 768px) {
+        padding-bottom: 42px;
+      }
+      @include interpolate.interpolate(font-size, 576px, 32px, 992px, 58px);
+      @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
+    }
+    p {
+      font-family: "caustenregular";
+      font-style: normal;
+      font-weight: 400;
+      color: #000000;
+      @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+      @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
+      strong {
+        display: block;
+        font-family: "caustenbold";
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        color: #913412;
+        @include interpolate.interpolate(font-size, 576px, 20px, 992px, 32px);
+        @include interpolate.interpolate(line-height, 576px, 28px, 992px, 41px);
+      }
+    }
+    .ruh_life-section {
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 56px;
+        @media (min-width: 768px) {
+          gap: 24px;
+          align-items: flex-start;
+          padding-bottom: 0;
+        }
+      }
+      p {
+        font-family: "caustenregular";
+        font-style: normal;
+        font-weight: 400;
+        color: #fff2dd;
+        padding-bottom: 24px;
+        max-width: 366px;
+        text-align: center;
+        @media (min-width: 768px) {
+          text-align: left;
+        }
+        @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+        @include interpolate.interpolate(line-height, 576px, 23px, 992px, 42px);
+      }
+      a {
+        display: inline-block;
+        background: #fff2dd;
+        font-family: "caustenbold";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: #913412;
+        margin: 0 auto;
+        padding: 16px 12px;
+        border-radius: 8px;
+        @media (min-width: 768px) {
+          border-radius: 16px;
+          padding: 24px 26px;
+          margin: 0;
+          font-size: 24px;
+          line-height: 24px;
+        }
+      }
+      img {
+        @media (min-width: 568px) {
+          max-width: 393px;
+        }
+        @media (min-width: 768px) {
+          max-width: 420px;
+        }
+        @media (min-width: 992px) {
+          max-width: 508px;
+        }
+      }
+    }
+    .piazza-section {
+      @include interpolate.interpolate(padding-top, 576px, 34px, 992px, 100px);
+    }
+    .playloft-section {
+      @include interpolate.interpolate(padding-top, 576px, 73px, 992px, 112px);
+      .container {
+        flex-direction: column;
+        .content {
+          margin: 0 auto;
+          text-align: center;
+          padding-top: 48px;
+          strong {
+            padding-top: 48px;
+          }
+        }
+      }
+    }
+    .best-place {
+      @include interpolate.interpolate(padding-top, 576px, 70px, 992px, 121px);
+      .library {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // gap: 70px 0;
+        text-align: center;
+        .content {
+          padding-top: 30px;
+          @media (min-width: 768px) {
+            max-width: 419px;
+          }
+        }
+        &.py {
+          .content {
+            padding-top: 40px;
+          }
+        }
+      }
+    }
+    .about-section {
+      background-color: #913412;
+      position: relative;
+      @include interpolate.interpolate(margin-top, 576px, 56px, 992px, 140px);
+      @include interpolate.interpolate(padding-top, 576px, 56px, 992px, 100px);
+      @include interpolate.interpolate(
+        padding-bottom,
+        576px,
+        56px,
+        992px,
+        100px
+      );
+      .container {
+        @media (min-width: 768px) {
+          flex-direction: row-reverse;
+          .content,
+          .image {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+        }
+
+        .image {
+          position: absolute;
+          left: 0;
+          top: -144px;
+          object-fit: contain;
+          @include interpolate.interpolate(width, 576px, 420px, 992px, 803px);
+          @include interpolate.interpolate(height, 576px, 332px, 992px, 689px);
+        }
+      }
+      .content {
+        text-align: center;
+        @media (min-width: 768px) {
+          padding-left: 48px;
+          text-align: left;
+          strong {
+            text-align: left;
+          }
+        }
+        h2 {
+          font-family: "caustenbold";
+          font-style: normal;
+          font-weight: 700;
+          color: #fff2dd;
+        }
+        p {
+          font-family: "caustenregular";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 33px;
+          color: #fff2dd;
+
+          strong {
+            font-family: caustenbold;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 33px;
+            color: #fec157;
+          }
+        }
+        a {
+          display: inline-block;
+          background: #fff2dd;
+          font-family: "caustenbold";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 20px;
+          text-align: center;
+          color: #913412;
+          margin: 0 auto;
+          padding: 16px 12px;
+          border-radius: 8px;
+          @media (min-width: 768px) {
+            border-radius: 16px;
+            padding: 24px 26px;
+            margin: 42px 0 0;
+            font-size: 24px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .sandpit-section {
+      @include interpolate.interpolate(padding-top, 576px, 53px, 992px, 126px);
+      .container {
+        flex-direction: column;
+      }
+      .content {
+        margin: 0 auto;
+        padding-top: 58px;
+        text-align: center;
+        strong {
+          padding-top: 48px;
+        }
+      }
+    }
+    .dance-section {
+      @include interpolate.interpolate(padding-top, 576px, 68px, 992px, 110px);
+      .container {
+        .content {
+          max-width: 348px;
+        }
+      }
+    }
+    .width-686 {
+      max-width: 686px;
+    }
+    .width-300 {
+      max-width: 300px;
+    }
+  }
+}

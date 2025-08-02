@@ -1,0 +1,16 @@
+{
+  "name": "ruhprimary",
+  "version": "1.0.0",
+  "description": "A lightweight, modern WordPress theme built for WordPress 6.8, integrated with Elementor, Tailwind CSS, and SCSS. The `ruhprimary` theme is designed for developers who want a minimal, customizable foundation for building responsive websites with a utility-first CSS framework and Elementor’s page-building capabilities.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass assets/scss/style.scss:style.css --style=compressed --no-source-map",
+    "watch": "sass --watch assets/scss/style.scss:style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}

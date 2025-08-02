@@ -1,0 +1,60 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1120px;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+}
+.pl-0 {
+  padding-left: 0;
+}
+.pr-0 {
+  padding-right: 0;
+}
+
+.error404 .site-main,
+.site-main .page-curriculum .curriculum__header-title,
+.site-main .page-about-us,
+.site-main .page-parents-corner .parent-community,
+.site-main .page-sports-co-curricular,
+.site-main .page-school-life .ruh_life-section__detail,
+.site-main .page-contact,
+.site-main .page-admission-form,
+.site-main .page-admission-process,
+.site-main .page-enquiry-form,
+.site-main .quick-links-widget,
+.site-main.site-blog__detail,
+.site-main .ruh-blog-archive {
+  padding-top: 122px;
+  padding-top: 140px;
+  @media (min-width: 768px) {
+    padding-top: 136px;
+    padding-top: 202px;
+  }
+}
+
+.error404 {
+  .elementor-element {
+    padding: 0;
+  }
+}
+
+.type-page {
+  &.page-curriculum,
+  &.page-about-us,
+  &.page-parents-corner,
+  &.page-sports-co-curricular,
+  &.page-school-life,
+  &.page-admission-process,
+  &.page-enquiry-form,
+  &.page-contact,
+  &.page-admission-form &.page-cambridge-py,
+  &.page-cambridge-clsp,
+  &.page-ibdp-diploma,
+  &.page-ibcp {
+    .elementor-element {
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+/*
+ Theme Name:   Ruhprimary
+ Theme URI:    https://example.com/ruhprimary/
+ Author:       Your Name
+ Author URI:   https://example.com/
+ Description:  A blank WordPress theme built for Elementor with SCSS support.
+ Version:      1.0.0
+ Requires at least: 5.9
+ Tested up to: 6.8
+ Requires PHP: 7.4
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  ruhprimary
+ Tags:         custom-background, custom-logo, custom-menu, editor-style, block-styles, elementor
+*/
+
+@use "utlis/reset";
+@use "utlis/font";
+@use "utlis/grid";
+@use "section/header";
+@use "section/footer";
+@use "section/info-section";
+@use "section/contactform7";
+@use "page/quick-link";
+@use "page/contact";
+@use "page/blog";
+@use "page/page-parents-corner";
+@use "page/school-life";
+@use "page/sports-co-curricular";
+@use "page/about";
+@use "page/curriculum";
+@use "page/page-404";
