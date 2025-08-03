@@ -2,6 +2,7 @@
 @use "../mixin/interpolate";
 
 .archive {
+  background-color: #fff2dd;
   .site-header {
     .site-header__logo {
       svg path {
@@ -62,6 +63,7 @@
 }
 
 .posts-list {
+  background-color: #fff2dd;
   display: grid;
   grid-gap: 57px 77px;
   grid-template-columns: 1fr;
@@ -74,6 +76,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
   .archive-thumb {
+    width: 100%;
     display: inline-block;
     padding-bottom: 22px;
     img {
@@ -142,6 +145,9 @@
 }
 
 .blog-template-default {
+  background-color: #fff2dd;
+  padding-left: 16px;
+  padding-right: 16px;
   .site-header {
     .site-header__logo {
       svg path {
@@ -168,7 +174,7 @@
     color: #913412;
     padding-bottom: 17px;
     @include interpolate.interpolate(font-size, 576px, 32px, 992px, 64px);
-    @include interpolate.interpolate(line-height, 576px, 84px, 992px, 84px);
+    @include interpolate.interpolate(line-height, 576px, 32px, 992px, 64px);
   }
   .entry-content {
     max-width: 768px;
@@ -185,6 +191,18 @@
         height: auto;
         display: block;
       }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: caustenbold;
+      font-style: normal;
+      font-weight: 700;
+      color: #913412;
+      padding-bottom: 16px;
     }
     p,
     li {
@@ -203,5 +221,11 @@
     a {
       text-decoration-line: underline;
     }
+  }
+
+  .nocomments,
+  .entry-footer,
+  .related-posts {
+    display: none;
   }
 }

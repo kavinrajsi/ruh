@@ -43,10 +43,10 @@ add_action('after_setup_theme', 'ruhprimary_setup');
 function ruhprimary_enqueue_styles_scripts()
 {
     // Enqueue CSS in the head
-    wp_enqueue_style('ruhprimary-style', get_stylesheet_uri(), array(), '1.0.3');
+    wp_enqueue_style('ruhprimary-style', get_stylesheet_uri(), array(), '1.0.4');
 
     // Enqueue JavaScript in the footer
-    wp_enqueue_script('ruhprimary-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.3', true);
+    wp_enqueue_script('ruhprimary-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.4', true);
 
     // Preload custom fonts for performance
     // List of custom fonts to preload (WOFF & WOFF2)

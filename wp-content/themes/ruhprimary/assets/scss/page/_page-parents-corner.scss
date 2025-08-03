@@ -337,16 +337,20 @@
         @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
         @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
       }
+      
     }
 
     .after-school {
       background: #505c44;
       .container {
-        margin-top: 184px;
         flex-direction: row;
         position: relative;
         padding-top: 48px;
         padding-bottom: 88px;
+        margin-top: 80px;
+        @media (min-width: 576px) {
+          margin-top: 184px;
+        }
       }
       .content {
         z-index: 1;

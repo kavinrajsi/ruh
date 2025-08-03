@@ -5,8 +5,7 @@
 .page-admission-form,
 .page-admission-process,
 .page-contact {
-
-  background-color: #FFF2DD;
+  background-color: #fff2dd;
   .site-header {
     .site-header__logo {
       svg path {
@@ -65,10 +64,13 @@
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
-          width: 100%;
+          width: 60%;
           height: 18px;
           margin: 0 auto;
           text-align: center;
+          @media (min-width: 992px) {
+            width: 100%;
+          }
         }
       }
     }
@@ -263,20 +265,8 @@
             @media (min-width: 768px) {
               margin-top: 27px;
             }
-            @include interpolate.interpolate(
-              font-size,
-              576px,
-              42px,
-              992px,
-              48px
-            );
-            @include interpolate.interpolate(
-              line-height,
-              576px,
-              36px,
-              992px,
-              36px
-            );
+            @include interpolate.interpolate(font-size, 576px, 42px, 992px, 48px);
+            @include interpolate.interpolate(line-height, 576px, 36px, 992px, 36px);
           }
         }
       }

@@ -49,6 +49,7 @@ function register_hello_widgets($widgets_manager)
     require_once(__DIR__ . '/page/page-school-life.php');
     require_once(__DIR__ . '/page/page-parent-community.php');
     require_once(__DIR__ . '/page/page-curriculum.php');
+    require_once(__DIR__ . '/page/page-home.php');
 
     $widgets_manager->register(new \Elementor_Quick_Links_Page());
     $widgets_manager->register(new \Elementor_Contact_Us_Page());
@@ -57,6 +58,7 @@ function register_hello_widgets($widgets_manager)
     $widgets_manager->register(new \Elementor_Life_At_RUH_Page());
     $widgets_manager->register(new \Elementor_Ruh_Parent_Community());
     $widgets_manager->register(new \Elementor_Ruh_Curriculum());
+    $widgets_manager->register(new \Elementor_Home_Page_Widget());
 
     
 }

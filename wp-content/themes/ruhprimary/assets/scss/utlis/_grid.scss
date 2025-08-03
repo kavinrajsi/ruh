@@ -14,11 +14,15 @@
 }
 
 .error404 .site-main,
+.site-main .page-home,
 .site-main .page-curriculum .curriculum__header-title,
 .site-main .page-about-us .about-page__section--story,
 .site-main .page-parents-corner .parent-community,
 .site-main .page-sports-co-curricular,
+.site-main .page-sports,
 .site-main .page-school-life .ruh_life-section__detail,
+.site-main .page-liferuh .ruh_life-section__detail,
+.site-main .page-life-ruh .ruh_life-section__detail,
 .site-main .page-contact,
 .site-main .page-admission-form,
 .site-main .page-admission-process,
@@ -41,15 +45,20 @@
 }
 
 .type-page {
+  &.page-home,
   &.page-curriculum,
   &.page-about-us,
   &.page-parents-corner,
+  &.page-sports,
   &.page-sports-co-curricular,
   &.page-school-life,
+  &.page-liferuh,
+  &.page-life-ruh,
   &.page-admission-process,
   &.page-enquiry-form,
   &.page-contact,
-  &.page-admission-form &.page-cambridge-py,
+  &.page-admission-form ,
+  &.page-cambridge-py,
   &.page-cambridge-clsp,
   &.page-ibdp-diploma,
   &.page-ibcp {

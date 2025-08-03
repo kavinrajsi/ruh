@@ -150,6 +150,32 @@ class Elementor_Ruh_Sports_Widget extends Widget_Base
         ]);
         $this->end_controls_section();
 
+
+        /**
+         * Section: After School
+         */
+        $this->start_controls_section('section_after_school', [
+            'label' => __('After School', 'ruh-widget'),
+        ]);
+
+        $this->add_control('after_title', [
+            'label' => __('Title', 'ruh-widget'),
+            'type' => Controls_Manager::TEXT,
+        ]);
+
+        $this->add_control('after_button_text', [
+            'label' => __('Button Text', 'ruh-widget'),
+            'type' => Controls_Manager::TEXT,
+        ]);
+
+        $this->add_control('after_image', [
+            'label' => __('Image', 'ruh-widget'),
+            'type' => Controls_Manager::MEDIA,
+        ]);
+
+        $this->end_controls_section();
+
+
         /**
          * CTA Section
          */
@@ -216,13 +242,13 @@ class Elementor_Ruh_Sports_Widget extends Widget_Base
             echo '<img class="sports-arena__logo" src="' . esc_url($s['arena_logo']['url']) . '" alt="Sports Arena Logo">';
         }
 
-        echo '<div class="sports-arena__image-wrapper">';
+        echo '<div class="sports-arena__image-wrapper bouncing-element" data-aos="fade-up" data-aos-once="false">';
         if (!empty($s['arena_image']['url'])) {
             echo '<img src="' . esc_url($s['arena_image']['url']) . '" class="sports-arena__image">';
         }
         echo '</div></div>';
 
-        echo '<div class="sports-arena__content"><div class="container">';
+        echo '<div class="sports-arena__content" data-aos="fade-up"><div class="container">';
         echo '<p class="sports-arena__description">' . esc_html($s['arena_description']) . '</p>';
         echo '<p class="sports-arena__mission">' . esc_html($s['arena_mission']) . '</p>';
         if (!empty($s['arena_group_image']['url'])) {
@@ -234,7 +260,7 @@ class Elementor_Ruh_Sports_Widget extends Widget_Base
         echo '</section>';
 
         // Art Studio Section
-        echo '<section class="art-studio"><div class="container">';
+        echo '<section class="art-studio" data-aos="fade-up"><div class="container">';
         echo '<div class="art-studio__gallery">';
         if (!empty($s['art_image_1']['url'])) {
             echo '<img src="' . esc_url($s['art_image_1']['url']) . '" class="art-studio__image">';
@@ -247,27 +273,41 @@ class Elementor_Ruh_Sports_Widget extends Widget_Base
 
         // Afterschool Programs Section
         if (!empty($s['program_list'])) {
-            echo '<section class="afterschool-programs">';
+            echo '<section class="afterschool-programs" data-aos="fade-up" >';
             echo '<div class="afterschool-programs__container container">';
             echo '<h2 class="afterschool-programs__title">' . esc_html($s['programs_title']) . '</h2>';
             echo '<p class="afterschool-programs__subtitle">' . esc_html($s['programs_subtitle']) . '</p>';
             echo '<ul class="afterschool-programs__list">';
-
+            $delay = 0;
             foreach ($s['program_list'] as $program) {
-                echo '<li class="afterschool-programs__item">';
+                echo '<li class="afterschool-programs__item" data-aos="fade-up" data-aos-delay="' . $delay . '" >';
                 echo '<p class="afterschool-programs__item-title">' . esc_html($program['title']) . '</p>';
                 if (!empty($program['icon']['url'])) {
                     echo '<img class="afterschool-programs__item-icon" src="' . esc_url($program['icon']['url']) . '" alt="' . esc_attr($program['title']) . ' icon">';
                 }
                 echo '<p class="afterschool-programs__item-desc">' . esc_html($program['description']) . '</p>';
                 echo '</li>';
+                $delay += 100;
             }
 
             echo '</ul></div></section>';
         }
 
+        // After School Section
+        echo '<section class="after-school" data-aos="fade-up"><div class="after-school__container container">';
+        if (!empty($s['after_title'])) {
+            echo '<div class="content"><h2 class="after-school__title">' . esc_html($s['after_title']) . '</h2>';
+        }
+        if (!empty($s['after_button_text'])) {
+            echo '<button class="after-school__button">' . esc_html($s['after_button_text']) . '</button></div>';
+        }
+        if (!empty($s['after_image']['url'])) {
+            echo '<img class="after-school__image" src="' . esc_url($s['after_image']['url']) . '" alt="">';
+        }
+        echo '</div></section>';
+
         // CTA Section
-        echo "<section class='info-section container-fluid'>";
+        echo "<section class='info-section container-fluid' data-aos='fade-up'>";
         echo "<div class='info-section__container container'>";
 
         if (!empty($s['cta_image']['url'])) echo '<img class="info-section__image" src="' . esc_url($s['cta_image']['url']) . '" alt="">';

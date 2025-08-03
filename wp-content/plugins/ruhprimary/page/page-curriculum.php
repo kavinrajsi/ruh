@@ -162,7 +162,7 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         </section>
 
         <!-- Way of Learning -->
-        <section class="curriculum__way">
+        <section class="curriculum__way" data-aos="fade-up">
             <div class="container curriculum__way-container">
                 <div class="content">
                     <h3 class="curriculum__way-titleWrapper"><svg width="136" height="50" viewBox="0 0 136 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +179,7 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         </section>
 
         <!-- Years Curriculum -->
-        <section class="curriculum__years">
+        <section class="curriculum__years" data-aos="fade-up">
             <div class="container curriculum__years-container">
                 <?php if ($settings['years_image']['url']): ?>
                     <img class="curriculum__years-image" src="<?php echo esc_url($settings['years_image']['url']); ?>" alt="Years Curriculum Image">
@@ -192,7 +192,7 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         </section>
 
         <!-- New Way Learning -->
-        <section class="curriculum__new-way">
+        <section class="curriculum__new-way" data-aos="fade-up">
             <div class="container curriculum__new-way-container">
                 <?php if ($settings['new_way_video']['url']): ?>
                     <video class="curriculum__new-way-video" poster="<?php echo esc_url($settings['new_way_image']['url']); ?>">
@@ -206,7 +206,7 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         </section>
 
         <!-- Primary Years Curriculum -->
-        <section class="curriculum__primary">
+        <section class="curriculum__primary" data-aos="fade-up">
             <div class="container curriculum__primary-container">
                 <div class="content">
                     <h3 class="curriculum__primary-title"><?php echo esc_html($settings['primary_title']); ?></h3>
@@ -219,7 +219,7 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         </section>
 
         <!-- Learning Methodologies -->
-        <section class="curriculum__methodologies">
+        <section class="curriculum__methodologies" data-aos="fade-up">
             <div class="curriculum__methodologies-contentWrapper container">
                 <h3 class="curriculum__methodologies-title"><?php echo esc_html($settings['methodologies_title']); ?></h3>
                 <div class="curriculum__methodologies-content"><?php echo wp_kses_post($settings['methodologies_content']); ?></div>
@@ -241,7 +241,7 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         </section>
 
         <!-- Diversity in Learning -->
-        <section class="curriculum__diversity">
+        <section class="curriculum__diversity" data-aos="fade-up">
           <div class="container curriculum__diversity-container">
                  <h3 class="curriculum__diversity-container-title"><?php echo wp_kses_post($settings['diversity_title']); ?></h3>
                 <p class="curriculum__diversity-container-content"><?php echo wp_kses_post($settings['diversity_content']); ?></p>
@@ -257,7 +257,7 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         </section>
 
         <!-- Experiential Learning -->
-        <section class="curriculum__experiential">
+        <section class="curriculum__experiential" data-aos="fade-up">
             <div class="container curriculum__experiential-content">
                 <h3 class="curriculum__experiential-title"><?php echo esc_html($settings['experiential_title']); ?></h3>
                 <?php echo wp_kses_post($settings['experiential_content']); ?>
@@ -273,9 +273,7 @@ class Elementor_Ruh_Curriculum extends Widget_Base
             </div>
         </section>
 
-
-
-        <section class="info-section container-fluid">
+        <section class="info-section container-fluid" data-aos="fade-up">
             <div class="info-section__container container">
                 <?php if (!empty($settings['cta_image']['url'])): ?>
                     <img class="info-section__image" src="<?php echo esc_url($settings['cta_image']['url']); ?>" alt="">

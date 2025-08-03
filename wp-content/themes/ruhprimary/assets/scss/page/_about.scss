@@ -205,9 +205,9 @@
                 text-align: center;
                 color: #505c44;
                 max-width: 316px;
+                padding-bottom: 36px;
                 @include interpolate.interpolate(font-size, 576px, 32px, 992px, 64px);
                 @include interpolate.interpolate(line-height, 576px, 32px, 992px, 70px);
-                padding-bottom: 36px;
             }
             .about-page__content--roles {
                 font-family: caustenregular;

@@ -1,8 +1,10 @@
 //_blog.scss
 @use "../mixin/interpolate";
 
+.page-liferuh,
+.page-life-ruh,
 .page-school-life {
-  background-color: #FFF2DD;
+  background-color: #fff2dd;
   .site-header {
     .site-header__logo {
       svg path {
@@ -16,14 +18,20 @@
   .entry-content {
     .ruh_life-section__detail {
       background-color: #913412;
+      overflow: hidden;
+      .image {
+        margin-bottom: -3px;
+      }
     }
     .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-direction: column;
-      align-items: flex-start;
-      @media (min-width: 768px) {
+      text-align: center;
+      @media (min-width: 992px) {
+        // align-items: flex-start;
+        text-align: left;
         flex-direction: row;
       }
     }
@@ -34,7 +42,7 @@
       font-weight: 400;
       color: #fff2dd;
       -webkit-text-stroke: 2px #fff2dd;
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         text-align: left;
       }
       @include interpolate.interpolate(font-size, 576px, 36px, 992px, 64px);
@@ -48,6 +56,10 @@
         -webkit-text-stroke: 0px;
         padding-top: 7px;
         padding-bottom: 16px;
+        @media (min-width: 992px) {
+          padding-top: 42px;
+          padding-bottom: 14px;
+        }
         @include interpolate.interpolate(font-size, 576px, 20px, 992px, 32px);
         @include interpolate.interpolate(line-height, 576px, 33px, 992px, 33px);
       }
@@ -58,7 +70,7 @@
       font-weight: 700;
       color: #913412;
       padding-bottom: 16px;
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         padding-bottom: 42px;
       }
       @include interpolate.interpolate(font-size, 576px, 32px, 992px, 58px);
@@ -88,7 +100,7 @@
         flex-direction: column;
         align-items: center;
         padding-bottom: 56px;
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           gap: 24px;
           align-items: flex-start;
           padding-bottom: 0;
@@ -102,7 +114,7 @@
         padding-bottom: 24px;
         max-width: 366px;
         text-align: center;
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           text-align: left;
         }
         @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
@@ -121,7 +133,7 @@
         margin: 0 auto;
         padding: 16px 12px;
         border-radius: 8px;
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           border-radius: 16px;
           padding: 24px 26px;
           margin: 0;
@@ -133,7 +145,7 @@
         @media (min-width: 568px) {
           max-width: 393px;
         }
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           max-width: 420px;
         }
         @media (min-width: 992px) {
@@ -143,6 +155,9 @@
     }
     .piazza-section {
       @include interpolate.interpolate(padding-top, 576px, 34px, 992px, 100px);
+      .container {
+        align-items: center;
+      }
     }
     .playloft-section {
       @include interpolate.interpolate(padding-top, 576px, 73px, 992px, 112px);
@@ -168,7 +183,7 @@
         text-align: center;
         .content {
           padding-top: 30px;
-          @media (min-width: 768px) {
+          @media (min-width: 992px) {
             max-width: 419px;
           }
         }
@@ -184,37 +199,44 @@
       position: relative;
       @include interpolate.interpolate(margin-top, 576px, 56px, 992px, 140px);
       @include interpolate.interpolate(padding-top, 576px, 56px, 992px, 100px);
-      @include interpolate.interpolate(
-        padding-bottom,
-        576px,
-        56px,
-        992px,
-        100px
-      );
+      padding-bottom: 0;
+      @media (min-width: 992px) {
+        @include interpolate.interpolate(padding-bottom, 576px, 56px, 992px, 100px);
+      }
       .container {
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           flex-direction: row-reverse;
-          .content,
-          .image {
-            flex: 0 0 50%;
-            max-width: 50%;
-          }
         }
 
         .image {
-          position: absolute;
+          bottom: -20px;
+          position: relative;
+          width: calc(100% + 16px + 16px + 16px);
           left: 0;
-          top: -144px;
-          object-fit: contain;
-          @include interpolate.interpolate(width, 576px, 420px, 992px, 803px);
-          @include interpolate.interpolate(height, 576px, 332px, 992px, 689px);
+          right: 0;
+          margin: 0 -16px;
+          text-align: center;
+          max-width: initial;
+          @media (min-width: 992px) {
+            position: absolute;
+            width: auto;
+            left: -20px;
+            top: -90px;
+            object-fit: cover;
+            @include interpolate.interpolate(width, 576px, 420px, 992px, 803px);
+            @include interpolate.interpolate(height, 576px, 332px, 992px, 689px);
+          }
         }
       }
       .content {
+        z-index: 1;
         text-align: center;
-        @media (min-width: 768px) {
-          padding-left: 48px;
+        max-width: 320px;
+        @media (min-width: 992px) {
+          flex: 0 0 340px;
+          max-width: 340px;
           text-align: left;
+
           strong {
             text-align: left;
           }
@@ -224,22 +246,26 @@
           font-style: normal;
           font-weight: 700;
           color: #fff2dd;
+          font-size: 32px;
+          line-height: 33px;
         }
         p {
+          max-width: 330px;
           font-family: "caustenregular";
           font-style: normal;
           font-weight: 400;
-          font-size: 24px;
-          line-height: 33px;
           color: #fff2dd;
-
+          @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+          @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
           strong {
+            display: inline;
             font-family: caustenbold;
             font-style: normal;
             font-weight: 700;
-            font-size: 24px;
-            line-height: 33px;
             color: #fec157;
+
+            @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+            @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
           }
         }
         a {
@@ -252,10 +278,10 @@
           line-height: 20px;
           text-align: center;
           color: #913412;
-          margin: 0 auto;
+          margin: 24px auto 0;
           padding: 16px 12px;
           border-radius: 8px;
-          @media (min-width: 768px) {
+          @media (min-width: 992px) {
             border-radius: 16px;
             padding: 24px 26px;
             margin: 42px 0 0;
@@ -281,16 +307,20 @@
     }
     .dance-section {
       @include interpolate.interpolate(padding-top, 576px, 68px, 992px, 110px);
+      @include interpolate.interpolate(padding-bottom, 576px, 58px, 992px, 168px);
       .container {
+        align-items: center;
         .content {
           max-width: 348px;
         }
       }
     }
     .width-686 {
+      padding-top: 22px;
       max-width: 686px;
     }
     .width-300 {
+      padding-top: 22px;
       max-width: 300px;
     }
   }

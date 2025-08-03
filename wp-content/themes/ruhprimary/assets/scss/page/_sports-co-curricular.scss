@@ -1,6 +1,7 @@
 //_blog.scss
 @use "../mixin/interpolate";
 
+.page-sports,
 .page-sports-co-curricular {
   background-color: #fff2dd;
   .site-main & {
@@ -9,11 +10,17 @@
   .site-header {
     .site-header__logo {
       svg path {
-        fill: #913412;
+        fill: #fff2dd;
+        @media (min-width: 768px) {
+          fill: #913412;
+        }
       }
     }
     .site-header__toggle-line {
-      border-color: #913412;
+      border-color: #fff2dd;
+      @media (min-width: 768px) {
+        border-color: #913412;
+      }
     }
   }
 
@@ -92,6 +99,10 @@
     position: relative;
     .hero__image {
       width: 100%;
+      object-position: bottom center;
+      object-fit: cover;
+      width: 100%;
+      @include interpolate.interpolate(height, 576px, 480px, 992px, 762px);
     }
     .hero__text {
       position: absolute;
@@ -100,23 +111,34 @@
       right: 0;
       margin: 0 auto;
       width: 100%;
-      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       text-align: center;
+      max-width: 300px;
+      @media (min-width: 768px) {
+        max-width: 1120px;
+        height: 100%;
+      }
       .hero__subtext {
         font-family: "ps-aelynregular";
         font-style: normal;
         font-weight: 400;
-        font-size: 40px;
-        line-height: 33px;
-        /* identical to box height, or 82% */
         text-align: center;
-        /* Base Offwhite */
         color: #fff2dd;
         -webkit-text-stroke: 1px #fff2dd;
-        /* Base Offwhite */
+        @include interpolate.interpolate(font-size, 576px, 20px, 992px, 40px);
+        @include interpolate.interpolate(line-height, 576px, 20px, 992px, 33px);
+        @media (max-width: 768px) {
+          &:first-child {
+            padding-bottom: 38px;
+            margin-right: auto;
+          }
+          &:last-child {
+            padding-bottom: 18px;
+            margin-left: auto;
+          }
+        }
       }
     }
   }

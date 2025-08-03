@@ -335,11 +335,15 @@ body {
 }
 
 .error404 .site-main,
+.site-main .page-home,
 .site-main .page-curriculum .curriculum__header-title,
 .site-main .page-about-us .about-page__section--story,
 .site-main .page-parents-corner .parent-community,
 .site-main .page-sports-co-curricular,
+.site-main .page-sports,
 .site-main .page-school-life .ruh_life-section__detail,
+.site-main .page-liferuh .ruh_life-section__detail,
+.site-main .page-life-ruh .ruh_life-section__detail,
 .site-main .page-contact,
 .site-main .page-admission-form,
 .site-main .page-admission-process,
@@ -352,11 +356,15 @@ body {
 }
 @media (min-width: 768px) {
   .error404 .site-main,
+  .site-main .page-home,
   .site-main .page-curriculum .curriculum__header-title,
   .site-main .page-about-us .about-page__section--story,
   .site-main .page-parents-corner .parent-community,
   .site-main .page-sports-co-curricular,
+  .site-main .page-sports,
   .site-main .page-school-life .ruh_life-section__detail,
+  .site-main .page-liferuh .ruh_life-section__detail,
+  .site-main .page-life-ruh .ruh_life-section__detail,
   .site-main .page-contact,
   .site-main .page-admission-form,
   .site-main .page-admission-process,
@@ -373,7 +381,7 @@ body {
   padding: 0;
 }
 
-.type-page.page-curriculum .elementor-element, .type-page.page-about-us .elementor-element, .type-page.page-parents-corner .elementor-element, .type-page.page-sports-co-curricular .elementor-element, .type-page.page-school-life .elementor-element, .type-page.page-admission-process .elementor-element, .type-page.page-enquiry-form .elementor-element, .type-page.page-contact .elementor-element, .type-page.page-admission-form .type-page.page-cambridge-py .elementor-element, .type-page.page-cambridge-clsp .elementor-element, .type-page.page-ibdp-diploma .elementor-element, .type-page.page-ibcp .elementor-element {
+.type-page.page-home .elementor-element, .type-page.page-curriculum .elementor-element, .type-page.page-about-us .elementor-element, .type-page.page-parents-corner .elementor-element, .type-page.page-sports .elementor-element, .type-page.page-sports-co-curricular .elementor-element, .type-page.page-school-life .elementor-element, .type-page.page-liferuh .elementor-element, .type-page.page-life-ruh .elementor-element, .type-page.page-admission-process .elementor-element, .type-page.page-enquiry-form .elementor-element, .type-page.page-contact .elementor-element, .type-page.page-admission-form .elementor-element, .type-page.page-cambridge-py .elementor-element, .type-page.page-cambridge-clsp .elementor-element, .type-page.page-ibdp-diploma .elementor-element, .type-page.page-ibcp .elementor-element {
   padding: 0;
 }
 
@@ -483,20 +491,6 @@ body.no-scroll {
   opacity: 1;
   visibility: visible;
   z-index: 9999;
-}
-.site-nav .site-nav__logo {
-  width: 152px;
-  height: 102px;
-}
-@media (min-width: 768px) {
-  .site-nav .site-nav__logo {
-    width: 208px;
-    height: 134px;
-  }
-}
-.site-nav .site-nav__logo svg {
-  width: 100%;
-  height: auto;
 }
 .site-nav__group {
   padding-top: 48px;
@@ -739,6 +733,21 @@ body.no-scroll {
 .site-contact__social-link svg {
   width: 100%;
   height: auto;
+}
+
+.site-header__logo {
+  width: 78px;
+  height: 50px;
+}
+@media (min-width: 768px) {
+  .site-header__logo {
+    width: 155px;
+    height: 100px;
+  }
+}
+.site-header__logo svg {
+  width: 100%;
+  height: 100%;
 }
 
 .footer__top {
@@ -1715,7 +1724,7 @@ body.no-scroll {
 .page-admission-form,
 .page-admission-process,
 .page-contact {
-  background-color: #FFF2DD;
+  background-color: #fff2dd;
 }
 .page-enquiry-form .site-header .site-header__logo svg path,
 .page-admission-form .site-header .site-header__logo svg path,
@@ -1839,10 +1848,18 @@ body.no-scroll {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
+  width: 60%;
   height: 18px;
   margin: 0 auto;
   text-align: center;
+}
+@media (min-width: 992px) {
+  .page-enquiry-form .contact-us-widget h2 strong::after,
+  .page-admission-form .contact-us-widget h2 strong::after,
+  .page-admission-process .contact-us-widget h2 strong::after,
+  .page-contact .contact-us-widget h2 strong::after {
+    width: 100%;
+  }
 }
 .page-enquiry-form .contact-us-widget .wpcf7-form,
 .page-admission-form .contact-us-widget .wpcf7-form,
@@ -2300,6 +2317,9 @@ textarea {
   resize: none;
 }
 
+.archive {
+  background-color: #fff2dd;
+}
 .archive .site-header .site-header__logo svg path {
   fill: #fff2dd;
 }
@@ -2440,6 +2460,7 @@ textarea {
 }
 
 .posts-list {
+  background-color: #fff2dd;
   display: grid;
   grid-gap: 57px 77px;
   grid-template-columns: 1fr;
@@ -2481,6 +2502,7 @@ textarea {
   }
 }
 .posts-list .archive-thumb {
+  width: 100%;
   display: inline-block;
   padding-bottom: 22px;
 }
@@ -2545,6 +2567,11 @@ textarea {
   font-weight: 400;
 }
 
+.blog-template-default {
+  background-color: #fff2dd;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 .blog-template-default .site-header .site-header__logo svg path {
   fill: #913412;
 }
@@ -2578,16 +2605,16 @@ textarea {
   }
 }
 .blog-template-default h1 {
-  line-height: 84px;
+  line-height: 32px;
 }
 @media screen and (min-width: 576px) {
   .blog-template-default h1 {
-    line-height: calc(0vw + 84px);
+    line-height: calc(7.6923076923vw - 12.3076923077px);
   }
 }
 @media screen and (min-width: 992px) {
   .blog-template-default h1 {
-    line-height: 84px;
+    line-height: 64px;
   }
 }
 .blog-template-default .entry-content {
@@ -2606,6 +2633,18 @@ textarea {
   width: 100%;
   height: auto;
   display: block;
+}
+.blog-template-default .entry-content h1,
+.blog-template-default .entry-content h2,
+.blog-template-default .entry-content h3,
+.blog-template-default .entry-content h4,
+.blog-template-default .entry-content h5,
+.blog-template-default .entry-content h6 {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  color: #913412;
+  padding-bottom: 16px;
 }
 .blog-template-default .entry-content p,
 .blog-template-default .entry-content li {
@@ -2653,6 +2692,11 @@ textarea {
 }
 .blog-template-default .entry-content a {
   text-decoration-line: underline;
+}
+.blog-template-default .nocomments,
+.blog-template-default .entry-footer,
+.blog-template-default .related-posts {
+  display: none;
 }
 
 .page-parents-corner {
@@ -3362,11 +3406,16 @@ textarea {
   background: #505c44;
 }
 .page-parents-corner .entry-content .after-school .container {
-  margin-top: 184px;
   flex-direction: row;
   position: relative;
   padding-top: 48px;
   padding-bottom: 88px;
+  margin-top: 80px;
+}
+@media (min-width: 576px) {
+  .page-parents-corner .entry-content .after-school .container {
+    margin-top: 184px;
+  }
 }
 .page-parents-corner .entry-content .after-school .content {
   z-index: 1;
@@ -3499,30 +3548,51 @@ textarea {
   }
 }
 
+.page-liferuh,
+.page-life-ruh,
 .page-school-life {
-  background-color: #FFF2DD;
+  background-color: #fff2dd;
 }
+.page-liferuh .site-header .site-header__logo svg path,
+.page-life-ruh .site-header .site-header__logo svg path,
 .page-school-life .site-header .site-header__logo svg path {
   fill: #fff2dd;
 }
+.page-liferuh .site-header .site-header__toggle-line,
+.page-life-ruh .site-header .site-header__toggle-line,
 .page-school-life .site-header .site-header__toggle-line {
   border-color: #fff2dd;
 }
+.page-liferuh .entry-content .ruh_life-section__detail,
+.page-life-ruh .entry-content .ruh_life-section__detail,
 .page-school-life .entry-content .ruh_life-section__detail {
   background-color: #913412;
+  overflow: hidden;
 }
+.page-liferuh .entry-content .ruh_life-section__detail .image,
+.page-life-ruh .entry-content .ruh_life-section__detail .image,
+.page-school-life .entry-content .ruh_life-section__detail .image {
+  margin-bottom: -3px;
+}
+.page-liferuh .entry-content .container,
+.page-life-ruh .entry-content .container,
 .page-school-life .entry-content .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  align-items: flex-start;
+  text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .container,
+  .page-life-ruh .entry-content .container,
   .page-school-life .entry-content .container {
+    text-align: left;
     flex-direction: row;
   }
 }
+.page-liferuh .entry-content h1,
+.page-life-ruh .entry-content h1,
 .page-school-life .entry-content h1 {
   text-align: center;
   font-family: "ps-aelynregular";
@@ -3531,37 +3601,53 @@ textarea {
   color: #fff2dd;
   -webkit-text-stroke: 2px #fff2dd;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content h1,
+  .page-life-ruh .entry-content h1,
   .page-school-life .entry-content h1 {
     text-align: left;
   }
 }
+.page-liferuh .entry-content h1,
+.page-life-ruh .entry-content h1,
 .page-school-life .entry-content h1 {
   font-size: 36px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content h1,
+  .page-life-ruh .entry-content h1,
   .page-school-life .entry-content h1 {
     font-size: calc(6.7307692308vw - 2.7692307692px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content h1,
+  .page-life-ruh .entry-content h1,
   .page-school-life .entry-content h1 {
     font-size: 64px;
   }
 }
+.page-liferuh .entry-content h1,
+.page-life-ruh .entry-content h1,
 .page-school-life .entry-content h1 {
   line-height: 33px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content h1,
+  .page-life-ruh .entry-content h1,
   .page-school-life .entry-content h1 {
     line-height: calc(0vw + 33px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content h1,
+  .page-life-ruh .entry-content h1,
   .page-school-life .entry-content h1 {
     line-height: 33px;
   }
 }
+.page-liferuh .entry-content h1 strong,
+.page-life-ruh .entry-content h1 strong,
 .page-school-life .entry-content h1 strong {
   font-family: "caustenbold";
   font-style: normal;
@@ -3572,32 +3658,54 @@ textarea {
   padding-top: 7px;
   padding-bottom: 16px;
 }
+@media (min-width: 992px) {
+  .page-liferuh .entry-content h1 strong,
+  .page-life-ruh .entry-content h1 strong,
+  .page-school-life .entry-content h1 strong {
+    padding-top: 42px;
+    padding-bottom: 14px;
+  }
+}
+.page-liferuh .entry-content h1 strong,
+.page-life-ruh .entry-content h1 strong,
 .page-school-life .entry-content h1 strong {
   font-size: 20px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content h1 strong,
+  .page-life-ruh .entry-content h1 strong,
   .page-school-life .entry-content h1 strong {
     font-size: calc(2.8846153846vw + 3.3846153846px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content h1 strong,
+  .page-life-ruh .entry-content h1 strong,
   .page-school-life .entry-content h1 strong {
     font-size: 32px;
   }
 }
+.page-liferuh .entry-content h1 strong,
+.page-life-ruh .entry-content h1 strong,
 .page-school-life .entry-content h1 strong {
   line-height: 33px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content h1 strong,
+  .page-life-ruh .entry-content h1 strong,
   .page-school-life .entry-content h1 strong {
     line-height: calc(0vw + 33px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content h1 strong,
+  .page-life-ruh .entry-content h1 strong,
   .page-school-life .entry-content h1 strong {
     line-height: 33px;
   }
 }
+.page-liferuh .entry-content h2:not(.info-section__title),
+.page-life-ruh .entry-content h2:not(.info-section__title),
 .page-school-life .entry-content h2:not(.info-section__title) {
   font-family: "caustenbold";
   font-style: normal;
@@ -3605,69 +3713,99 @@ textarea {
   color: #913412;
   padding-bottom: 16px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content h2:not(.info-section__title),
+  .page-life-ruh .entry-content h2:not(.info-section__title),
   .page-school-life .entry-content h2:not(.info-section__title) {
     padding-bottom: 42px;
   }
 }
+.page-liferuh .entry-content h2:not(.info-section__title),
+.page-life-ruh .entry-content h2:not(.info-section__title),
 .page-school-life .entry-content h2:not(.info-section__title) {
   font-size: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content h2:not(.info-section__title),
+  .page-life-ruh .entry-content h2:not(.info-section__title),
   .page-school-life .entry-content h2:not(.info-section__title) {
     font-size: calc(6.25vw - 4px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content h2:not(.info-section__title),
+  .page-life-ruh .entry-content h2:not(.info-section__title),
   .page-school-life .entry-content h2:not(.info-section__title) {
     font-size: 58px;
   }
 }
+.page-liferuh .entry-content h2:not(.info-section__title),
+.page-life-ruh .entry-content h2:not(.info-section__title),
 .page-school-life .entry-content h2:not(.info-section__title) {
   line-height: 24px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content h2:not(.info-section__title),
+  .page-life-ruh .entry-content h2:not(.info-section__title),
   .page-school-life .entry-content h2:not(.info-section__title) {
     line-height: calc(2.1634615385vw + 11.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content h2:not(.info-section__title),
+  .page-life-ruh .entry-content h2:not(.info-section__title),
   .page-school-life .entry-content h2:not(.info-section__title) {
     line-height: 33px;
   }
 }
+.page-liferuh .entry-content p,
+.page-life-ruh .entry-content p,
 .page-school-life .entry-content p {
   font-family: "caustenregular";
   font-style: normal;
   font-weight: 400;
   color: #000000;
 }
+.page-liferuh .entry-content p,
+.page-life-ruh .entry-content p,
 .page-school-life .entry-content p {
   font-size: 16px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content p,
+  .page-life-ruh .entry-content p,
   .page-school-life .entry-content p {
     font-size: calc(1.9230769231vw + 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content p,
+  .page-life-ruh .entry-content p,
   .page-school-life .entry-content p {
     font-size: 24px;
   }
 }
+.page-liferuh .entry-content p,
+.page-life-ruh .entry-content p,
 .page-school-life .entry-content p {
   line-height: 24px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content p,
+  .page-life-ruh .entry-content p,
   .page-school-life .entry-content p {
     line-height: calc(2.1634615385vw + 11.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content p,
+  .page-life-ruh .entry-content p,
   .page-school-life .entry-content p {
     line-height: 33px;
   }
 }
+.page-liferuh .entry-content p strong,
+.page-life-ruh .entry-content p strong,
 .page-school-life .entry-content p strong {
   display: block;
   font-family: "caustenbold";
@@ -3676,45 +3814,63 @@ textarea {
   text-align: center;
   color: #913412;
 }
+.page-liferuh .entry-content p strong,
+.page-life-ruh .entry-content p strong,
 .page-school-life .entry-content p strong {
   font-size: 20px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content p strong,
+  .page-life-ruh .entry-content p strong,
   .page-school-life .entry-content p strong {
     font-size: calc(2.8846153846vw + 3.3846153846px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content p strong,
+  .page-life-ruh .entry-content p strong,
   .page-school-life .entry-content p strong {
     font-size: 32px;
   }
 }
+.page-liferuh .entry-content p strong,
+.page-life-ruh .entry-content p strong,
 .page-school-life .entry-content p strong {
   line-height: 28px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content p strong,
+  .page-life-ruh .entry-content p strong,
   .page-school-life .entry-content p strong {
     line-height: calc(3.125vw + 10px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content p strong,
+  .page-life-ruh .entry-content p strong,
   .page-school-life .entry-content p strong {
     line-height: 41px;
   }
 }
+.page-liferuh .entry-content .ruh_life-section .content,
+.page-life-ruh .entry-content .ruh_life-section .content,
 .page-school-life .entry-content .ruh_life-section .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 56px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .ruh_life-section .content,
+  .page-life-ruh .entry-content .ruh_life-section .content,
   .page-school-life .entry-content .ruh_life-section .content {
     gap: 24px;
     align-items: flex-start;
     padding-bottom: 0;
   }
 }
+.page-liferuh .entry-content .ruh_life-section p,
+.page-life-ruh .entry-content .ruh_life-section p,
 .page-school-life .entry-content .ruh_life-section p {
   font-family: "caustenregular";
   font-style: normal;
@@ -3724,37 +3880,53 @@ textarea {
   max-width: 366px;
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .ruh_life-section p,
+  .page-life-ruh .entry-content .ruh_life-section p,
   .page-school-life .entry-content .ruh_life-section p {
     text-align: left;
   }
 }
+.page-liferuh .entry-content .ruh_life-section p,
+.page-life-ruh .entry-content .ruh_life-section p,
 .page-school-life .entry-content .ruh_life-section p {
   font-size: 16px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .ruh_life-section p,
+  .page-life-ruh .entry-content .ruh_life-section p,
   .page-school-life .entry-content .ruh_life-section p {
     font-size: calc(1.9230769231vw + 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .ruh_life-section p,
+  .page-life-ruh .entry-content .ruh_life-section p,
   .page-school-life .entry-content .ruh_life-section p {
     font-size: 24px;
   }
 }
+.page-liferuh .entry-content .ruh_life-section p,
+.page-life-ruh .entry-content .ruh_life-section p,
 .page-school-life .entry-content .ruh_life-section p {
   line-height: 23px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .ruh_life-section p,
+  .page-life-ruh .entry-content .ruh_life-section p,
   .page-school-life .entry-content .ruh_life-section p {
     line-height: calc(4.5673076923vw - 3.3076923077px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .ruh_life-section p,
+  .page-life-ruh .entry-content .ruh_life-section p,
   .page-school-life .entry-content .ruh_life-section p {
     line-height: 42px;
   }
 }
+.page-liferuh .entry-content .ruh_life-section a,
+.page-life-ruh .entry-content .ruh_life-section a,
 .page-school-life .entry-content .ruh_life-section a {
   display: inline-block;
   background: #fff2dd;
@@ -3769,7 +3941,9 @@ textarea {
   padding: 16px 12px;
   border-radius: 8px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .ruh_life-section a,
+  .page-life-ruh .entry-content .ruh_life-section a,
   .page-school-life .entry-content .ruh_life-section a {
     border-radius: 16px;
     padding: 24px 26px;
@@ -3779,206 +3953,393 @@ textarea {
   }
 }
 @media (min-width: 568px) {
+  .page-liferuh .entry-content .ruh_life-section img,
+  .page-life-ruh .entry-content .ruh_life-section img,
   .page-school-life .entry-content .ruh_life-section img {
     max-width: 393px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .ruh_life-section img,
+  .page-life-ruh .entry-content .ruh_life-section img,
   .page-school-life .entry-content .ruh_life-section img {
     max-width: 420px;
   }
 }
 @media (min-width: 992px) {
+  .page-liferuh .entry-content .ruh_life-section img,
+  .page-life-ruh .entry-content .ruh_life-section img,
   .page-school-life .entry-content .ruh_life-section img {
     max-width: 508px;
   }
 }
+.page-liferuh .entry-content .piazza-section,
+.page-life-ruh .entry-content .piazza-section,
 .page-school-life .entry-content .piazza-section {
   padding-top: 34px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .piazza-section,
+  .page-life-ruh .entry-content .piazza-section,
   .page-school-life .entry-content .piazza-section {
     padding-top: calc(15.8653846154vw - 57.3846153846px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .piazza-section,
+  .page-life-ruh .entry-content .piazza-section,
   .page-school-life .entry-content .piazza-section {
     padding-top: 100px;
   }
 }
+.page-liferuh .entry-content .piazza-section .container,
+.page-life-ruh .entry-content .piazza-section .container,
+.page-school-life .entry-content .piazza-section .container {
+  align-items: center;
+}
+.page-liferuh .entry-content .playloft-section,
+.page-life-ruh .entry-content .playloft-section,
 .page-school-life .entry-content .playloft-section {
   padding-top: 73px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .playloft-section,
+  .page-life-ruh .entry-content .playloft-section,
   .page-school-life .entry-content .playloft-section {
     padding-top: calc(9.375vw + 19px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .playloft-section,
+  .page-life-ruh .entry-content .playloft-section,
   .page-school-life .entry-content .playloft-section {
     padding-top: 112px;
   }
 }
+.page-liferuh .entry-content .playloft-section .container,
+.page-life-ruh .entry-content .playloft-section .container,
 .page-school-life .entry-content .playloft-section .container {
   flex-direction: column;
 }
+.page-liferuh .entry-content .playloft-section .container .content,
+.page-life-ruh .entry-content .playloft-section .container .content,
 .page-school-life .entry-content .playloft-section .container .content {
   margin: 0 auto;
   text-align: center;
   padding-top: 48px;
 }
+.page-liferuh .entry-content .playloft-section .container .content strong,
+.page-life-ruh .entry-content .playloft-section .container .content strong,
 .page-school-life .entry-content .playloft-section .container .content strong {
   padding-top: 48px;
 }
+.page-liferuh .entry-content .best-place,
+.page-life-ruh .entry-content .best-place,
 .page-school-life .entry-content .best-place {
   padding-top: 70px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .best-place,
+  .page-life-ruh .entry-content .best-place,
   .page-school-life .entry-content .best-place {
     padding-top: calc(12.2596153846vw - 0.6153846154px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .best-place,
+  .page-life-ruh .entry-content .best-place,
   .page-school-life .entry-content .best-place {
     padding-top: 121px;
   }
 }
+.page-liferuh .entry-content .best-place .library,
+.page-life-ruh .entry-content .best-place .library,
 .page-school-life .entry-content .best-place .library {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
+.page-liferuh .entry-content .best-place .library .content,
+.page-life-ruh .entry-content .best-place .library .content,
 .page-school-life .entry-content .best-place .library .content {
   padding-top: 30px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .best-place .library .content,
+  .page-life-ruh .entry-content .best-place .library .content,
   .page-school-life .entry-content .best-place .library .content {
     max-width: 419px;
   }
 }
+.page-liferuh .entry-content .best-place .library.py .content,
+.page-life-ruh .entry-content .best-place .library.py .content,
 .page-school-life .entry-content .best-place .library.py .content {
   padding-top: 40px;
 }
+.page-liferuh .entry-content .about-section,
+.page-life-ruh .entry-content .about-section,
 .page-school-life .entry-content .about-section {
   background-color: #913412;
   position: relative;
+  padding-bottom: 0;
 }
+.page-liferuh .entry-content .about-section,
+.page-life-ruh .entry-content .about-section,
 .page-school-life .entry-content .about-section {
   margin-top: 56px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section,
+  .page-life-ruh .entry-content .about-section,
   .page-school-life .entry-content .about-section {
     margin-top: calc(20.1923076923vw - 60.3076923077px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section,
+  .page-life-ruh .entry-content .about-section,
   .page-school-life .entry-content .about-section {
     margin-top: 140px;
   }
 }
+.page-liferuh .entry-content .about-section,
+.page-life-ruh .entry-content .about-section,
 .page-school-life .entry-content .about-section {
   padding-top: 56px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section,
+  .page-life-ruh .entry-content .about-section,
   .page-school-life .entry-content .about-section {
     padding-top: calc(10.5769230769vw - 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section,
+  .page-life-ruh .entry-content .about-section,
   .page-school-life .entry-content .about-section {
     padding-top: 100px;
   }
 }
-.page-school-life .entry-content .about-section {
-  padding-bottom: 56px;
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .about-section,
+  .page-life-ruh .entry-content .about-section,
+  .page-school-life .entry-content .about-section {
+    padding-bottom: 56px;
+  }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section,
+  .page-life-ruh .entry-content .about-section,
   .page-school-life .entry-content .about-section {
     padding-bottom: calc(10.5769230769vw - 4.9230769231px);
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section,
+  .page-life-ruh .entry-content .about-section,
   .page-school-life .entry-content .about-section {
     padding-bottom: 100px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .container,
+  .page-life-ruh .entry-content .about-section .container,
   .page-school-life .entry-content .about-section .container {
     flex-direction: row-reverse;
   }
-  .page-school-life .entry-content .about-section .container .content,
+}
+.page-liferuh .entry-content .about-section .container .image,
+.page-life-ruh .entry-content .about-section .container .image,
+.page-school-life .entry-content .about-section .container .image {
+  bottom: -20px;
+  position: relative;
+  width: calc(100% + 16px + 16px + 16px);
+  left: 0;
+  right: 0;
+  margin: 0 -16px;
+  text-align: center;
+  max-width: initial;
+}
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .container .image,
+  .page-life-ruh .entry-content .about-section .container .image,
   .page-school-life .entry-content .about-section .container .image {
-    flex: 0 0 50%;
-    max-width: 50%;
+    position: absolute;
+    width: auto;
+    left: -20px;
+    top: -90px;
+    object-fit: cover;
+  }
+  .page-liferuh .entry-content .about-section .container .image,
+  .page-life-ruh .entry-content .about-section .container .image,
+  .page-school-life .entry-content .about-section .container .image {
+    width: 420px;
   }
 }
-.page-school-life .entry-content .about-section .container .image {
-  position: absolute;
-  left: 0;
-  top: -144px;
-  object-fit: contain;
-}
-.page-school-life .entry-content .about-section .container .image {
-  width: 420px;
-}
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section .container .image,
+  .page-life-ruh .entry-content .about-section .container .image,
   .page-school-life .entry-content .about-section .container .image {
     width: calc(92.0673076923vw - 110.3076923077px);
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .container .image,
+  .page-life-ruh .entry-content .about-section .container .image,
   .page-school-life .entry-content .about-section .container .image {
     width: 803px;
   }
 }
-.page-school-life .entry-content .about-section .container .image {
-  height: 332px;
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .container .image,
+  .page-life-ruh .entry-content .about-section .container .image,
+  .page-school-life .entry-content .about-section .container .image {
+    height: 332px;
+  }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section .container .image,
+  .page-life-ruh .entry-content .about-section .container .image,
   .page-school-life .entry-content .about-section .container .image {
     height: calc(85.8173076923vw - 162.3076923077px);
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .container .image,
+  .page-life-ruh .entry-content .about-section .container .image,
   .page-school-life .entry-content .about-section .container .image {
     height: 689px;
   }
 }
+.page-liferuh .entry-content .about-section .content,
+.page-life-ruh .entry-content .about-section .content,
 .page-school-life .entry-content .about-section .content {
+  z-index: 1;
   text-align: center;
+  max-width: 320px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .content,
+  .page-life-ruh .entry-content .about-section .content,
   .page-school-life .entry-content .about-section .content {
-    padding-left: 48px;
+    flex: 0 0 340px;
+    max-width: 340px;
     text-align: left;
   }
+  .page-liferuh .entry-content .about-section .content strong,
+  .page-life-ruh .entry-content .about-section .content strong,
   .page-school-life .entry-content .about-section .content strong {
     text-align: left;
   }
 }
+.page-liferuh .entry-content .about-section .content h2,
+.page-life-ruh .entry-content .about-section .content h2,
 .page-school-life .entry-content .about-section .content h2 {
   font-family: "caustenbold";
   font-style: normal;
   font-weight: 700;
   color: #fff2dd;
+  font-size: 32px;
+  line-height: 33px;
 }
+.page-liferuh .entry-content .about-section .content p,
+.page-life-ruh .entry-content .about-section .content p,
 .page-school-life .entry-content .about-section .content p {
+  max-width: 330px;
   font-family: "caustenregular";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 33px;
   color: #fff2dd;
 }
+.page-liferuh .entry-content .about-section .content p,
+.page-life-ruh .entry-content .about-section .content p,
+.page-school-life .entry-content .about-section .content p {
+  font-size: 16px;
+}
+@media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section .content p,
+  .page-life-ruh .entry-content .about-section .content p,
+  .page-school-life .entry-content .about-section .content p {
+    font-size: calc(1.9230769231vw + 4.9230769231px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .content p,
+  .page-life-ruh .entry-content .about-section .content p,
+  .page-school-life .entry-content .about-section .content p {
+    font-size: 24px;
+  }
+}
+.page-liferuh .entry-content .about-section .content p,
+.page-life-ruh .entry-content .about-section .content p,
+.page-school-life .entry-content .about-section .content p {
+  line-height: 24px;
+}
+@media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section .content p,
+  .page-life-ruh .entry-content .about-section .content p,
+  .page-school-life .entry-content .about-section .content p {
+    line-height: calc(2.1634615385vw + 11.5384615385px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .content p,
+  .page-life-ruh .entry-content .about-section .content p,
+  .page-school-life .entry-content .about-section .content p {
+    line-height: 33px;
+  }
+}
+.page-liferuh .entry-content .about-section .content p strong,
+.page-life-ruh .entry-content .about-section .content p strong,
 .page-school-life .entry-content .about-section .content p strong {
+  display: inline;
   font-family: caustenbold;
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
   color: #fec157;
 }
+.page-liferuh .entry-content .about-section .content p strong,
+.page-life-ruh .entry-content .about-section .content p strong,
+.page-school-life .entry-content .about-section .content p strong {
+  font-size: 16px;
+}
+@media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section .content p strong,
+  .page-life-ruh .entry-content .about-section .content p strong,
+  .page-school-life .entry-content .about-section .content p strong {
+    font-size: calc(1.9230769231vw + 4.9230769231px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .content p strong,
+  .page-life-ruh .entry-content .about-section .content p strong,
+  .page-school-life .entry-content .about-section .content p strong {
+    font-size: 24px;
+  }
+}
+.page-liferuh .entry-content .about-section .content p strong,
+.page-life-ruh .entry-content .about-section .content p strong,
+.page-school-life .entry-content .about-section .content p strong {
+  line-height: 24px;
+}
+@media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .about-section .content p strong,
+  .page-life-ruh .entry-content .about-section .content p strong,
+  .page-school-life .entry-content .about-section .content p strong {
+    line-height: calc(2.1634615385vw + 11.5384615385px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .content p strong,
+  .page-life-ruh .entry-content .about-section .content p strong,
+  .page-school-life .entry-content .about-section .content p strong {
+    line-height: 33px;
+  }
+}
+.page-liferuh .entry-content .about-section .content a,
+.page-life-ruh .entry-content .about-section .content a,
 .page-school-life .entry-content .about-section .content a {
   display: inline-block;
   background: #fff2dd;
@@ -3989,11 +4350,13 @@ textarea {
   line-height: 20px;
   text-align: center;
   color: #913412;
-  margin: 0 auto;
+  margin: 24px auto 0;
   padding: 16px 12px;
   border-radius: 8px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .page-liferuh .entry-content .about-section .content a,
+  .page-life-ruh .entry-content .about-section .content a,
   .page-school-life .entry-content .about-section .content a {
     border-radius: 16px;
     padding: 24px 26px;
@@ -4002,68 +4365,136 @@ textarea {
     line-height: 24px;
   }
 }
+.page-liferuh .entry-content .sandpit-section,
+.page-life-ruh .entry-content .sandpit-section,
 .page-school-life .entry-content .sandpit-section {
   padding-top: 53px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .sandpit-section,
+  .page-life-ruh .entry-content .sandpit-section,
   .page-school-life .entry-content .sandpit-section {
     padding-top: calc(17.5480769231vw - 48.0769230769px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .sandpit-section,
+  .page-life-ruh .entry-content .sandpit-section,
   .page-school-life .entry-content .sandpit-section {
     padding-top: 126px;
   }
 }
+.page-liferuh .entry-content .sandpit-section .container,
+.page-life-ruh .entry-content .sandpit-section .container,
 .page-school-life .entry-content .sandpit-section .container {
   flex-direction: column;
 }
+.page-liferuh .entry-content .sandpit-section .content,
+.page-life-ruh .entry-content .sandpit-section .content,
 .page-school-life .entry-content .sandpit-section .content {
   margin: 0 auto;
   padding-top: 58px;
   text-align: center;
 }
+.page-liferuh .entry-content .sandpit-section .content strong,
+.page-life-ruh .entry-content .sandpit-section .content strong,
 .page-school-life .entry-content .sandpit-section .content strong {
   padding-top: 48px;
 }
+.page-liferuh .entry-content .dance-section,
+.page-life-ruh .entry-content .dance-section,
 .page-school-life .entry-content .dance-section {
   padding-top: 68px;
 }
 @media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .dance-section,
+  .page-life-ruh .entry-content .dance-section,
   .page-school-life .entry-content .dance-section {
     padding-top: calc(10.0961538462vw + 9.8461538462px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .dance-section,
+  .page-life-ruh .entry-content .dance-section,
   .page-school-life .entry-content .dance-section {
     padding-top: 110px;
   }
 }
+.page-liferuh .entry-content .dance-section,
+.page-life-ruh .entry-content .dance-section,
+.page-school-life .entry-content .dance-section {
+  padding-bottom: 58px;
+}
+@media screen and (min-width: 576px) {
+  .page-liferuh .entry-content .dance-section,
+  .page-life-ruh .entry-content .dance-section,
+  .page-school-life .entry-content .dance-section {
+    padding-bottom: calc(26.4423076923vw - 94.3076923077px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-liferuh .entry-content .dance-section,
+  .page-life-ruh .entry-content .dance-section,
+  .page-school-life .entry-content .dance-section {
+    padding-bottom: 168px;
+  }
+}
+.page-liferuh .entry-content .dance-section .container,
+.page-life-ruh .entry-content .dance-section .container,
+.page-school-life .entry-content .dance-section .container {
+  align-items: center;
+}
+.page-liferuh .entry-content .dance-section .container .content,
+.page-life-ruh .entry-content .dance-section .container .content,
 .page-school-life .entry-content .dance-section .container .content {
   max-width: 348px;
 }
+.page-liferuh .entry-content .width-686,
+.page-life-ruh .entry-content .width-686,
 .page-school-life .entry-content .width-686 {
+  padding-top: 22px;
   max-width: 686px;
 }
+.page-liferuh .entry-content .width-300,
+.page-life-ruh .entry-content .width-300,
 .page-school-life .entry-content .width-300 {
+  padding-top: 22px;
   max-width: 300px;
 }
 
+.page-sports,
 .page-sports-co-curricular {
   background-color: #fff2dd;
 }
+.site-main .page-sports,
 .site-main .page-sports-co-curricular {
   padding-top: 0;
 }
+.page-sports .site-header .site-header__logo svg path,
 .page-sports-co-curricular .site-header .site-header__logo svg path {
-  fill: #913412;
+  fill: #fff2dd;
 }
+@media (min-width: 768px) {
+  .page-sports .site-header .site-header__logo svg path,
+  .page-sports-co-curricular .site-header .site-header__logo svg path {
+    fill: #913412;
+  }
+}
+.page-sports .site-header .site-header__toggle-line,
 .page-sports-co-curricular .site-header .site-header__toggle-line {
-  border-color: #913412;
+  border-color: #fff2dd;
 }
+@media (min-width: 768px) {
+  .page-sports .site-header .site-header__toggle-line,
+  .page-sports-co-curricular .site-header .site-header__toggle-line {
+    border-color: #913412;
+  }
+}
+.page-sports .entry-content .ruh_life-section__detail,
 .page-sports-co-curricular .entry-content .ruh_life-section__detail {
   background-color: #fff2dd;
 }
+.page-sports .entry-content .container,
 .page-sports-co-curricular .entry-content .container {
   display: flex;
   justify-content: space-between;
@@ -4072,10 +4503,12 @@ textarea {
   align-items: flex-start;
 }
 @media (min-width: 768px) {
+  .page-sports .entry-content .container,
   .page-sports-co-curricular .entry-content .container {
     flex-direction: row;
   }
 }
+.page-sports .entry-content h1,
 .page-sports-co-curricular .entry-content h1 {
   text-align: center;
   font-family: "ps-aelynregular";
@@ -4085,36 +4518,44 @@ textarea {
   -webkit-text-stroke: 2px #fff2dd;
 }
 @media (min-width: 768px) {
+  .page-sports .entry-content h1,
   .page-sports-co-curricular .entry-content h1 {
     text-align: left;
   }
 }
+.page-sports .entry-content h1,
 .page-sports-co-curricular .entry-content h1 {
   font-size: 36px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content h1,
   .page-sports-co-curricular .entry-content h1 {
     font-size: calc(6.7307692308vw - 2.7692307692px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content h1,
   .page-sports-co-curricular .entry-content h1 {
     font-size: 64px;
   }
 }
+.page-sports .entry-content h1,
 .page-sports-co-curricular .entry-content h1 {
   line-height: 33px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content h1,
   .page-sports-co-curricular .entry-content h1 {
     line-height: calc(0vw + 33px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content h1,
   .page-sports-co-curricular .entry-content h1 {
     line-height: 33px;
   }
 }
+.page-sports .entry-content h1 strong,
 .page-sports-co-curricular .entry-content h1 strong {
   font-family: "caustenbold";
   font-style: normal;
@@ -4125,32 +4566,39 @@ textarea {
   padding-top: 7px;
   padding-bottom: 16px;
 }
+.page-sports .entry-content h1 strong,
 .page-sports-co-curricular .entry-content h1 strong {
   font-size: 20px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content h1 strong,
   .page-sports-co-curricular .entry-content h1 strong {
     font-size: calc(2.8846153846vw + 3.3846153846px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content h1 strong,
   .page-sports-co-curricular .entry-content h1 strong {
     font-size: 32px;
   }
 }
+.page-sports .entry-content h1 strong,
 .page-sports-co-curricular .entry-content h1 strong {
   line-height: 33px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content h1 strong,
   .page-sports-co-curricular .entry-content h1 strong {
     line-height: calc(0vw + 33px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content h1 strong,
   .page-sports-co-curricular .entry-content h1 strong {
     line-height: 33px;
   }
 }
+.page-sports .entry-content h2:not(.info-section__title),
 .page-sports-co-curricular .entry-content h2:not(.info-section__title) {
   font-family: "caustenbold";
   font-style: normal;
@@ -4159,68 +4607,83 @@ textarea {
   padding-bottom: 16px;
 }
 @media (min-width: 768px) {
+  .page-sports .entry-content h2:not(.info-section__title),
   .page-sports-co-curricular .entry-content h2:not(.info-section__title) {
     padding-bottom: 42px;
   }
 }
+.page-sports .entry-content h2:not(.info-section__title),
 .page-sports-co-curricular .entry-content h2:not(.info-section__title) {
   font-size: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content h2:not(.info-section__title),
   .page-sports-co-curricular .entry-content h2:not(.info-section__title) {
     font-size: calc(6.25vw - 4px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content h2:not(.info-section__title),
   .page-sports-co-curricular .entry-content h2:not(.info-section__title) {
     font-size: 58px;
   }
 }
+.page-sports .entry-content h2:not(.info-section__title),
 .page-sports-co-curricular .entry-content h2:not(.info-section__title) {
   line-height: 24px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content h2:not(.info-section__title),
   .page-sports-co-curricular .entry-content h2:not(.info-section__title) {
     line-height: calc(2.1634615385vw + 11.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content h2:not(.info-section__title),
   .page-sports-co-curricular .entry-content h2:not(.info-section__title) {
     line-height: 33px;
   }
 }
+.page-sports .entry-content p,
 .page-sports-co-curricular .entry-content p {
   font-family: "caustenregular";
   font-style: normal;
   font-weight: 400;
   color: #000000;
 }
+.page-sports .entry-content p,
 .page-sports-co-curricular .entry-content p {
   font-size: 16px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content p,
   .page-sports-co-curricular .entry-content p {
     font-size: calc(1.9230769231vw + 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content p,
   .page-sports-co-curricular .entry-content p {
     font-size: 24px;
   }
 }
+.page-sports .entry-content p,
 .page-sports-co-curricular .entry-content p {
   line-height: 24px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content p,
   .page-sports-co-curricular .entry-content p {
     line-height: calc(2.1634615385vw + 11.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content p,
   .page-sports-co-curricular .entry-content p {
     line-height: 33px;
   }
 }
+.page-sports .entry-content p strong,
 .page-sports-co-curricular .entry-content p strong {
   display: block;
   font-family: "caustenbold";
@@ -4229,38 +4692,66 @@ textarea {
   text-align: center;
   color: #913412;
 }
+.page-sports .entry-content p strong,
 .page-sports-co-curricular .entry-content p strong {
   font-size: 20px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content p strong,
   .page-sports-co-curricular .entry-content p strong {
     font-size: calc(2.8846153846vw + 3.3846153846px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content p strong,
   .page-sports-co-curricular .entry-content p strong {
     font-size: 32px;
   }
 }
+.page-sports .entry-content p strong,
 .page-sports-co-curricular .entry-content p strong {
   line-height: 28px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .entry-content p strong,
   .page-sports-co-curricular .entry-content p strong {
     line-height: calc(3.125vw + 10px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .entry-content p strong,
   .page-sports-co-curricular .entry-content p strong {
     line-height: 41px;
   }
 }
+.page-sports .hero,
 .page-sports-co-curricular .hero {
   position: relative;
 }
+.page-sports .hero .hero__image,
 .page-sports-co-curricular .hero .hero__image {
   width: 100%;
+  object-position: bottom center;
+  object-fit: cover;
+  width: 100%;
 }
+.page-sports .hero .hero__image,
+.page-sports-co-curricular .hero .hero__image {
+  height: 480px;
+}
+@media screen and (min-width: 576px) {
+  .page-sports .hero .hero__image,
+  .page-sports-co-curricular .hero .hero__image {
+    height: calc(67.7884615385vw + 89.5384615385px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-sports .hero .hero__image,
+  .page-sports-co-curricular .hero .hero__image {
+    height: 762px;
+  }
+}
+.page-sports .hero .hero__text,
 .page-sports-co-curricular .hero .hero__text {
   position: absolute;
   bottom: 0;
@@ -4268,68 +4759,126 @@ textarea {
   right: 0;
   margin: 0 auto;
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  max-width: 300px;
 }
+@media (min-width: 768px) {
+  .page-sports .hero .hero__text,
+  .page-sports-co-curricular .hero .hero__text {
+    max-width: 1120px;
+    height: 100%;
+  }
+}
+.page-sports .hero .hero__text .hero__subtext,
 .page-sports-co-curricular .hero .hero__text .hero__subtext {
   font-family: "ps-aelynregular";
   font-style: normal;
   font-weight: 400;
-  font-size: 40px;
-  line-height: 33px;
-  /* identical to box height, or 82% */
   text-align: center;
-  /* Base Offwhite */
   color: #fff2dd;
   -webkit-text-stroke: 1px #fff2dd;
-  /* Base Offwhite */
 }
+.page-sports .hero .hero__text .hero__subtext,
+.page-sports-co-curricular .hero .hero__text .hero__subtext {
+  font-size: 20px;
+}
+@media screen and (min-width: 576px) {
+  .page-sports .hero .hero__text .hero__subtext,
+  .page-sports-co-curricular .hero .hero__text .hero__subtext {
+    font-size: calc(4.8076923077vw - 7.6923076923px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-sports .hero .hero__text .hero__subtext,
+  .page-sports-co-curricular .hero .hero__text .hero__subtext {
+    font-size: 40px;
+  }
+}
+.page-sports .hero .hero__text .hero__subtext,
+.page-sports-co-curricular .hero .hero__text .hero__subtext {
+  line-height: 20px;
+}
+@media screen and (min-width: 576px) {
+  .page-sports .hero .hero__text .hero__subtext,
+  .page-sports-co-curricular .hero .hero__text .hero__subtext {
+    line-height: calc(3.125vw + 2px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-sports .hero .hero__text .hero__subtext,
+  .page-sports-co-curricular .hero .hero__text .hero__subtext {
+    line-height: 33px;
+  }
+}
+@media (max-width: 768px) {
+  .page-sports .hero .hero__text .hero__subtext:first-child,
+  .page-sports-co-curricular .hero .hero__text .hero__subtext:first-child {
+    padding-bottom: 38px;
+    margin-right: auto;
+  }
+  .page-sports .hero .hero__text .hero__subtext:last-child,
+  .page-sports-co-curricular .hero .hero__text .hero__subtext:last-child {
+    padding-bottom: 18px;
+    margin-left: auto;
+  }
+}
+.page-sports .sports-arena,
 .page-sports-co-curricular .sports-arena {
   padding-top: 43px;
 }
 @media (min-width: 768px) {
+  .page-sports .sports-arena,
   .page-sports-co-curricular .sports-arena {
     padding-top: 126px;
   }
 }
+.page-sports .sports-arena .sports-arena__title,
 .page-sports-co-curricular .sports-arena .sports-arena__title {
   visibility: hidden;
   opacity: 0;
 }
+.page-sports .sports-arena .sports-arena__logo,
 .page-sports-co-curricular .sports-arena .sports-arena__logo {
   width: 153px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .sports-arena .sports-arena__logo,
   .page-sports-co-curricular .sports-arena .sports-arena__logo {
     width: calc(65.625vw - 225px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .sports-arena .sports-arena__logo,
   .page-sports-co-curricular .sports-arena .sports-arena__logo {
     width: 426px;
   }
 }
+.page-sports .sports-arena .sports-arena__logo,
 .page-sports-co-curricular .sports-arena .sports-arena__logo {
   height: 123px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .sports-arena .sports-arena__logo,
   .page-sports-co-curricular .sports-arena .sports-arena__logo {
     height: calc(52.6442307692vw - 180.2307692308px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .sports-arena .sports-arena__logo,
   .page-sports-co-curricular .sports-arena .sports-arena__logo {
     height: 342px;
   }
 }
+.page-sports .sports-arena__content .container,
 .page-sports-co-curricular .sports-arena__content .container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.page-sports .sports-arena__content .sports-arena__description,
 .page-sports-co-curricular .sports-arena__content .sports-arena__description {
   font-family: caustenregular;
   font-style: normal;
@@ -4342,6 +4891,7 @@ textarea {
   max-width: 862px;
   padding-top: 120px;
 }
+.page-sports .sports-arena__content .sports-arena__mission,
 .page-sports-co-curricular .sports-arena__content .sports-arena__mission {
   font-family: caustenbold;
   font-style: normal;
@@ -4355,37 +4905,45 @@ textarea {
   max-width: 862px;
   padding-top: 45px;
 }
+.page-sports .sports-arena__content .sports-arena__group-photo,
 .page-sports-co-curricular .sports-arena__content .sports-arena__group-photo {
   padding-top: 46px;
   padding-bottom: 60px;
 }
 @media (min-width: 768px) {
+  .page-sports .sports-arena__content .sports-arena__group-photo,
   .page-sports-co-curricular .sports-arena__content .sports-arena__group-photo {
     padding-top: 102px;
     padding-bottom: 175px;
   }
 }
+.page-sports .art-studio,
 .page-sports-co-curricular .art-studio {
   padding-bottom: 102px;
 }
 @media (min-width: 768px) {
+  .page-sports .art-studio,
   .page-sports-co-curricular .art-studio {
     padding-bottom: 158px;
   }
 }
+.page-sports .art-studio .container,
 .page-sports-co-curricular .art-studio .container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.page-sports .art-studio .art-studio__gallery,
 .page-sports-co-curricular .art-studio .art-studio__gallery {
   padding-bottom: 12px;
 }
 @media (min-width: 768px) {
+  .page-sports .art-studio .art-studio__gallery,
   .page-sports-co-curricular .art-studio .art-studio__gallery {
     padding-bottom: 32px;
   }
 }
+.page-sports .art-studio .art-studio__title,
 .page-sports-co-curricular .art-studio .art-studio__title {
   font-family: caustenbold;
   font-style: normal;
@@ -4395,32 +4953,39 @@ textarea {
   color: #505c44;
   max-width: 746px;
 }
+.page-sports .art-studio .art-studio__title,
 .page-sports-co-curricular .art-studio .art-studio__title {
   font-size: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .art-studio .art-studio__title,
   .page-sports-co-curricular .art-studio .art-studio__title {
     font-size: calc(6.25vw - 4px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .art-studio .art-studio__title,
   .page-sports-co-curricular .art-studio .art-studio__title {
     font-size: 58px;
   }
 }
+.page-sports .art-studio .art-studio__title,
 .page-sports-co-curricular .art-studio .art-studio__title {
   line-height: 33px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .art-studio .art-studio__title,
   .page-sports-co-curricular .art-studio .art-studio__title {
     line-height: calc(0vw + 33px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .art-studio .art-studio__title,
   .page-sports-co-curricular .art-studio .art-studio__title {
     line-height: 33px;
   }
 }
+.page-sports .art-studio .art-studio__description,
 .page-sports-co-curricular .art-studio .art-studio__description {
   font-family: caustenregular;
   font-style: normal;
@@ -4431,32 +4996,39 @@ textarea {
   max-width: 746px;
   padding-bottom: 44px;
 }
+.page-sports .art-studio .art-studio__description,
 .page-sports-co-curricular .art-studio .art-studio__description {
   font-size: 16px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .art-studio .art-studio__description,
   .page-sports-co-curricular .art-studio .art-studio__description {
     font-size: calc(1.9230769231vw + 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .art-studio .art-studio__description,
   .page-sports-co-curricular .art-studio .art-studio__description {
     font-size: 24px;
   }
 }
+.page-sports .art-studio .art-studio__description,
 .page-sports-co-curricular .art-studio .art-studio__description {
   line-height: 24px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .art-studio .art-studio__description,
   .page-sports-co-curricular .art-studio .art-studio__description {
     line-height: calc(2.1634615385vw + 11.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .art-studio .art-studio__description,
   .page-sports-co-curricular .art-studio .art-studio__description {
     line-height: 33px;
   }
 }
+.page-sports .art-studio .art-studio__note,
 .page-sports-co-curricular .art-studio .art-studio__note {
   font-family: caustenbold;
   font-style: normal;
@@ -4466,38 +5038,47 @@ textarea {
   color: #913412;
   max-width: 746px;
 }
+.page-sports .art-studio .art-studio__note,
 .page-sports-co-curricular .art-studio .art-studio__note {
   font-size: 20px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .art-studio .art-studio__note,
   .page-sports-co-curricular .art-studio .art-studio__note {
     font-size: calc(2.8846153846vw + 3.3846153846px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .art-studio .art-studio__note,
   .page-sports-co-curricular .art-studio .art-studio__note {
     font-size: 32px;
   }
 }
+.page-sports .art-studio .art-studio__note,
 .page-sports-co-curricular .art-studio .art-studio__note {
   line-height: 28px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .art-studio .art-studio__note,
   .page-sports-co-curricular .art-studio .art-studio__note {
     line-height: calc(3.125vw + 10px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .art-studio .art-studio__note,
   .page-sports-co-curricular .art-studio .art-studio__note {
     line-height: 41px;
   }
 }
+.page-sports .afterschool-programs__container,
 .page-sports-co-curricular .afterschool-programs__container {
   padding-bottom: 186px;
 }
+.page-sports .afterschool-programs__container.container,
 .page-sports-co-curricular .afterschool-programs__container.container {
   flex-direction: column;
 }
+.page-sports .afterschool-programs__container .afterschool-programs__title,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__title {
   font-family: caustenbold;
   font-style: normal;
@@ -4505,32 +5086,39 @@ textarea {
   /* Primary Brown */
   color: #913412;
 }
+.page-sports .afterschool-programs__container .afterschool-programs__title,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__title {
   font-size: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__title,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__title {
     font-size: calc(7.6923076923vw - 12.3076923077px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__title,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__title {
     font-size: 64px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__title,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__title {
   line-height: 33px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__title,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__title {
     line-height: calc(0vw + 33px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__title,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__title {
     line-height: 33px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__subtitle,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__subtitle {
   max-width: 770px;
   font-family: caustensemi_bold;
@@ -4540,39 +5128,48 @@ textarea {
   padding-bottom: 58px;
 }
 @media (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__subtitle,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__subtitle {
     padding-bottom: 98px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__subtitle,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__subtitle {
   font-size: 20px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__subtitle,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__subtitle {
     font-size: calc(3.8461538462vw - 2.1538461538px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__subtitle,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__subtitle {
     font-size: 36px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__subtitle,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__subtitle {
   line-height: 28px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__subtitle,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__subtitle {
     line-height: calc(1.2019230769vw + 21.0769230769px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__subtitle,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__subtitle {
     line-height: 33px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__list,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__list {
   width: 100%;
 }
+.page-sports .afterschool-programs__container .afterschool-programs__item,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item {
   display: flex;
   justify-content: space-between;
@@ -4586,11 +5183,13 @@ textarea {
   padding-top: 16px;
 }
 @media (min-width: 768px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item {
     padding-top: 36px;
   }
 }
 @media (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item {
     align-items: center;
     padding-bottom: 36px;
@@ -4598,6 +5197,7 @@ textarea {
     grid-template-columns: 410px 1fr 420px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title {
   grid-area: title;
   grid-column: 1;
@@ -4607,38 +5207,46 @@ textarea {
   text-align: left;
   color: #505c44;
 }
+.page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title {
   font-size: 20px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title {
     font-size: calc(6.7307692308vw - 18.7692307692px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title {
     font-size: 48px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title {
   line-height: 33px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title {
     line-height: calc(0vw + 33px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-title {
     line-height: 33px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-icon,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-icon {
   grid-area: icon;
   grid-column: 2;
   max-width: 128px;
 }
 @media (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-icon,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-icon {
     margin-bottom: -36px;
     margin-inline: auto;
@@ -4647,11 +5255,13 @@ textarea {
   }
 }
 @media (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item:hover .afterschool-programs__item-icon,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item:hover .afterschool-programs__item-icon {
     visibility: visible;
     opacity: 1;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
   grid-area: desc;
   font-family: caustenregular;
@@ -4664,39 +5274,47 @@ textarea {
   padding-bottom: 29px;
 }
 @media (min-width: 568px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
     max-width: 420px;
   }
 }
 @media (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
     padding-top: 0px;
     padding-bottom: 0;
     grid-column: 3;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
   font-size: 16px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
     font-size: calc(1.9230769231vw + 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
     font-size: 24px;
   }
 }
+.page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
 .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
   line-height: 24px;
 }
 @media screen and (min-width: 576px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
     line-height: calc(2.1634615385vw + 11.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-sports .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc,
   .page-sports-co-curricular .afterschool-programs__container .afterschool-programs__item .afterschool-programs__item-desc {
     line-height: 33px;
   }
@@ -5218,11 +5836,11 @@ textarea {
   width: 100%;
 }
 .page-curriculum .curriculum__header-image {
-  height: 412px;
+  height: 480px;
 }
 @media screen and (min-width: 576px) {
   .page-curriculum .curriculum__header-image {
-    height: calc(84.1346153846vw - 72.6153846154px);
+    height: calc(67.7884615385vw + 89.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
@@ -6149,6 +6767,30 @@ textarea {
   .page-curriculum .curriculum__experiential-gallery {
     padding-top: 72px;
   }
+}
+
+.bouncing-element {
+  /* Initial state before animation */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* CSS for the bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-100px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+/* Apply bounce animation when AOS activates and element is visible */
+[data-aos].aos-animate.bouncing-element {
+  animation: bounce 1s ease-in-out;
+  opacity: 1; /* Ensure visibility after fade-up */
 }
 
 .error404 .site-header .site-header__logo svg path {

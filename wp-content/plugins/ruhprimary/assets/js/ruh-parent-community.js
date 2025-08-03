@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
         items: 3.2,
       },
       1000: {
-        items: 5.6,
+        items: 3,
       },
     },
   });
