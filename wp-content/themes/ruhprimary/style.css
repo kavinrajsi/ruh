@@ -336,7 +336,7 @@ body {
 
 .error404 .site-main,
 .site-main .page-curriculum .curriculum__header-title,
-.site-main .page-about-us,
+.site-main .page-about-us .about-page__section--story,
 .site-main .page-parents-corner .parent-community,
 .site-main .page-sports-co-curricular,
 .site-main .page-school-life .ruh_life-section__detail,
@@ -353,7 +353,7 @@ body {
 @media (min-width: 768px) {
   .error404 .site-main,
   .site-main .page-curriculum .curriculum__header-title,
-  .site-main .page-about-us,
+  .site-main .page-about-us .about-page__section--story,
   .site-main .page-parents-corner .parent-community,
   .site-main .page-sports-co-curricular,
   .site-main .page-school-life .ruh_life-section__detail,
@@ -4714,8 +4714,154 @@ textarea {
 .page-about-us .site-header .site-header__toggle-line {
   border-color: #913412;
 }
-.page-about-us .about-page__campus p {
+.page-about-us .about-page__section--story {
+  background-color: #505c44;
+  padding-bottom: 0;
+}
+.page-about-us .about-page__section--story .about-page__image--story {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.page-about-us .about-page__section--story .about-page__content--story .container {
+  position: relative;
+}
+.page-about-us .about-page__section--story .about-page__content--story h1 {
+  font-family: "ps-aelynregular";
+  font-style: normal;
+  font-weight: 400;
+  color: #fec157;
+  padding-top: 18px;
+}
+@media (min-width: 992px) {
+  .page-about-us .about-page__section--story .about-page__content--story h1 {
+    padding-bottom: 40px;
+  }
+}
+.page-about-us .about-page__section--story .about-page__content--story h1 {
+  font-size: 36px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__section--story .about-page__content--story h1 {
+    font-size: calc(2.8846153846vw + 19.3846153846px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__section--story .about-page__content--story h1 {
+    font-size: 48px;
+  }
+}
+.page-about-us .about-page__section--story .about-page__content--story h1 {
+  line-height: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__section--story .about-page__content--story h1 {
+    line-height: calc(0.2403846154vw + 30.6153846154px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__section--story .about-page__content--story h1 {
+    line-height: 33px;
+  }
+}
+.page-about-us .about-page__section--story .about-page__content--story p {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff2dd;
+  max-width: 380px;
+  padding-bottom: 70px;
+}
+.page-about-us .about-page__section--story .about-page__content--story p {
+  font-size: 16px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__section--story .about-page__content--story p {
+    font-size: calc(1.9230769231vw + 4.9230769231px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__section--story .about-page__content--story p {
+    font-size: 24px;
+  }
+}
+.page-about-us .about-page__section--story .about-page__content--story p {
+  line-height: 23px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__section--story .about-page__content--story p {
+    line-height: calc(2.4038461538vw + 9.1538461538px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__section--story .about-page__content--story p {
+    line-height: 33px;
+  }
+}
+.page-about-us .about-page__section--story .divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+.page-about-us .about-page__section--story .divider svg {
+  width: 100%;
+  height: 100%;
+}
+.page-about-us .about-page__campuses {
+  padding-top: 120px;
+  padding-bottom: 136px;
+  display: grid;
+  grid-template-areas: "one two" "three two" "three four";
+}
+.page-about-us .about-page__campuses > div {
+  max-width: 352px;
+  margin-inline: auto;
+}
+.page-about-us .about-page__campuses > div:nth-child(1) {
+  grid-area: one;
+  max-width: 412px;
+}
+.page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 33px;
+  color: #913412;
+  padding-bottom: 40px;
+}
+.page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  color: #000000;
+  max-width: 398px;
+}
+.page-about-us .about-page__campuses > div:nth-child(2) {
+  grid-area: two;
+  padding-top: 100px;
+}
+.page-about-us .about-page__campuses > div:nth-child(3) {
+  padding-top: 238px;
+  grid-area: three;
+}
+.page-about-us .about-page__campuses > div:nth-child(4) {
+  padding-top: 224px;
+  grid-area: four;
+}
+.page-about-us .about-page__campus-content {
   max-width: 295.88px;
+  margin-inline: auto;
+  padding-top: 24px;
+}
+.page-about-us .about-page__campus p {
   font-family: caustenregular;
   font-style: normal;
   font-weight: 400;
@@ -4760,7 +4906,6 @@ textarea {
   font-family: caustenregular;
   font-style: normal;
   font-weight: 400;
-  /* Base Offwhite */
   color: #fff2dd;
   font-size: 16px;
   line-height: 24px;
@@ -4773,6 +4918,9 @@ textarea {
     text-align: left;
   }
 }
+.page-about-us .about-page__detail-content p strong {
+  color: #fec157;
+}
 .page-about-us .about-page__detail-content p + p {
   padding-top: 28px;
 }
@@ -4780,6 +4928,98 @@ textarea {
   .page-about-us .about-page__detail-content p + p {
     padding-top: 45px;
   }
+}
+.page-about-us .about-page__role-future {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 412px;
+  padding-bottom: 412px;
+}
+.page-about-us .about-page__role-future img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.page-about-us .about-page__role-future .about-page__title--roles {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  color: #505c44;
+  max-width: 316px;
+  padding-bottom: 36px;
+}
+.page-about-us .about-page__role-future .about-page__title--roles {
+  font-size: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__role-future .about-page__title--roles {
+    font-size: calc(7.6923076923vw - 12.3076923077px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__role-future .about-page__title--roles {
+    font-size: 64px;
+  }
+}
+.page-about-us .about-page__role-future .about-page__title--roles {
+  line-height: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__role-future .about-page__title--roles {
+    line-height: calc(9.1346153846vw - 20.6153846154px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__role-future .about-page__title--roles {
+    line-height: 70px;
+  }
+}
+.page-about-us .about-page__role-future .about-page__content--roles {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  color: #000000;
+  max-width: 436px;
+}
+.page-about-us .about-page__role-future .about-page__content--roles {
+  font-size: 16px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__role-future .about-page__content--roles {
+    font-size: calc(1.9230769231vw + 4.9230769231px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__role-future .about-page__content--roles {
+    font-size: 24px;
+  }
+}
+.page-about-us .about-page__role-future .about-page__content--roles {
+  line-height: 24px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__role-future .about-page__content--roles {
+    line-height: calc(2.1634615385vw + 11.5384615385px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__role-future .about-page__content--roles {
+    line-height: 33px;
+  }
+}
+.page-about-us .about-page__role-future .about-page__content--roles strong {
+  display: block;
+  padding-top: 28px;
+  font-family: caustensemi_bold;
+  font-style: normal;
+  font-weight: 600;
 }
 .page-about-us .about-page__classroom {
   background-color: #fec157;
@@ -4918,13 +5158,42 @@ textarea {
   }
 }
 .page-about-us .about-page__gallery-title {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
   text-align: center;
-  font-size: 30px;
+  color: #fff2dd;
   padding-bottom: 33px;
 }
 @media (min-width: 992px) {
   .page-about-us .about-page__gallery-title {
     padding-bottom: 40px;
+  }
+}
+.page-about-us .about-page__gallery-title {
+  font-size: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__gallery-title {
+    font-size: calc(7.6923076923vw - 12.3076923077px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__gallery-title {
+    font-size: 64px;
+  }
+}
+.page-about-us .about-page__gallery-title {
+  line-height: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-about-us .about-page__gallery-title {
+    line-height: calc(0.2403846154vw + 30.6153846154px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about-us .about-page__gallery-title {
+    line-height: 33px;
   }
 }
 

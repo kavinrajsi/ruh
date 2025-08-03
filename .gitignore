@@ -232,6 +232,8 @@ wp-config.php
 # Example plugin
 /wp-content/plugins/hello.php
 
+/wp-content/plugins/all-in-one-wp-migration/
+
 # Uploads
 /wp-content/uploads/
 

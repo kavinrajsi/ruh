@@ -213,122 +213,55 @@ class Elementor_About_Us_Page extends Widget_Base
     {
         $settings = $this->get_settings_for_display();
 
-        // echo '<div class="about-page-widget">';
-
-        // // The Story
-        // if ($s['story_image']['url'] || $s['story_content']) {
-        //     echo '<section class="the-story">';
-        //     if ($s['story_image']['url']) {
-        //         echo '<img src="' . esc_url($s['story_image']['url']) . '" alt="">';
-        //     }
-        //     echo '<div>' . wp_kses_post($s['story_content']) . '</div>';
-        //     echo '</section>';
-        // }
-
-        // // Campuses
-        // if ($s['campuses_title']) {
-        //     echo '<h2>' . esc_html($s['campuses_title']) . '</h2>';
-        // }
-        // echo '<div>' . wp_kses_post($s['campuses_content']) . '</div>';
-        // if (!empty($s['campus_list'])) {
-        //     foreach ($s['campus_list'] as $campus) {
-        //         echo '<div class="campus">';
-        //         if ($campus['campus_image']['url']) {
-        //             echo '<img src="' . esc_url($campus['campus_image']['url']) . '" alt="">';
-        //         }
-        //         echo '<h3>' . esc_html($campus['campus_title']) . '</h3>';
-        //         echo '<p>' . wp_kses_post($campus['campus_content']) . '</p>';
-        //         echo '</div>';
-        //     }
-        // }
-
-        // // About Us
-        // if ($s['about_image']['url']) {
-        //     echo '<img src="' . esc_url($s['about_image']['url']) . '" alt="">';
-        // }
-        // echo '<div>' . wp_kses_post($s['about_content']) . '</div>';
-
-        // // Roles of Future
-        // if ($s['roles_image']['url']) {
-        //     echo '<img src="' . esc_url($s['roles_image']['url']) . '" alt="">';
-        // }
-        // echo '<h3>' . esc_html($s['roles_title']) . '</h3>';
-        // echo '<div>' . wp_kses_post($s['roles_content']) . '</div>';
-
-        // // About Classroom
-        // if ($s['classroom_image']['url']) {
-        //     echo '<img src="' . esc_url($s['classroom_image']['url']) . '" alt="">';
-        // }
-        // echo '<div>' . wp_kses_post($s['classroom_content']) . '</div>';
-
-        // // Friends Gallery
-        // if (!empty($s['friends_gallery'])) {
-        //     echo '<div class="friends-gallery">';
-        //     echo '<div class="container">';
-        //     foreach ($s['friends_gallery'] as $img) {
-        //         echo '<img src="' . esc_url($img['url']) . '" alt="">';
-        //     }
-        //     echo '</div>';
-        //     echo '</div>';
-        // }
-
-        // // Curious to Know
-        // echo "<section class='info-section container-fluid'>";
-        // echo "<div class='info-section__container container'>";
-
-        // if (!empty($s['cta_image']['url'])) echo '<img class="info-section__image" src="' . esc_url($s['cta_image']['url']) . '" alt="">';
-        // echo "<div class='info-section__content'>";
-        // if (!empty($s['cta_title'])) {
-        //     $tag = !empty($s['cta_title_tag']) ? $s['cta_title_tag'] : 'h2';
-        //     echo '<h2 class="info-section__title">' . esc_html($s['cta_title']) . '</h2>';
-        // }
-        // if (!empty($s['cta_content'])) echo '<div class="info-section__text">' . wp_kses_post($s['cta_content']) . '</div>';
-        // if (!empty($s['cta_button_url']['url'])) echo '<a href="' . esc_url($s['cta_button_url']['url']) . '" class="info-section__link">' . esc_html($s['cta_button_text']) . '</a>';
-        // echo "</div>";
-        // echo "</div>";
-        // echo "</section>";
-
-
 ?>
 
         <!-- The Story Section -->
         <?php if (!empty($settings['story_image']['url']) || !empty($settings['story_content'])) : ?>
             <section class="about-page__section about-page__section--story">
-                <?php if (!empty($settings['story_image']['url'])) : ?>
-                    <img class="about-page__image about-page__image--story" src="<?= esc_url($settings['story_image']['url']); ?>" alt="">
-                <?php endif; ?>
-                <div class="about-page__content about-page__content--story">
-                    <?= wp_kses_post($settings['story_content']); ?>
+                <div class="container">
+                    <?php if (!empty($settings['story_image']['url'])) : ?>
+                        <img class="about-page__image about-page__image--story" src="<?= esc_url($settings['story_image']['url']); ?>" alt="">
+                    <?php endif; ?>
+                    <div class="about-page__content about-page__content--story">
+                        <?= wp_kses_post($settings['story_content']); ?>
+                    </div>
+                </div>
+                <div class="divider">
+                    <svg width="1280" height="178" viewBox="0 0 1280 178" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M723 77.5L1280 0V178H0L723 77.5Z" fill="#FFF2DD" />
+                    </svg>
                 </div>
             </section>
         <?php endif; ?>
 
 
         <!-- Our Campuses -->
-        <?php if (!empty($settings['campuses_title'])) : ?>
-            <h2 class="about-page__title about-page__title--campuses"><?= esc_html($settings['campuses_title']); ?></h2>
-        <?php endif; ?>
+        <section class="about-page__campuses container">
+            <div>
+                <?php if (!empty($settings['campuses_title'])) : ?>
+                    <h2 class="about-page__title about-page__title--campuses"><?= wp_kses_post($settings['campuses_title']); ?></h2>
+                <?php endif; ?>
 
-        <?php if (!empty($settings['campuses_content'])) : ?>
-            <div class="about-page__text about-page__text--campuses">
-                <?= wp_kses_post($settings['campuses_content']); ?>
+                <?php if (!empty($settings['campuses_content'])) : ?>
+                    <div class="about-page__text about-page__text--campuses">
+                        <?= wp_kses_post($settings['campuses_content']); ?>
+                    </div>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
-
-        <?php if (!empty($settings['campus_list'])) : ?>
-            <div class="about-page__campus-list container">
+            <?php if (!empty($settings['campus_list'])) : ?>
+                <!-- <div class="about-page__campus-list container"> -->
                 <?php foreach ($settings['campus_list'] as $campus) : ?>
                     <div class="about-page__campus">
                         <?php if (!empty($campus['campus_image']['url'])) : ?>
                             <img class="about-page__campus-image" src="<?= esc_url($campus['campus_image']['url']); ?>" alt="">
                         <?php endif; ?>
-                        <h3 class="about-page__campus-title"><?= esc_html($campus['campus_title']); ?></h3>
-                        <p class="about-page__campus-content"><?= esc_html($campus['campus_content']); ?></p>
+                        <h3 class="about-page__campus-title"><?= wp_kses_post($campus['campus_title']); ?></h3>
+                        <div class="about-page__campus-content"><?= wp_kses_post($campus['campus_content']); ?></div>
                     </div>
                 <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
-
+                <!-- </div> -->
+            <?php endif; ?>
+        </section>
 
         <!-- About Us -->
         <section class="about-page__detail">
@@ -348,13 +281,17 @@ class Elementor_About_Us_Page extends Widget_Base
 
 
         <!-- Roles of Future -->
-        <?php if (!empty($settings['roles_image']['url'])) : ?>
-            <img class="about-page__image about-page__image--roles" src="<?= esc_url($settings['roles_image']['url']); ?>" alt="">
-        <?php endif; ?>
-        <h3 class="about-page__title about-page__title--roles"><?= esc_html($settings['roles_title']); ?></h3>
-        <div class="about-page__content about-page__content--roles">
-            <?= wp_kses_post($settings['roles_content']); ?>
-        </div>
+        <section class="about-page__role-future">
+            <?php if (!empty($settings['roles_image']['url'])) : ?>
+                <img class="about-page__image about-page__image--roles" src="<?= esc_url($settings['roles_image']['url']); ?>" alt="">
+            <?php endif; ?>
+            <div class="content">
+                <h3 class="about-page__title about-page__title--roles"><?= esc_html($settings['roles_title']); ?></h3>
+                <div class="about-page__content about-page__content--roles">
+                    <?= wp_kses_post($settings['roles_content']); ?>
+                </div>
+            </div>
+        </section>
 
 
         <!-- About Classroom -->
@@ -448,6 +385,7 @@ class Elementor_About_Us_Page extends Widget_Base
 
 
         </div>
-<?
+<?php
+
     }
 }

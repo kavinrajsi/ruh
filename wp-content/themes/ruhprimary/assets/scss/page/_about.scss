@@ -18,11 +18,110 @@
     }
 
     .about-page {
-        // Block styles
+        &__section--story {
+            background-color: #505c44;
+            padding-bottom: 0;
+            .about-page__image--story {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .about-page__content--story {
+                .container {
+                    position: relative;
+                }
+                h1 {
+                    font-family: "ps-aelynregular";
+                    font-style: normal;
+                    font-weight: 400;
+                    color: #fec157;
+                    padding-top: 18px;
+                    @media (min-width: 992px) {
+                        padding-bottom: 40px;
+                    }
+                    @include interpolate.interpolate(font-size, 576px, 36px, 992px, 48px);
+                    @include interpolate.interpolate(line-height, 576px, 32px, 992px, 33px);
+                }
+                p {
+                    font-family: caustenregular;
+                    font-style: normal;
+                    font-weight: 400;
+                    color: #fff2dd;
+                    max-width: 380px;
+                    padding-bottom: 70px;
+                    @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+                    @include interpolate.interpolate(line-height, 576px, 23px, 992px, 33px);
+                }
+            }
+            .divider {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                bottom: -4px;
+                width: 100%;
+                z-index: 2;
+                position: relative;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        &__campuses {
+            padding-top: 120px;
+            padding-bottom: 136px;
+            display: grid;
+            grid-template-areas:
+                "one two"
+                "three two"
+                "three four";
+            > div {
+                max-width: 352px;
+                margin-inline: auto;
+                &:nth-child(1) {
+                    grid-area: one;
+                    max-width: 412px;
+                    .about-page__title--campuses {
+                        font-family: caustenbold;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 64px;
+                        line-height: 33px;
+                        color: #913412;
+                        padding-bottom: 40px;
+                    }
+                    .about-page__text--campuses {
+                        font-family: caustenregular;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 24px;
+                        line-height: 33px;
+                        color: #000000;
+                        max-width: 398px;
+                    }
+                }
+                &:nth-child(2) {
+                    grid-area: two;
+                    padding-top: 100px;
+                }
+                &:nth-child(3) {
+                    padding-top: 238px;
+                    grid-area: three;
+                }
+                &:nth-child(4) {
+                    padding-top: 224px;
+                    grid-area: four;
+                }
+            }
+        }
         &__campus {
-            p {
+            &-content {
                 max-width: 295.88px;
-
+                margin-inline: auto;
+                padding-top: 24px;
+            }
+            p {
                 font-family: caustenregular;
                 font-style: normal;
                 font-weight: 400;
@@ -30,7 +129,6 @@
                 line-height: 33px;
                 /* or 138% */
                 text-align: center;
-
                 color: #000000;
             }
         }
@@ -64,7 +162,6 @@
                     font-family: caustenregular;
                     font-style: normal;
                     font-weight: 400;
-                    /* Base Offwhite */
                     color: #fff2dd;
                     font-size: 16px;
                     line-height: 24px;
@@ -74,12 +171,60 @@
                         line-height: 33px;
                         text-align: left;
                     }
+                    strong {
+                        color: #fec157;
+                    }
                     + p {
                         padding-top: 28px;
                         @media (min-width: 992px) {
                             padding-top: 45px;
                         }
                     }
+                }
+            }
+        }
+        &__role-future {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 412px;
+            padding-bottom: 412px;
+            img{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+            .about-page__title--roles {
+                font-family: caustenbold;
+                font-style: normal;
+                font-weight: 700;
+                text-align: center;
+                color: #505c44;
+                max-width: 316px;
+                @include interpolate.interpolate(font-size, 576px, 32px, 992px, 64px);
+                @include interpolate.interpolate(line-height, 576px, 32px, 992px, 70px);
+                padding-bottom: 36px;
+            }
+            .about-page__content--roles {
+                font-family: caustenregular;
+                font-style: normal;
+                font-weight: 400;
+                text-align: center;
+                color: #000000;
+                max-width: 436px;
+
+                @include interpolate.interpolate(font-size, 576px, 16px, 992px, 24px);
+                @include interpolate.interpolate(line-height, 576px, 24px, 992px, 33px);
+                strong {
+                    display: block;
+                    padding-top: 28px;
+                    font-family: caustensemi_bold;
+                    font-style: normal;
+                    font-weight: 600;
                 }
             }
         }
@@ -166,14 +311,20 @@
                 padding-bottom: 72px;
             }
         }
-
         &__gallery-title {
+            font-family: caustenbold;
+            font-style: normal;
+            font-weight: 700;
             text-align: center;
-            font-size: 30px;
+            color: #fff2dd;
+
             padding-bottom: 33px;
             @media (min-width: 992px) {
                 padding-bottom: 40px;
             }
+
+            @include interpolate.interpolate(font-size, 576px, 32px, 992px, 64px);
+            @include interpolate.interpolate(line-height, 576px, 32px, 992px, 33px);
         }
     }
 }
