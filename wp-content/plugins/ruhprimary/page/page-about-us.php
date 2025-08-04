@@ -123,8 +123,13 @@ class Elementor_About_Us_Page extends Widget_Base
             'label' => __('Roles of Future', 'about-page-widget'),
         ]);
 
-        $this->add_control('roles_image', [
-            'label' => __('Image', 'about-page-widget'),
+        $this->add_control('roles_image_mobile', [
+            'label' => __('Image Mobile', 'about-page-widget'),
+            'type' => Controls_Manager::MEDIA,
+        ]);
+
+        $this->add_control('roles_image_desktop', [
+            'label' => __('Image Desktop', 'about-page-widget'),
             'type' => Controls_Manager::MEDIA,
         ]);
 
@@ -219,17 +224,25 @@ class Elementor_About_Us_Page extends Widget_Base
         <?php if (!empty($settings['story_image']['url']) || !empty($settings['story_content'])) : ?>
             <section class="about-page__section about-page__section--story">
                 <div class="container">
-                    <?php if (!empty($settings['story_image']['url'])) : ?>
-                        <img class="about-page__image about-page__image--story" src="<?= esc_url($settings['story_image']['url']); ?>" alt="">
-                    <?php endif; ?>
                     <div class="about-page__content about-page__content--story">
                         <?= wp_kses_post($settings['story_content']); ?>
                     </div>
+                    <?php if (!empty($settings['story_image']['url'])) : ?>
+                        <div class="about-page__image--storyWrapper">
+                            <div class="divider top">
+                                <svg width="395" height="46" viewBox="0 0 395 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M394 1L0.5 45V1H394Z" fill="#505C44" stroke="#505C44" />
+                                </svg>
+                            </div>
+                            <img class="about-page__image--story" src="<?= esc_url($settings['story_image']['url']); ?>" alt="">
+                        </div>
+                    <?php endif; ?>
                 </div>
-                <div class="divider">
-                    <svg width="1280" height="178" viewBox="0 0 1280 178" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M723 77.5L1280 0V178H0L723 77.5Z" fill="#FFF2DD" />
+                <div class="divider bottom">
+                    <svg width="393" height="69" viewBox="0 0 393 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M393 68V1.5L0 56.5V68H393Z" fill="#FFF2DD" stroke="#FFF2DD" />
                     </svg>
+
                 </div>
             </section>
         <?php endif; ?>
@@ -282,8 +295,11 @@ class Elementor_About_Us_Page extends Widget_Base
 
         <!-- Roles of Future -->
         <section class="about-page__role-future">
-            <?php if (!empty($settings['roles_image']['url'])) : ?>
-                <img class="about-page__image about-page__image--roles" src="<?= esc_url($settings['roles_image']['url']); ?>" alt="">
+            <?php if (!empty($settings['roles_image_mobile']['url'])) : ?>
+                <img class=" about-page__image--roles mobile" src="<?= esc_url($settings['roles_image_mobile']['url']); ?>" alt="">
+            <?php endif; ?>
+            <?php if (!empty($settings['roles_image_desktop']['url'])) : ?>
+                <img class=" about-page__image--roles desktop" src="<?= esc_url($settings['roles_image_desktop']['url']); ?>" alt="">
             <?php endif; ?>
             <div class="content">
                 <h3 class="about-page__title about-page__title--roles"><?= esc_html($settings['roles_title']); ?></h3>
@@ -301,7 +317,6 @@ class Elementor_About_Us_Page extends Widget_Base
                 <div class="about-page__classroom-content">
                     <?= wp_kses_post($settings['classroom_content']); ?>
                 </div>
-
                 <?php if (!empty($settings['classroom_image']['url'])) : ?>
                     <img class="about-page__classroom-image" src="<?= esc_url($settings['classroom_image']['url']); ?>" alt="">
                 <?php endif; ?>
@@ -346,10 +361,11 @@ class Elementor_About_Us_Page extends Widget_Base
                                 </defs>
                             </svg></h2>
                     <?php endif; ?>
-
-                    <?php foreach ($settings['friends_gallery'] as $img) : ?>
-                        <img class="about-page__gallery-image" src="<?= esc_url($img['url']); ?>" alt="">
-                    <?php endforeach; ?>
+                    <div class="about-page__gallery-imageWrapper">
+                        <?php foreach ($settings['friends_gallery'] as $img) : ?>
+                            <img class="about-page__gallery-image" src="<?= esc_url($img['url']); ?>" alt="">
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>

@@ -210,10 +210,14 @@ body.no-scroll {
 
   @media (min-width: 768px) {
     width: 155px;
-    height: 100px;
+    height: auto;
   }
   svg {
     width: 100%;
     height: 100%;
+  }
+  a {
+    display: inline-block;
+    width: 100%;
   }
 }

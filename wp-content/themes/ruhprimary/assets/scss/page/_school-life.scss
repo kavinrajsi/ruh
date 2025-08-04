@@ -197,9 +197,9 @@
     .about-section {
       background-color: #913412;
       position: relative;
+      padding-bottom: 0;
       @include interpolate.interpolate(margin-top, 576px, 56px, 992px, 140px);
       @include interpolate.interpolate(padding-top, 576px, 56px, 992px, 100px);
-      padding-bottom: 0;
       @media (min-width: 992px) {
         @include interpolate.interpolate(padding-bottom, 576px, 56px, 992px, 100px);
       }

@@ -2,6 +2,7 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
+use Elementor\Repeater;
 
 if (!defined('ABSPATH')) exit;
 
@@ -25,7 +26,17 @@ class Elementor_Home_Page_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['general'];
+        return ['fos'];
+    }
+
+    public function get_script_depends()
+    {
+        return ['slick-js', 'ruh-parent-community-js'];
+    }
+
+    public function get_style_depends()
+    {
+        return ['slick-css', 'slick-theme-css'];
     }
 
     protected function register_controls()
@@ -147,12 +158,6 @@ class Elementor_Home_Page_Widget extends Widget_Base
             'label'   => __('Content', 'home-page-widget'),
             'type'    => \Elementor\Controls_Manager::WYSIWYG,
             'default' => 'We celebrate the uniqueness of every learner through diverse methodologies...',
-        ]);
-
-        $this->add_control('learning_cta_text', [
-            'label'   => __('CTA Text', 'home-page-widget'),
-            'type'    => \Elementor\Controls_Manager::TEXT,
-            'default' => 'Contact learning advisor today!',
         ]);
 
         $this->add_control('learning_cta_button_text', [
@@ -395,17 +400,14 @@ class Elementor_Home_Page_Widget extends Widget_Base
                     </div>
                 </div>
                 <div class="legacy-story__text">
-                    <h2>
-                        <span><?= esc_html__('Stories of', 'home-page-widget'); ?></span>
-                        <?= esc_html($settings['legacy_story_title']); ?>
-                    </h2>
-                    <p><?= esc_html($settings['legacy_story_content']); ?></p>
+                    <?= ($settings['legacy_story_title']); ?>
+                    <?= ($settings['legacy_story_content']); ?>
                 </div>
             </div>
         </section>
 
         <!-- Co-Founder Note (Second) -->
-        <section class="cofounder-note cofounder-note--second">
+        <section class="cofounder-note cofounder-note--second container">
             <div class="cofounder-note__wrapper">
                 <div class="cofounder-note__text">
                     <h2><?php esc_html_e('Co-Founder’s Note', 'home-page-widget'); ?></h2>
@@ -499,19 +501,13 @@ class Elementor_Home_Page_Widget extends Widget_Base
         <section class="learning-styles">
             <div class="container learning-styles__wrapper">
                 <div class="learning-styles__left">
-                    <div class="bubble visual">visual</div>
-                    <div class="bubble listening">listening</div>
-                    <div class="bubble kinaesthetic">kinaesthetic</div>
-
                     <?php if (!empty($settings['learning_image']['url'])) : ?>
                         <img src="<?= esc_url($settings['learning_image']['url']); ?>" alt="Child" class="child-img">
                     <?php endif; ?>
                 </div>
 
                 <div class="learning-styles__right">
-                    <p><?= esc_html($settings['learning_text']); ?></p>
-                    <p class="cta-lead"><?= esc_html($settings['learning_cta_text']); ?></p>
-
+                    <?= ($settings['learning_text']); ?>
                     <?php if (!empty($settings['learning_cta_url']['url'])) : ?>
                         <a href="<?= esc_url($settings['learning_cta_url']['url']); ?>"
                             class="cta-button"
@@ -566,21 +562,22 @@ class Elementor_Home_Page_Widget extends Widget_Base
 
         <!-- Campuses Gallery -->
         <?php if (!empty($settings['campuses_gallery'])) : ?>
-            <div class="campuses-gallery">
-                <div class="container campuses-gallery__container">
+            <div class="campuses-gallery container-fluid">
+                <div class="campuses-gallery__container">
                     <?php if (!empty($settings['campuses_title'])) : ?>
                         <h2 class="campuses-gallery__title"><?= esc_html($settings['campuses_title']); ?></h2>
                     <?php endif; ?>
-
-                    <?php foreach ($settings['campuses_gallery'] as $img) : ?>
-                        <img class="campuses-gallery__image" src="<?= esc_url($img['url']); ?>" alt="">
-                    <?php endforeach; ?>
+                    <div class="campuses-gallery__containerWrapper owl-carousel">
+                        <?php foreach ($settings['campuses_gallery'] as $img) : ?>
+                            <div><img class="campuses-gallery__image" src="<?= esc_url($img['url']); ?>" alt=""></div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>
 
         <!-- Co-Founder Note -->
-        <section class="cofounder-note">
+        <section class="cofounder-note container">
             <div class="cofounder-note__wrapper">
                 <div class="cofounder-note__text">
                     <h2><?php esc_html_e('Co-Founder’s Note', 'home-page-widget'); ?></h2>
@@ -608,85 +605,173 @@ class Elementor_Home_Page_Widget extends Widget_Base
                             <!-- Decorative SVG -->
                         </h2>
                     <?php endif; ?>
-
-                    <?php foreach ($settings['friends_gallery'] as $img) : ?>
-                        <img class="about-page__gallery-image" src="<?= esc_url($img['url']); ?>" alt="">
-                    <?php endforeach; ?>
+                    <div class="about-page__gallery-imageWrapper">
+                        <?php foreach ($settings['friends_gallery'] as $img) : ?>
+                            <img class="about-page__gallery-image" src="<?= esc_url($img['url']); ?>" alt="">
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>
 
         <!-- Testimonials -->
         <?php if ($settings['show_testimonials'] === 'yes') : ?>
-            <section class="home-testimonials container">
-                <h2><?php esc_html_e('What People Say', 'home-page-widget'); ?></h2>
+            <section class="home-testimonials ">
+                <div class="container">
+                    <h2>What our lovely <strong>parents say about us</strong></h2>
+                </div>
+                <div class=" home-testimonialsWrapper container-fluid">
+                    <div class="owl-carousel">
+                        <?php
+                        $args = [
+                            'post_type'      => 'testimonial',
+                            'posts_per_page' => !empty($settings['testimonial_count']) ? (int)$settings['testimonial_count'] : 3,
+                            'orderby'        => sanitize_text_field($settings['testimonial_orderby']),
+                            'order'          => sanitize_text_field($settings['testimonial_order']),
+                            'post_status'    => 'publish',
+                        ];
 
-                <?php
-                $args = [
-                    'post_type'      => 'testimonial',
-                    'posts_per_page' => !empty($settings['testimonial_count']) ? (int)$settings['testimonial_count'] : 3,
-                    'orderby'        => sanitize_text_field($settings['testimonial_orderby']),
-                    'order'          => sanitize_text_field($settings['testimonial_order']),
-                    'post_status'    => 'publish',
-                ];
+                        $testimonial_query = new WP_Query($args);
 
-                $testimonial_query = new WP_Query($args);
+                        if ($testimonial_query->have_posts()) :
+                            while ($testimonial_query->have_posts()) : $testimonial_query->the_post();
+                                $image = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                                // Get custom meta fields
+                                $parent_name = get_post_meta(get_the_ID(), '_testimonial_parent_name', true);
+                                $child_name = get_post_meta(get_the_ID(), '_testimonial_child_name', true);
+                                $star_rating = get_post_meta(get_the_ID(), '_testimonial_star_rating', true);
 
-                if ($testimonial_query->have_posts()) :
-                    while ($testimonial_query->have_posts()) : $testimonial_query->the_post();
-                        $image = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-                ?>
-                        <div class="testimonial">
-                            <?php if ($image) : ?>
-                                <img src="<?= esc_url($image); ?>" alt="<?= esc_attr(get_the_title()); ?>">
-                            <?php endif; ?>
-                            <p><?= wp_kses_post(get_the_content()); ?></p>
-                            <strong><?= esc_html(get_the_title()); ?></strong>
-                        </div>
-                <?php
-                    endwhile;
-                    wp_reset_postdata();
-                else :
-                    echo '<p>' . esc_html__('No testimonials found.', 'home-page-widget') . '</p>';
-                endif;
-                ?>
+                        ?>
+                                <div class="testimonial">
+                                    <?php if ($star_rating) : ?>
+                                        <div class="testimonial-rating">
+                                            <?php
+                                            for ($i = 0; $i < (int)$star_rating; $i++) :
+                                            ?>
+                                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_71_689)">
+                                                        <path d="M10.4612 1.60996C10.632 1.19932 11.2137 1.19932 11.3845 1.60996L13.4506 6.57744C13.5226 6.75056 13.6854 6.86885 13.8723 6.88383L19.2351 7.31376C19.6784 7.3493 19.8582 7.90256 19.5204 8.19189L15.4345 11.6919C15.2921 11.8139 15.23 12.0053 15.2735 12.1876L16.5218 17.4208C16.625 17.8534 16.1543 18.1954 15.7748 17.9635L11.1835 15.1592C11.0235 15.0615 10.8222 15.0615 10.6622 15.1592L6.07091 17.9635C5.69136 18.1954 5.22073 17.8534 5.32393 17.4208L6.57224 12.1876C6.61574 12.0053 6.55355 11.8139 6.41116 11.6919L2.32526 8.19189C1.9875 7.90256 2.16726 7.3493 2.61059 7.31376L7.9734 6.88383C8.16029 6.86885 8.3231 6.75056 8.3951 6.57744L10.4612 1.60996Z" fill="#FFFCFC" />
+                                                        <g clip-path="url(#clip1_71_689)">
+                                                            <path d="M10.4612 1.60996C10.632 1.19932 11.2137 1.19932 11.3845 1.60996L13.4506 6.57744C13.5226 6.75056 13.6854 6.86885 13.8723 6.88383L19.2351 7.31376C19.6784 7.3493 19.8582 7.90256 19.5204 8.19189L15.4345 11.6919C15.2921 11.8139 15.23 12.0053 15.2735 12.1876L16.5218 17.4208C16.625 17.8534 16.1543 18.1954 15.7748 17.9635L11.1835 15.1592C11.0235 15.0615 10.8222 15.0615 10.6622 15.1592L6.07091 17.9635C5.69136 18.1954 5.22073 17.8534 5.32393 17.4208L6.57224 12.1876C6.61574 12.0053 6.55355 11.8139 6.41116 11.6919L2.32526 8.19189C1.9875 7.90256 2.16726 7.3493 2.61059 7.31376L7.9734 6.88383C8.16029 6.86885 8.3231 6.75056 8.3951 6.57744L10.4612 1.60996Z" fill="#FEC84B" />
+                                                        </g>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_71_689">
+                                                            <rect width="20" height="20" fill="white" transform="translate(0.922852)" />
+                                                        </clipPath>
+                                                        <clipPath id="clip1_71_689">
+                                                            <rect width="20" height="20" fill="white" transform="translate(0.922852)" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            <?php
+                                            endfor;
+                                            ?>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <div class="testimonial--content">
+                                        <?= wp_kses_post(get_the_content()); ?>
+                                    </div>
+                                    <?php if ($parent_name || $child_name) : ?>
+                                        <p class="testimonial--parent">
+                                            <?php if ($parent_name) : ?>
+                                                — <?php echo esc_html($parent_name); ?>
+                                            <?php endif; ?>
+                                        </p>
+                                        <p class="testimonial--child">
+                                            <?php if ($child_name) : ?>
+                                                <?php echo esc_html($child_name); ?>
+                                            <?php endif; ?>
+                                        </p>
+                                    <?php endif; ?>
+
+                                </div>
+                        <?php
+                            endwhile;
+                            wp_reset_postdata();
+                        else :
+                            echo '<p>' . esc_html__('No testimonials found.', 'home-page-widget') . '</p>';
+                        endif;
+                        ?>
+                    </div>
+                </div>
             </section>
         <?php endif; ?>
 
         <!-- Latest Blogs Section -->
         <section class="home-latest-blogs container">
-            <h2><?php esc_html_e('Latest Blogs', 'home-page-widget'); ?></h2>
+            <div class="content">
+                <h2>The Ruh'lington Post</h2>
+                <p>Explore perspectives, reflections, and learning adventures from Ruh'lers. The Ruh’lington Post is your gateway to engaging stories, academic insights, and campus highlights.</p>
+                <a href="/blog" class="button">View all posts</a>
+            </div>
+            <div class="bloglist">
+                <?php
+                $blog_args = [
+                    'post_type'      => 'blog',
+                    'posts_per_page' => !empty($settings['latest_blogs_count']) ? (int)$settings['latest_blogs_count'] : 3,
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                    'post_status'    => 'publish',
+                ];
 
-            <?php
-            $blog_args = [
-                'post_type'      => 'blog',
-                'posts_per_page' => !empty($settings['latest_blogs_count']) ? (int)$settings['latest_blogs_count'] : 3,
-                'orderby'        => 'date',
-                'order'          => 'DESC',
-                'post_status'    => 'publish',
-            ];
+                $blog_query = new WP_Query($blog_args);
 
-            $blog_query = new WP_Query($blog_args);
-
-            if ($blog_query->have_posts()) :
-                while ($blog_query->have_posts()) : $blog_query->the_post();
-            ?>
-                    <div class="blog-post">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <a href="<?php the_permalink(); ?>">
-                                <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title_attribute(); ?>">
-                            </a>
-                        <?php endif; ?>
-                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
-                    </div>
-            <?php
-                endwhile;
-                wp_reset_postdata();
-            else :
-                echo '<p>' . esc_html__('No blog posts found.', 'home-page-widget') . '</p>';
-            endif;
-            ?>
+                if ($blog_query->have_posts()) :
+                    while ($blog_query->have_posts()) : $blog_query->the_post();
+                ?>
+                        <div class="blog-post">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <a class="archive-thumb" href="<?php the_permalink(); ?>">
+                                    <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title_attribute(); ?>">
+                                </a>
+                            <?php endif; ?>
+                            <div>
+                                <div class="entry-taxonomies">
+                                    <?php
+                                    $collections = get_the_term_list(get_the_ID(), 'collection', '<span class="collections">', ', ', '</span>');
+                                    $tags        = get_the_term_list(get_the_ID(), 'blog_tag', '<span class="tags">', ', ', '</span>');
+                                    if ($collections) echo wp_kses_post($collections);
+                                    if ($tags)        echo wp_kses_post($tags);
+                                    ?>
+                                </div>
+                                <h3 class="entry-title">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <span><?php the_title(); ?></span>
+                                        <span class="entry-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </h3>
+                                <div class="entry-excerpt">
+                                    <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                </div>
+                                <div class="entry-meta">
+                                    <span class="byline">
+                                        <?php
+                                        printf(
+                                            esc_html__('by %s', 'textdomain'),
+                                            esc_html(get_the_author())
+                                        );
+                                        ?>
+                                    </span>
+                                    <time datetime="<?php echo esc_attr(get_the_date(DATE_W3C)); ?>">
+                                        <?php echo esc_html(get_the_date()); ?>
+                                    </time>
+                                </div>
+                            </div>
+                        </div>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p>' . esc_html__('No blog posts found.', 'home-page-widget') . '</p>';
+                endif;
+                ?>
+            </div>
         </section>
 
         <!-- Curious To Know (CTA) -->

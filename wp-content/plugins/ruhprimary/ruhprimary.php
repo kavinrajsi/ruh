@@ -34,7 +34,11 @@ add_action('elementor/frontend/after_register_styles', function () {
 // ✅ Load custom widget class
 function ruh_register_custom_widgets($widgets_manager) {
     require_once(__DIR__ . '/page/page-parent-community.php');
+    require_once(__DIR__ . '/page/page-curriculum.php');
+    require_once(__DIR__ . '/page/page-home.php');
     $widgets_manager->register(new \Elementor_Ruh_Parent_Community());
+    $widgets_manager->register(new \Elementor_Ruh_Curriculum());
+    $widgets_manager->register(new \Elementor_Home_Page_Widget());
 }
 add_action('elementor/widgets/register', 'ruh_register_custom_widgets');
 

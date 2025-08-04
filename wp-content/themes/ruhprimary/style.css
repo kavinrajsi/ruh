@@ -13,6 +13,7 @@
  Text Domain:  ruhprimary
  Tags:         custom-background, custom-logo, custom-menu, editor-style, block-styles, elementor
 */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 /*
  Theme Name: ruhprimary
  Theme URI: https://example.com/ruhprimary
@@ -338,6 +339,7 @@ body {
 .site-main .page-home,
 .site-main .page-curriculum .curriculum__header-title,
 .site-main .page-about-us .about-page__section--story,
+.site-main .page-about .about-page__section--story,
 .site-main .page-parents-corner .parent-community,
 .site-main .page-sports-co-curricular,
 .site-main .page-sports,
@@ -359,6 +361,7 @@ body {
   .site-main .page-home,
   .site-main .page-curriculum .curriculum__header-title,
   .site-main .page-about-us .about-page__section--story,
+  .site-main .page-about .about-page__section--story,
   .site-main .page-parents-corner .parent-community,
   .site-main .page-sports-co-curricular,
   .site-main .page-sports,
@@ -381,7 +384,7 @@ body {
   padding: 0;
 }
 
-.type-page.page-home .elementor-element, .type-page.page-curriculum .elementor-element, .type-page.page-about-us .elementor-element, .type-page.page-parents-corner .elementor-element, .type-page.page-sports .elementor-element, .type-page.page-sports-co-curricular .elementor-element, .type-page.page-school-life .elementor-element, .type-page.page-liferuh .elementor-element, .type-page.page-life-ruh .elementor-element, .type-page.page-admission-process .elementor-element, .type-page.page-enquiry-form .elementor-element, .type-page.page-contact .elementor-element, .type-page.page-admission-form .elementor-element, .type-page.page-cambridge-py .elementor-element, .type-page.page-cambridge-clsp .elementor-element, .type-page.page-ibdp-diploma .elementor-element, .type-page.page-ibcp .elementor-element {
+.type-page.page-home .elementor-element, .type-page.page-curriculum .elementor-element, .type-page.page-about-us .elementor-element, .type-page.page-about .elementor-element, .type-page.page-parents-corner .elementor-element, .type-page.page-sports .elementor-element, .type-page.page-sports-co-curricular .elementor-element, .type-page.page-school-life .elementor-element, .type-page.page-liferuh .elementor-element, .type-page.page-life-ruh .elementor-element, .type-page.page-admission-process .elementor-element, .type-page.page-enquiry-form .elementor-element, .type-page.page-contact .elementor-element, .type-page.page-admission-form .elementor-element, .type-page.page-cambridge-py .elementor-element, .type-page.page-cambridge-clsp .elementor-element, .type-page.page-ibdp-diploma .elementor-element, .type-page.page-ibcp .elementor-element {
   padding: 0;
 }
 
@@ -742,12 +745,16 @@ body.no-scroll {
 @media (min-width: 768px) {
   .site-header__logo {
     width: 155px;
-    height: 100px;
+    height: auto;
   }
 }
 .site-header__logo svg {
   width: 100%;
   height: 100%;
+}
+.site-header__logo a {
+  display: inline-block;
+  width: 100%;
 }
 
 .footer__top {
@@ -1496,6 +1503,646 @@ body.no-scroll {
   /* identical to box height, or 150% */
   /* Base Offwhite */
   color: #fff2dd;
+}
+
+.page-home {
+  background-color: #fff2dd;
+}
+.page-home .site-header .site-header__logo svg path {
+  fill: #fff2dd;
+}
+.page-home .site-header .site-header__toggle-line {
+  border-color: #fff2dd;
+}
+@media (min-width: 992px) {
+  .page-home .site-header .site-header__toggle-line {
+    border-color: #913412;
+  }
+}
+.page-home .legacy-story .legacy-story__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 47px;
+}
+.page-home .legacy-story .legacy-story__wrapper .gallery-frame img:last-child {
+  display: none;
+}
+.page-home .legacy-story .legacy-story__wrapper .legacy-story__text {
+  max-width: 598px;
+}
+.page-home .legacy-story .legacy-story__wrapper .legacy-story__text h2 {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 71px;
+  color: #dc602a;
+}
+.page-home .legacy-story .legacy-story__wrapper .legacy-story__text h2 strong {
+  font-family: "ps-aelynregular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 70px;
+  line-height: normal;
+  color: #913412;
+  -webkit-text-stroke: 1px #913412;
+}
+.page-home .legacy-story .legacy-story__wrapper .legacy-story__text p {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  color: #000000;
+}
+.page-home .cofounder-note__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  padding-top: 72px;
+  padding-bottom: 54px;
+}
+@media (min-width: 992px) {
+  .page-home .cofounder-note__wrapper {
+    padding-top: 124px;
+    padding-bottom: 118px;
+  }
+}
+.page-home .cofounder-note__wrapper .cofounder-note__text {
+  background-color: #913412;
+  padding: 104px 62px;
+  max-width: 520px;
+}
+.page-home .cofounder-note__wrapper .cofounder-note__text h2 {
+  font-family: "ps-aelynregular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 71px;
+  color: #fff2dd;
+  -webkit-text-stroke: 1px #fff2dd;
+  padding-bottom: 30px;
+}
+.page-home .cofounder-note__wrapper .cofounder-note__text p.quote {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  /* or 138% */
+  /* Base Offwhite */
+  color: #fff2dd;
+  padding-bottom: 30px;
+}
+.page-home .cofounder-note__wrapper .cofounder-note__text p.name {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 33px;
+  /* or 92% */
+  /* Secondary Yellow */
+  color: #fec157;
+}
+.page-home .cofounder-note__wrapper .cofounder-note__text p.title {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 33px;
+  /* or 206% */
+  /* Base Offwhite */
+  color: #fff2dd;
+}
+@media (min-width: 992px) {
+  .page-home .cofounder-note__wrapper .cofounder-note__image {
+    z-index: 1;
+    margin-left: -60px;
+  }
+}
+.cofounder-note--second .page-home .cofounder-note__wrapper {
+  flex-direction: row-reverse;
+}
+@media (min-width: 992px) {
+  .cofounder-note--second .page-home .cofounder-note__wrapper .cofounder-note__image {
+    margin-right: -60px;
+  }
+}
+.page-home .campus-story .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.page-home .campus-story .container h2 {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 84px;
+  /* identical to box height, or 131% */
+  text-align: center;
+  /* Primary Green */
+  color: #505c44;
+  padding-bottom: 24px;
+}
+.page-home .campus-story .container p {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  /* or 138% */
+  text-align: center;
+  color: #000000;
+  padding-bottom: 80px;
+  max-width: 716px;
+  margin-inline: auto;
+}
+.page-home .campus-story .container a {
+  display: inline-block;
+  width: 264px;
+  height: 72px;
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 72px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 16px;
+  background: #913412;
+  margin: 0 auto;
+}
+.page-home .campus-story .container .campus-media {
+  width: 100%;
+  padding-top: 180px;
+  padding-bottom: 204px;
+}
+.page-home .campus-story .container .campus-media .video-embed {
+  height: 700px;
+  border: 9px dashed #913412;
+  border-radius: 350px;
+  padding: 30px;
+}
+.page-home .campus-story .container .campus-media .video-embed iframe {
+  border: 10px solid #913412;
+  border-radius: 350px;
+  width: 100%;
+  height: 100%;
+}
+.page-home .learning-styles .learning-styles__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-home .learning-styles .learning-styles__wrapper > div {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.page-home .learning-styles .learning-styles__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-home .learning-styles .learning-styles__right p {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000;
+}
+.page-home .learning-styles .learning-styles__right p strong {
+  display: block;
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 84px;
+  text-align: center;
+  color: #dc602a;
+}
+.page-home .learning-styles .learning-styles__right a.cta-button {
+  background: #913412;
+  border-radius: 16px;
+  width: 265px;
+  display: inline-block;
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 72px;
+  text-align: center;
+  color: #ffffff;
+}
+.page-home .ssvm-institutions {
+  background-color: #dc602a;
+  padding-top: 174px;
+  padding-bottom: 158px;
+}
+.page-home .ssvm-institutions .ssvm-institutions__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+.page-home .ssvm-institutions .ssvm-institutions__wrapper .ssvm-institutions__text p {
+  max-width: 505px;
+  padding-top: 64px;
+  font-family: caustensemi_bold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #fff2dd;
+}
+.page-home .ssvm-institutions .ssvm-institutions__wrapper .ssvm-institutions__highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+.page-home .ssvm-institutions .ssvm-institutions__wrapper .ssvm-institutions__highlights .highlight p {
+  margin-top: 14px;
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
+  color: #fff2dd;
+}
+.page-home .ssvm-institutions .ssvm-institutions__wrapper .ssvm-institutions__highlights .highlight:nth-child(3) {
+  max-width: 200px;
+  margin-inline: auto;
+}
+.page-home .campuses-gallery__title {
+  padding-top: 124px;
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 84px;
+  /* identical to box height, or 131% */
+  text-align: center;
+  /* Primary Green */
+  color: #505c44;
+  padding-bottom: 24px;
+  text-align: center;
+}
+.page-home .about-page__gallery {
+  background-color: #505c44;
+  padding-top: 42px;
+  padding-bottom: 60px;
+}
+@media (min-width: 992px) {
+  .page-home .about-page__gallery {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+.page-home .about-page__gallery-title {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  color: #fff2dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 33px;
+}
+@media (min-width: 992px) {
+  .page-home .about-page__gallery-title {
+    padding-bottom: 40px;
+  }
+}
+.page-home .about-page__gallery-title {
+  font-size: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-home .about-page__gallery-title {
+    font-size: calc(7.6923076923vw - 12.3076923077px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-home .about-page__gallery-title {
+    font-size: 64px;
+  }
+}
+.page-home .about-page__gallery-title {
+  line-height: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-home .about-page__gallery-title {
+    line-height: calc(0.2403846154vw + 30.6153846154px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-home .about-page__gallery-title {
+    line-height: 33px;
+  }
+}
+.page-home .about-page__gallery-title svg {
+  width: 98px;
+}
+@media screen and (min-width: 576px) {
+  .page-home .about-page__gallery-title svg {
+    width: calc(5.7692307692vw + 64.7692307692px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-home .about-page__gallery-title svg {
+    width: 122px;
+  }
+}
+.page-home .about-page__gallery-title svg {
+  height: 34px;
+}
+@media screen and (min-width: 576px) {
+  .page-home .about-page__gallery-title svg {
+    height: calc(2.4038461538vw + 20.1538461538px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-home .about-page__gallery-title svg {
+    height: 44px;
+  }
+}
+.page-home .about-page__gallery-imageWrapper {
+  display: grid;
+  gap: 16px 32px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (min-width: 992px) {
+  .page-home .about-page__gallery-imageWrapper {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+.page-home .home-testimonials {
+  padding-top: 186px;
+  padding-bottom: 110px;
+  background: #fec157;
+}
+.page-home .home-testimonials h2 {
+  max-width: 276px;
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 55px;
+  color: #dc602a;
+  padding-bottom: 82px;
+}
+.page-home .home-testimonials h2 strong {
+  display: block;
+  font-family: "ps-aelynregular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 51px;
+  color: #913412;
+  -webkit-text-stroke: 1px #913412;
+}
+.page-home .home-testimonials .home-testimonialsWrapper {
+  display: flex;
+}
+.page-home .home-testimonials .home-testimonialsWrapper .owl-stage-outer {
+  overflow: visible;
+}
+.page-home .home-testimonials .home-testimonialsWrapper .owl-stage-outer .owl-item.active.center {
+  position: relative;
+  top: -200px;
+}
+.page-home .home-testimonials .home-testimonialsWrapper .testimonial {
+  border-radius: 24px;
+  background-color: #fff;
+  padding: 64px;
+  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.15));
+}
+.page-home .home-testimonials .home-testimonialsWrapper .testimonial .testimonial--content {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+.page-home .home-testimonials .home-testimonialsWrapper .testimonial .testimonial--content p {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+  /* or 138% */
+  letter-spacing: -0.02em;
+  color: #101828;
+}
+.page-home .home-testimonials .home-testimonialsWrapper .testimonial .testimonial--parent {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #101828;
+}
+.page-home .home-testimonials .home-testimonialsWrapper .testimonial .testimonial--child {
+  padding-top: 8px;
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #667085;
+}
+.page-home .home-latest-blogs {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.page-home .home-latest-blogs.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px 64px;
+}
+@media (min-width: 992px) {
+  .page-home .home-latest-blogs.container {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+.page-home .home-latest-blogs .content h2 {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #505c44;
+  padding-bottom: 20px;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .page-home .home-latest-blogs .content h2 {
+    text-align: left;
+  }
+}
+.page-home .home-latest-blogs .content h2 {
+  font-size: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-home .home-latest-blogs .content h2 {
+    font-size: calc(1.9230769231vw + 20.9230769231px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-home .home-latest-blogs .content h2 {
+    font-size: 40px;
+  }
+}
+.page-home .home-latest-blogs .content h2 {
+  line-height: 44px;
+}
+@media screen and (min-width: 576px) {
+  .page-home .home-latest-blogs .content h2 {
+    line-height: calc(0vw + 44px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-home .home-latest-blogs .content h2 {
+    line-height: 44px;
+  }
+}
+.page-home .home-latest-blogs .content p {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  color: #000000;
+  padding-bottom: 32px;
+  max-width: 358px;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .page-home .home-latest-blogs .content p {
+    max-width: 394px;
+    text-align: left;
+    padding-bottom: 40px;
+  }
+}
+.page-home .home-latest-blogs .content p {
+  font-size: 16px;
+}
+@media screen and (min-width: 576px) {
+  .page-home .home-latest-blogs .content p {
+    font-size: calc(0.9615384615vw + 10.4615384615px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-home .home-latest-blogs .content p {
+    font-size: 20px;
+  }
+}
+.page-home .home-latest-blogs .content p {
+  line-height: 23px;
+}
+@media screen and (min-width: 576px) {
+  .page-home .home-latest-blogs .content p {
+    line-height: calc(1.6826923077vw + 13.3076923077px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-home .home-latest-blogs .content p {
+    line-height: 30px;
+  }
+}
+.page-home .home-latest-blogs .content .button {
+  min-width: 176px;
+  background: #913412;
+  border-radius: 16px;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 16px 24px;
+  font-size: 20px;
+  line-height: 20px;
+}
+@media (min-width: 992px) {
+  .page-home .home-latest-blogs .content .button {
+    min-width: 265px;
+    padding: 24px 26px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+.page-home .home-latest-blogs .blog-post {
+  padding-bottom: 48px;
+  display: flex;
+  gap: 24px;
+}
+.page-home .home-latest-blogs .blog-post:last-child {
+  padding-bottom: 0;
+}
+.page-home .home-latest-blogs .blog-post a {
+  display: inline-block;
+}
+.page-home .home-latest-blogs .blog-post img {
+  border-radius: 16px;
+}
+.page-home .home-latest-blogs .blog-post div {
+  width: 280px;
+}
+.page-home .home-latest-blogs .blog-post .entry-taxonomies {
+  padding-bottom: 8px;
+}
+.page-home .home-latest-blogs .blog-post .entry-taxonomies span a {
+  font-family: "gilroy-semibold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #913412;
+}
+.page-home .home-latest-blogs .blog-post .entry-title {
+  font-family: caustenbold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+  padding-bottom: 8px;
+}
+.page-home .home-latest-blogs .blog-post .entry-title a {
+  display: inline-flex;
+  gap: 16px;
+}
+.page-home .home-latest-blogs .blog-post .entry-excerpt {
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  padding-bottom: 24px;
+}
+.page-home .home-latest-blogs .blog-post .entry-meta span.byline {
+  display: block;
+  font-family: caustensemi_bold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.page-home .home-latest-blogs .blog-post .entry-meta time {
+  display: block;
+  font-family: caustenregular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
 }
 
 .page-cambridge-py,
@@ -5320,206 +5967,490 @@ textarea {
   }
 }
 
+.page-about,
 .page-about-us {
   background-color: #fff2dd;
 }
+.site-main .page-about,
 .site-main .page-about-us {
   padding-top: 0;
 }
+.page-about .site-header .site-header__logo svg path,
 .page-about-us .site-header .site-header__logo svg path {
   fill: #fff2dd;
 }
+.page-about .site-header .site-header__toggle-line,
 .page-about-us .site-header .site-header__toggle-line {
-  border-color: #913412;
+  border-color: #fff2dd;
 }
+@media (min-width: 992px) {
+  .page-about .site-header .site-header__toggle-line,
+  .page-about-us .site-header .site-header__toggle-line {
+    border-color: #913412;
+  }
+}
+.page-about .about-page__section--story,
 .page-about-us .about-page__section--story {
+  position: relative;
   background-color: #505c44;
   padding-bottom: 0;
 }
-.page-about-us .about-page__section--story .about-page__image--story {
-  position: absolute;
-  right: 0;
-  top: 0;
+.page-about .about-page__section--story .container,
+.page-about-us .about-page__section--story .container {
+  display: flex;
+  flex-direction: column;
 }
-.page-about-us .about-page__section--story .about-page__content--story .container {
+@media (min-width: 992px) {
+  .page-about .about-page__section--story .container,
+  .page-about-us .about-page__section--story .container {
+    gap: 24px;
+    flex-direction: row;
+  }
+}
+.page-about .about-page__section--story .about-page__content--story,
+.page-about-us .about-page__section--story .about-page__content--story {
   position: relative;
 }
+.page-about .about-page__section--story .about-page__content--story h1,
 .page-about-us .about-page__section--story .about-page__content--story h1 {
   font-family: "ps-aelynregular";
   font-style: normal;
   font-weight: 400;
   color: #fec157;
-  padding-top: 18px;
+  text-align: center;
+  padding-bottom: 18px;
 }
 @media (min-width: 992px) {
+  .page-about .about-page__section--story .about-page__content--story h1,
   .page-about-us .about-page__section--story .about-page__content--story h1 {
+    text-align: left;
     padding-bottom: 40px;
   }
 }
+.page-about .about-page__section--story .about-page__content--story h1,
 .page-about-us .about-page__section--story .about-page__content--story h1 {
   font-size: 36px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__section--story .about-page__content--story h1,
   .page-about-us .about-page__section--story .about-page__content--story h1 {
     font-size: calc(2.8846153846vw + 19.3846153846px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__section--story .about-page__content--story h1,
   .page-about-us .about-page__section--story .about-page__content--story h1 {
     font-size: 48px;
   }
 }
+.page-about .about-page__section--story .about-page__content--story h1,
 .page-about-us .about-page__section--story .about-page__content--story h1 {
   line-height: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__section--story .about-page__content--story h1,
   .page-about-us .about-page__section--story .about-page__content--story h1 {
     line-height: calc(0.2403846154vw + 30.6153846154px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__section--story .about-page__content--story h1,
   .page-about-us .about-page__section--story .about-page__content--story h1 {
     line-height: 33px;
   }
 }
+.page-about .about-page__section--story .about-page__content--story p,
 .page-about-us .about-page__section--story .about-page__content--story p {
+  max-width: 294px;
   font-family: caustenregular;
   font-style: normal;
   font-weight: 400;
   color: #fff2dd;
   max-width: 380px;
-  padding-bottom: 70px;
+  padding-bottom: 30px;
+  margin-inline: auto;
+  text-align: center;
 }
+@media (min-width: 992px) {
+  .page-about .about-page__section--story .about-page__content--story p,
+  .page-about-us .about-page__section--story .about-page__content--story p {
+    margin: 0;
+    text-align: left;
+    padding-bottom: 70px;
+  }
+}
+.page-about .about-page__section--story .about-page__content--story p,
 .page-about-us .about-page__section--story .about-page__content--story p {
   font-size: 16px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__section--story .about-page__content--story p,
   .page-about-us .about-page__section--story .about-page__content--story p {
     font-size: calc(1.9230769231vw + 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__section--story .about-page__content--story p,
   .page-about-us .about-page__section--story .about-page__content--story p {
     font-size: 24px;
   }
 }
+.page-about .about-page__section--story .about-page__content--story p,
 .page-about-us .about-page__section--story .about-page__content--story p {
   line-height: 23px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__section--story .about-page__content--story p,
   .page-about-us .about-page__section--story .about-page__content--story p {
     line-height: calc(2.4038461538vw + 9.1538461538px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__section--story .about-page__content--story p,
   .page-about-us .about-page__section--story .about-page__content--story p {
     line-height: 33px;
   }
 }
-.page-about-us .about-page__section--story .divider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  bottom: -4px;
-  width: 100%;
-  z-index: 2;
+.page-about .about-page__section--story .about-page__image--storyWrapper,
+.page-about-us .about-page__section--story .about-page__image--storyWrapper {
   position: relative;
 }
+@media (min-width: 992px) {
+  .page-about .about-page__section--story .about-page__image--storyWrapper,
+  .page-about-us .about-page__section--story .about-page__image--storyWrapper {
+    position: static;
+  }
+}
+.page-about .about-page__section--story .about-page__image--story,
+.page-about-us .about-page__section--story .about-page__image--story {
+  width: calc(100% + 16px + 16px + 16px);
+  margin: 0 -16px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  max-width: initial;
+}
+@media (min-width: 992px) {
+  .page-about .about-page__section--story .about-page__image--story,
+  .page-about-us .about-page__section--story .about-page__image--story {
+    width: auto;
+    margin: 0;
+    position: absolute;
+    left: initial;
+    right: 0;
+    top: 0;
+    text-align: right;
+    max-width: 100%;
+  }
+}
+.page-about .about-page__section--story .divider svg,
 .page-about-us .about-page__section--story .divider svg {
   width: 100%;
   height: 100%;
 }
+.page-about .about-page__section--story .divider.top,
+.page-about-us .about-page__section--story .divider.top {
+  z-index: 2;
+  position: absolute;
+  top: -3px;
+  width: calc(100% + 16px + 16px + 16px);
+  left: 0;
+  right: 0;
+  margin: 0 -16px;
+}
+@media (min-width: 992px) {
+  .page-about .about-page__section--story .divider.top,
+  .page-about-us .about-page__section--story .divider.top {
+    display: none;
+  }
+}
+.page-about .about-page__section--story .divider.bottom,
+.page-about-us .about-page__section--story .divider.bottom {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: -5px;
+}
+@media (min-width: 992px) {
+  .page-about .about-page__section--story .divider.bottom,
+  .page-about-us .about-page__section--story .divider.bottom {
+    position: relative;
+  }
+}
+.page-about .about-page__campuses,
 .page-about-us .about-page__campuses {
-  padding-top: 120px;
-  padding-bottom: 136px;
+  padding-top: 27px;
+  padding-bottom: 56px;
   display: grid;
-  grid-template-areas: "one two" "three two" "three four";
 }
+@media (min-width: 768px) {
+  .page-about .about-page__campuses,
+  .page-about-us .about-page__campuses {
+    padding-top: 120px;
+    padding-bottom: 136px;
+    grid-template-areas: "one two" "three two" "three four";
+  }
+}
+.page-about .about-page__campuses > div,
 .page-about-us .about-page__campuses > div {
-  max-width: 352px;
   margin-inline: auto;
+  max-width: 293px;
 }
+@media (min-width: 768px) {
+  .page-about .about-page__campuses > div,
+  .page-about-us .about-page__campuses > div {
+    max-width: 352px;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(1),
 .page-about-us .about-page__campuses > div:nth-child(1) {
-  grid-area: one;
   max-width: 412px;
 }
+@media (min-width: 768px) {
+  .page-about .about-page__campuses > div:nth-child(1),
+  .page-about-us .about-page__campuses > div:nth-child(1) {
+    grid-area: one;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(1) .about-page__title--campuses,
 .page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
   font-family: caustenbold;
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
-  line-height: 33px;
   color: #913412;
-  padding-bottom: 40px;
+  padding-bottom: 16px;
+  text-align: center;
 }
+@media (min-width: 768px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__title--campuses,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
+    text-align: left;
+    padding-bottom: 40px;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(1) .about-page__title--campuses,
+.page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
+  font-size: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__title--campuses,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
+    font-size: calc(7.6923076923vw - 12.3076923077px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__title--campuses,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
+    font-size: 64px;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(1) .about-page__title--campuses,
+.page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
+  line-height: 32px;
+}
+@media screen and (min-width: 576px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__title--campuses,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
+    line-height: calc(0.2403846154vw + 30.6153846154px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__title--campuses,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__title--campuses {
+    line-height: 33px;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses,
 .page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses {
+  max-width: 398px;
+}
+.page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses p,
+.page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses p {
   font-family: caustenregular;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 33px;
   color: #000000;
-  max-width: 398px;
+  text-align: center;
 }
+@media (min-width: 768px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses p,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses p {
+    text-align: left;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses p,
+.page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses p {
+  font-size: 16px;
+}
+@media screen and (min-width: 576px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses p,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses p {
+    font-size: calc(1.9230769231vw + 4.9230769231px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses p,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses p {
+    font-size: 24px;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses p,
+.page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses p {
+  line-height: 23px;
+}
+@media screen and (min-width: 576px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses p,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses p {
+    line-height: calc(2.4038461538vw + 9.1538461538px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .about-page__campuses > div:nth-child(1) .about-page__text--campuses p,
+  .page-about-us .about-page__campuses > div:nth-child(1) .about-page__text--campuses p {
+    line-height: 33px;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(2),
 .page-about-us .about-page__campuses > div:nth-child(2) {
-  grid-area: two;
-  padding-top: 100px;
+  padding-top: 40px;
 }
+@media (min-width: 768px) {
+  .page-about .about-page__campuses > div:nth-child(2),
+  .page-about-us .about-page__campuses > div:nth-child(2) {
+    padding-top: 100px;
+    grid-area: two;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(3),
 .page-about-us .about-page__campuses > div:nth-child(3) {
-  padding-top: 238px;
-  grid-area: three;
+  padding-top: 40px;
 }
+@media (min-width: 768px) {
+  .page-about .about-page__campuses > div:nth-child(3),
+  .page-about-us .about-page__campuses > div:nth-child(3) {
+    padding-top: 238px;
+    grid-area: three;
+  }
+}
+.page-about .about-page__campuses > div:nth-child(4),
 .page-about-us .about-page__campuses > div:nth-child(4) {
-  padding-top: 224px;
-  grid-area: four;
+  padding-top: 40px;
 }
+@media (min-width: 768px) {
+  .page-about .about-page__campuses > div:nth-child(4),
+  .page-about-us .about-page__campuses > div:nth-child(4) {
+    padding-top: 224px;
+    grid-area: four;
+  }
+}
+.page-about .about-page__campus-content,
 .page-about-us .about-page__campus-content {
   max-width: 295.88px;
   margin-inline: auto;
   padding-top: 24px;
 }
+.page-about .about-page__campus p,
 .page-about-us .about-page__campus p {
   font-family: caustenregular;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 33px;
-  /* or 138% */
   text-align: center;
   color: #000000;
 }
+.page-about .about-page__campus p,
+.page-about-us .about-page__campus p {
+  font-size: 16px;
+}
+@media screen and (min-width: 576px) {
+  .page-about .about-page__campus p,
+  .page-about-us .about-page__campus p {
+    font-size: calc(1.9230769231vw + 4.9230769231px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .about-page__campus p,
+  .page-about-us .about-page__campus p {
+    font-size: 24px;
+  }
+}
+.page-about .about-page__campus p,
+.page-about-us .about-page__campus p {
+  line-height: 23px;
+}
+@media screen and (min-width: 576px) {
+  .page-about .about-page__campus p,
+  .page-about-us .about-page__campus p {
+    line-height: calc(2.4038461538vw + 9.1538461538px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .about-page__campus p,
+  .page-about-us .about-page__campus p {
+    line-height: 33px;
+  }
+}
+.page-about .about-page__detail,
 .page-about-us .about-page__detail {
   background-color: #913412;
   padding-top: 46px;
-  padding-bottom: 46px;
   position: relative;
 }
 @media (min-width: 992px) {
+  .page-about .about-page__detail,
   .page-about-us .about-page__detail {
     padding-top: 66px;
     padding-bottom: 66px;
   }
 }
+.page-about .about-page__detail-container,
 .page-about-us .about-page__detail-container {
   display: flex;
-  flex-direction: row;
+  gap: 34px;
+  flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: center;
 }
-.page-about-us .about-page__detail-image {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+@media (min-width: 992px) {
+  .page-about .about-page__detail-container,
+  .page-about-us .about-page__detail-container {
+    flex-direction: row;
+  }
 }
+.page-about .about-page__detail-image,
+.page-about-us .about-page__detail-image {
+  width: calc(100% + 16px + 16px + 16px);
+  left: 0;
+  right: 0;
+  margin: 0 -16px;
+  text-align: center;
+  max-width: initial;
+}
+@media (min-width: 992px) {
+  .page-about .about-page__detail-image,
+  .page-about-us .about-page__detail-image {
+    width: auto;
+    margin-left: 0;
+    margin-right: auto;
+    max-width: initial;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+.page-about .about-page__detail-content,
 .page-about-us .about-page__detail-content {
   max-width: 306px;
 }
 @media (min-width: 992px) {
+  .page-about .about-page__detail-content,
   .page-about-us .about-page__detail-content {
     max-width: 324px;
   }
 }
+.page-about .about-page__detail-content p,
 .page-about-us .about-page__detail-content p {
   font-family: caustenregular;
   font-style: normal;
@@ -5530,39 +6461,61 @@ textarea {
   text-align: center;
 }
 @media (min-width: 992px) {
+  .page-about .about-page__detail-content p,
   .page-about-us .about-page__detail-content p {
     font-size: 24px;
     line-height: 33px;
     text-align: left;
   }
 }
+.page-about .about-page__detail-content p strong,
 .page-about-us .about-page__detail-content p strong {
   color: #fec157;
 }
+.page-about .about-page__detail-content p + p,
 .page-about-us .about-page__detail-content p + p {
   padding-top: 28px;
 }
 @media (min-width: 992px) {
+  .page-about .about-page__detail-content p + p,
   .page-about-us .about-page__detail-content p + p {
     padding-top: 45px;
   }
 }
+.page-about .about-page__role-future,
 .page-about-us .about-page__role-future {
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 412px;
-  padding-bottom: 412px;
+  padding-top: 138px;
+  padding-bottom: 0;
+  background-image: url("http://ruhprimary.local/wp-content/uploads/roles-of-future-desktop.gif");
+  background-repeat: no-repeat;
+  background-position: top center;
 }
+@media (min-width: 992px) {
+  .page-about .about-page__role-future,
+  .page-about-us .about-page__role-future {
+    padding-top: 412px;
+    padding-bottom: 472px;
+  }
+}
+.page-about .about-page__role-future img,
 .page-about-us .about-page__role-future img {
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  margin-inline: auto;
+  object-fit: cover;
+  object-position: center;
 }
+.page-about .about-page__role-future .about-page__title--roles,
 .page-about-us .about-page__role-future .about-page__title--roles {
   font-family: caustenbold;
   font-style: normal;
@@ -5571,67 +6524,94 @@ textarea {
   color: #505c44;
   max-width: 316px;
   padding-bottom: 36px;
+  max-width: 152px;
 }
+@media (min-width: 992px) {
+  .page-about .about-page__role-future .about-page__title--roles,
+  .page-about-us .about-page__role-future .about-page__title--roles {
+    max-width: initial;
+  }
+}
+.page-about .about-page__role-future .about-page__title--roles,
 .page-about-us .about-page__role-future .about-page__title--roles {
   font-size: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__role-future .about-page__title--roles,
   .page-about-us .about-page__role-future .about-page__title--roles {
     font-size: calc(7.6923076923vw - 12.3076923077px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__role-future .about-page__title--roles,
   .page-about-us .about-page__role-future .about-page__title--roles {
     font-size: 64px;
   }
 }
+.page-about .about-page__role-future .about-page__title--roles,
 .page-about-us .about-page__role-future .about-page__title--roles {
   line-height: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__role-future .about-page__title--roles,
   .page-about-us .about-page__role-future .about-page__title--roles {
     line-height: calc(9.1346153846vw - 20.6153846154px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__role-future .about-page__title--roles,
   .page-about-us .about-page__role-future .about-page__title--roles {
     line-height: 70px;
   }
 }
+.page-about .about-page__role-future .about-page__content--roles,
 .page-about-us .about-page__role-future .about-page__content--roles {
   font-family: caustenregular;
   font-style: normal;
   font-weight: 400;
   text-align: center;
   color: #000000;
-  max-width: 436px;
+  max-width: 152px;
 }
+@media (min-width: 992px) {
+  .page-about .about-page__role-future .about-page__content--roles,
+  .page-about-us .about-page__role-future .about-page__content--roles {
+    max-width: 436px;
+  }
+}
+.page-about .about-page__role-future .about-page__content--roles,
 .page-about-us .about-page__role-future .about-page__content--roles {
   font-size: 16px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__role-future .about-page__content--roles,
   .page-about-us .about-page__role-future .about-page__content--roles {
     font-size: calc(1.9230769231vw + 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__role-future .about-page__content--roles,
   .page-about-us .about-page__role-future .about-page__content--roles {
     font-size: 24px;
   }
 }
+.page-about .about-page__role-future .about-page__content--roles,
 .page-about-us .about-page__role-future .about-page__content--roles {
   line-height: 24px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__role-future .about-page__content--roles,
   .page-about-us .about-page__role-future .about-page__content--roles {
     line-height: calc(2.1634615385vw + 11.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__role-future .about-page__content--roles,
   .page-about-us .about-page__role-future .about-page__content--roles {
     line-height: 33px;
   }
 }
+.page-about .about-page__role-future .about-page__content--roles strong,
 .page-about-us .about-page__role-future .about-page__content--roles strong {
   display: block;
   padding-top: 28px;
@@ -5639,12 +6619,14 @@ textarea {
   font-style: normal;
   font-weight: 600;
 }
+.page-about .about-page__classroom,
 .page-about-us .about-page__classroom {
   background-color: #fec157;
   padding-bottom: 0px;
   margin-top: 116px;
   position: relative;
 }
+.page-about .about-page__classroom .container,
 .page-about-us .about-page__classroom .container {
   display: flex;
   gap: 16px;
@@ -5657,6 +6639,7 @@ textarea {
   padding-right: 0;
 }
 @media (min-width: 992px) {
+  .page-about .about-page__classroom .container,
   .page-about-us .about-page__classroom .container {
     padding-left: 16px;
     padding-right: 16px;
@@ -5665,27 +6648,42 @@ textarea {
     justify-content: flex-start;
   }
 }
+.page-about .about-page__classroom .container .about-page__classroom-content,
 .page-about-us .about-page__classroom .container .about-page__classroom-content {
   z-index: 1;
   max-width: 388px;
   padding-top: 28px;
   padding-bottom: 52px;
-  flex: 0 0 388px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-top: -116px;
+  max-width: 338px;
 }
 @media (min-width: 576px) {
+  .page-about .about-page__classroom .container .about-page__classroom-content,
   .page-about-us .about-page__classroom .container .about-page__classroom-content {
     max-width: 480px;
   }
 }
 @media (min-width: 992px) {
+  .page-about .about-page__classroom .container .about-page__classroom-content,
   .page-about-us .about-page__classroom .container .about-page__classroom-content {
+    flex: 0 0 388px;
+    max-width: 338px;
+  }
+}
+@media (min-width: 992px) {
+  .page-about .about-page__classroom .container .about-page__classroom-content,
+  .page-about-us .about-page__classroom .container .about-page__classroom-content {
+    padding-left: 0;
+    padding-right: 0;
     margin-top: 0;
     flex: 0 0 388px;
     padding-top: 82px;
     padding-bottom: 100px;
   }
 }
+.page-about .about-page__classroom .container .about-page__classroom-content p,
 .page-about-us .about-page__classroom .container .about-page__classroom-content p {
   font-family: caustenregular;
   font-style: normal;
@@ -5693,32 +6691,39 @@ textarea {
   text-align: center;
   color: #913412;
 }
+.page-about .about-page__classroom .container .about-page__classroom-content p,
 .page-about-us .about-page__classroom .container .about-page__classroom-content p {
   font-size: 16px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__classroom .container .about-page__classroom-content p,
   .page-about-us .about-page__classroom .container .about-page__classroom-content p {
     font-size: calc(1.9230769231vw + 4.9230769231px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__classroom .container .about-page__classroom-content p,
   .page-about-us .about-page__classroom .container .about-page__classroom-content p {
     font-size: 24px;
   }
 }
+.page-about .about-page__classroom .container .about-page__classroom-content p,
 .page-about-us .about-page__classroom .container .about-page__classroom-content p {
   line-height: 24px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__classroom .container .about-page__classroom-content p,
   .page-about-us .about-page__classroom .container .about-page__classroom-content p {
     line-height: calc(2.1634615385vw + 11.5384615385px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__classroom .container .about-page__classroom-content p,
   .page-about-us .about-page__classroom .container .about-page__classroom-content p {
     line-height: 33px;
   }
 }
+.page-about .about-page__classroom .container .about-page__classroom-content p strong,
 .page-about-us .about-page__classroom .container .about-page__classroom-content p strong {
   padding-top: 28px;
   display: block;
@@ -5727,6 +6732,7 @@ textarea {
   font-weight: 700;
   color: #505c44;
 }
+.page-about .about-page__classroom .container img,
 .page-about-us .about-page__classroom .container img {
   z-index: -1;
   object-fit: cover;
@@ -5736,82 +6742,150 @@ textarea {
   left: 0;
   right: 0;
   margin-inline: auto;
-  top: -116px;
+  top: -86px;
 }
+@media (min-width: 992px) {
+  .page-about .about-page__classroom .container img,
+  .page-about-us .about-page__classroom .container img {
+    top: -116px;
+  }
+}
+.page-about .about-page__classroom .container img,
 .page-about-us .about-page__classroom .container img {
   width: 352px;
 }
 @media screen and (min-width: 340px) {
+  .page-about .about-page__classroom .container img,
   .page-about-us .about-page__classroom .container img {
     width: calc(46.6257668712vw + 193.472392638px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__classroom .container img,
   .page-about-us .about-page__classroom .container img {
     width: 656px;
   }
 }
+.page-about .about-page__classroom .container img,
 .page-about-us .about-page__classroom .container img {
   height: 376px;
 }
 @media screen and (min-width: 340px) {
+  .page-about .about-page__classroom .container img,
   .page-about-us .about-page__classroom .container img {
     height: calc(38.3435582822vw + 245.6319018405px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__classroom .container img,
   .page-about-us .about-page__classroom .container img {
     height: 626px;
   }
 }
+.page-about .about-page__gallery,
 .page-about-us .about-page__gallery {
   background-color: #505c44;
   padding-top: 42px;
   padding-bottom: 60px;
 }
 @media (min-width: 992px) {
+  .page-about .about-page__gallery,
   .page-about-us .about-page__gallery {
     padding-top: 72px;
     padding-bottom: 72px;
   }
 }
+.page-about .about-page__gallery-title,
 .page-about-us .about-page__gallery-title {
   font-family: caustenbold;
   font-style: normal;
   font-weight: 700;
   text-align: center;
   color: #fff2dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-bottom: 33px;
 }
 @media (min-width: 992px) {
+  .page-about .about-page__gallery-title,
   .page-about-us .about-page__gallery-title {
     padding-bottom: 40px;
   }
 }
+.page-about .about-page__gallery-title,
 .page-about-us .about-page__gallery-title {
   font-size: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__gallery-title,
   .page-about-us .about-page__gallery-title {
     font-size: calc(7.6923076923vw - 12.3076923077px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__gallery-title,
   .page-about-us .about-page__gallery-title {
     font-size: 64px;
   }
 }
+.page-about .about-page__gallery-title,
 .page-about-us .about-page__gallery-title {
   line-height: 32px;
 }
 @media screen and (min-width: 576px) {
+  .page-about .about-page__gallery-title,
   .page-about-us .about-page__gallery-title {
     line-height: calc(0.2403846154vw + 30.6153846154px);
   }
 }
 @media screen and (min-width: 992px) {
+  .page-about .about-page__gallery-title,
   .page-about-us .about-page__gallery-title {
     line-height: 33px;
+  }
+}
+.page-about .about-page__gallery-title svg,
+.page-about-us .about-page__gallery-title svg {
+  width: 98px;
+}
+@media screen and (min-width: 576px) {
+  .page-about .about-page__gallery-title svg,
+  .page-about-us .about-page__gallery-title svg {
+    width: calc(5.7692307692vw + 64.7692307692px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .about-page__gallery-title svg,
+  .page-about-us .about-page__gallery-title svg {
+    width: 122px;
+  }
+}
+.page-about .about-page__gallery-title svg,
+.page-about-us .about-page__gallery-title svg {
+  height: 34px;
+}
+@media screen and (min-width: 576px) {
+  .page-about .about-page__gallery-title svg,
+  .page-about-us .about-page__gallery-title svg {
+    height: calc(2.4038461538vw + 20.1538461538px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-about .about-page__gallery-title svg,
+  .page-about-us .about-page__gallery-title svg {
+    height: 44px;
+  }
+}
+
+.about-page__gallery-imageWrapper {
+  display: grid;
+  gap: 16px 32px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (min-width: 992px) {
+  .about-page__gallery-imageWrapper {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 

@@ -2,10 +2,11 @@ jQuery(document).ready(function ($) {
   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 10,
-     center: true,
+    center: true,
     nav: false,
     dots: false,
     autoplay: true,
+    autoHeight: true,
     responsive: {
       0: {
         items: 1.4,
