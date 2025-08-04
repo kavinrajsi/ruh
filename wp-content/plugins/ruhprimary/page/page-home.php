@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * Description: A flexible and feature-rich Elementor widget to design the homepage layout of an educational institution. Includes sections such as Legacy Story, Co-Founders’ Notes, Campus Story with video support, Learning Styles, SSVM Institution Stats, Campus & Friends Galleries, Dynamic Testimonials, Latest Blogs, and a Call-to-Action. Fully customizable using the Elementor editor.
+ * Author: ruhprimary
+ * Version: 1.0.0
+ * Text Domain: ruhprimary
+ */
+
+
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Repeater;
 
 if (!defined('ABSPATH')) exit;
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description: A custom Elementor widget that builds a full About page layout with sections like "The Story", "Our Campuses", "Roles of Future", "Friends", and more.
+ * Description: A custom Elementor widget designed to create a comprehensive "About Us" page layout. Includes sections for The Story, Our Campuses, About Us, Roles of the Future, About the Classroom, Friends Gallery, and a Call-to-Action. Fully customizable via the Elementor editor.
  * Author: ruhprimary
  * Version: 1.0.0
  * Text Domain: ruhprimary
@@ -11,9 +11,6 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
-use Elementor\Group_Control_Image_Size;
-use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Background;
 
 if (! defined('ABSPATH')) exit;
 
@@ -266,7 +263,7 @@ class Elementor_About_Us_Page extends Widget_Base
                 <?php foreach ($settings['campus_list'] as $campus) : ?>
                     <div class="about-page__campus">
                         <?php if (!empty($campus['campus_image']['url'])) : ?>
-                            <img class="about-page__campus-image" src="<?= esc_url($campus['campus_image']['url']); ?>" alt="">
+                            <img class="about-page__campus-image" src="<?= esc_url($campus['campus_image']['url']); ?>" alt="<?= esc_attr($campus['campus_image']['alt']); ?>">
                         <?php endif; ?>
                         <h3 class="about-page__campus-title"><?= wp_kses_post($campus['campus_title']); ?></h3>
                         <div class="about-page__campus-content"><?= wp_kses_post($campus['campus_content']); ?></div>
@@ -296,10 +293,18 @@ class Elementor_About_Us_Page extends Widget_Base
         <!-- Roles of Future -->
         <section class="about-page__role-future">
             <?php if (!empty($settings['roles_image_mobile']['url'])) : ?>
-                <img class=" about-page__image--roles mobile" src="<?= esc_url($settings['roles_image_mobile']['url']); ?>" alt="">
+                <img
+                    class="about-page__image--roles mobile"
+                    src="<?= esc_url($settings['roles_image_mobile']['url']); ?>"
+                    alt="<?= esc_attr($settings['roles_image_mobile']['alt']); ?>">
+
             <?php endif; ?>
             <?php if (!empty($settings['roles_image_desktop']['url'])) : ?>
-                <img class=" about-page__image--roles desktop" src="<?= esc_url($settings['roles_image_desktop']['url']); ?>" alt="">
+                <img
+                    class="about-page__image--roles desktop"
+                    src="<?= esc_url($settings['roles_image_desktop']['url']); ?>"
+                    alt="<?= esc_attr($settings['roles_image_desktop']['alt']); ?>">
+
             <?php endif; ?>
             <div class="content">
                 <h3 class="about-page__title about-page__title--roles"><?= esc_html($settings['roles_title']); ?></h3>
@@ -318,7 +323,11 @@ class Elementor_About_Us_Page extends Widget_Base
                     <?= wp_kses_post($settings['classroom_content']); ?>
                 </div>
                 <?php if (!empty($settings['classroom_image']['url'])) : ?>
-                    <img class="about-page__classroom-image" src="<?= esc_url($settings['classroom_image']['url']); ?>" alt="">
+                    <img
+                        class="about-page__classroom-image"
+                        src="<?= esc_url($settings['classroom_image']['url']); ?>"
+                        alt="<?= esc_attr($settings['classroom_image']['alt']); ?>">
+
                 <?php endif; ?>
             </div>
         </section>
@@ -363,7 +372,11 @@ class Elementor_About_Us_Page extends Widget_Base
                     <?php endif; ?>
                     <div class="about-page__gallery-imageWrapper">
                         <?php foreach ($settings['friends_gallery'] as $img) : ?>
-                            <img class="about-page__gallery-image" src="<?= esc_url($img['url']); ?>" alt="">
+                            <img
+                                class="about-page__gallery-image"
+                                src="<?= esc_url($img['url']); ?>"
+                                alt="<?= esc_attr($img['alt']); ?>">
+
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -376,7 +389,10 @@ class Elementor_About_Us_Page extends Widget_Base
         <section class="info-section container-fluid">
             <div class="info-section__container container">
                 <?php if (!empty($settings['cta_image']['url'])): ?>
-                    <img class="info-section__image" src="<?php echo esc_url($settings['cta_image']['url']); ?>" alt="">
+                    <img
+                        class="info-section__image"
+                        src="<?php echo esc_url($settings['cta_image']['url']); ?>"
+                        alt="<?php echo esc_attr($settings['cta_image']['alt']); ?>">
                 <?php endif; ?>
 
                 <div class="info-section__content">

@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Description: A custom Elementor widget that builds a comprehensive curriculum page layout. Includes modular sections such as "Way of Learning", "Years Curriculum", "Primary Years Curriculum", "Learning Methodologies", "Diversity in Learning", and "Experiential Learning". Also includes support for video, image galleries, and a customizable Call-to-Action (CTA).
+ * Author: ruhprimary
+ * Version: 1.0.0
+ * Text Domain: ruhprimary
+ */
+
+
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
@@ -153,7 +161,11 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         <section class="curriculum__header">
             <div class="curriculum__header-container">
                 <?php if ($settings['header_image']['url']): ?>
-                    <img class="curriculum__header-image" src="<?php echo esc_url($settings['header_image']['url']); ?>" alt="Header Image">
+                    <img
+                        class="curriculum__header-image"
+                        src="<?php echo esc_url($settings['header_image']['url']); ?>"
+                        alt="<?php echo esc_attr($settings['header_image']['alt']); ?>">
+
                 <?php endif; ?>
                 <?php if ($settings['header_title']): ?>
                     <h2 class="curriculum__header-title"><?php echo esc_html($settings['header_title']); ?></h2>
@@ -173,7 +185,11 @@ class Elementor_Ruh_Curriculum extends Widget_Base
                     <div class="curriculum__way-content"><?php echo wp_kses_post($settings['way_content']); ?></div>
                 </div>
                 <?php if ($settings['way_image']['url']): ?>
-                    <img class="curriculum__way-image" src="<?php echo esc_url($settings['way_image']['url']); ?>" alt="Way of Learning Image">
+                    <img
+                        class="curriculum__way-image"
+                        src="<?php echo esc_url($settings['way_image']['url']); ?>"
+                        alt="<?php echo esc_attr($settings['way_image']['alt']); ?>">
+
                 <?php endif; ?>
             </div>
         </section>
@@ -182,7 +198,11 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         <section class="curriculum__years" data-aos="fade-up">
             <div class="container curriculum__years-container">
                 <?php if ($settings['years_image']['url']): ?>
-                    <img class="curriculum__years-image" src="<?php echo esc_url($settings['years_image']['url']); ?>" alt="Years Curriculum Image">
+                    <img
+                        class="curriculum__years-image"
+                        src="<?php echo esc_url($settings['years_image']['url']); ?>"
+                        alt="<?php echo esc_attr($settings['years_image']['alt']); ?>">
+
                 <?php endif; ?>
                 <div class="content">
                     <h3 class="curriculum__years-title"><?php echo esc_html($settings['years_title']); ?></h3>
@@ -200,7 +220,11 @@ class Elementor_Ruh_Curriculum extends Widget_Base
                         Your browser does not support the video tag.
                     </video>
                 <?php elseif ($settings['new_way_image']['url']): ?>
-                    <img class="curriculum__new-way-image" src="<?php echo esc_url($settings['new_way_image']['url']); ?>" alt="New Way Learning Image">
+                    <img
+                        class="curriculum__new-way-image"
+                        src="<?php echo esc_url($settings['new_way_image']['url']); ?>"
+                        alt="<?php echo esc_attr($settings['new_way_image']['alt']); ?>">
+
                 <?php endif; ?>
             </div>
         </section>
@@ -213,7 +237,11 @@ class Elementor_Ruh_Curriculum extends Widget_Base
                     <div class="curriculum__primary-content"><?php echo wp_kses_post($settings['primary_content']); ?></div>
                 </div>
                 <?php if ($settings['primary_image']['url']): ?>
-                    <img class="curriculum__primary-image" src="<?php echo esc_url($settings['primary_image']['url']); ?>" alt="Primary Years Image">
+                    <img
+                        class="curriculum__primary-image"
+                        src="<?php echo esc_url($settings['primary_image']['url']); ?>"
+                        alt="<?php echo esc_attr($settings['primary_image']['alt']); ?>">
+
                 <?php endif; ?>
             </div>
         </section>
@@ -230,7 +258,11 @@ class Elementor_Ruh_Curriculum extends Widget_Base
                         <?php foreach ($settings['methodology_items'] as $item): ?>
                             <div class="curriculum__methodologies-item">
                                 <?php if (!empty($item['method_image']['url'])): ?>
-                                    <img class="curriculum__methodologies-item-image" src="<?php echo esc_url($item['method_image']['url']); ?>" alt="Method Image">
+                                    <img
+                                        class="curriculum__methodologies-item-image"
+                                        src="<?php echo esc_url($item['method_image']['url']); ?>"
+                                        alt="<?php echo esc_attr($item['method_image']['alt']); ?>">
+
                                 <?php endif; ?>
                                 <h4 class="curriculum__methodologies-item-title"><?php echo esc_html($item['method_title']); ?></h4>
                             </div>
@@ -242,17 +274,21 @@ class Elementor_Ruh_Curriculum extends Widget_Base
 
         <!-- Diversity in Learning -->
         <section class="curriculum__diversity" data-aos="fade-up">
-          <div class="container curriculum__diversity-container">
-                 <h3 class="curriculum__diversity-container-title"><?php echo wp_kses_post($settings['diversity_title']); ?></h3>
+            <div class="container curriculum__diversity-container">
+                <h3 class="curriculum__diversity-container-title"><?php echo wp_kses_post($settings['diversity_title']); ?></h3>
                 <p class="curriculum__diversity-container-content"><?php echo wp_kses_post($settings['diversity_content']); ?></p>
             </div>
             <div class="container-fluid curriculum__diversity-container2">
                 <div class="container">
-                <?php if ($settings['diversity_image']['url']): ?>
-                    <img class="curriculum__diversity-container2-image" src="<?php echo esc_url($settings['diversity_image']['url']); ?>" alt="Diversity Image">
-                <?php endif; ?>
-                <div class="curriculum__diversity-content-2"><?php echo wp_kses_post($settings['diversity_content_2']); ?></div>
-            </div>
+                    <?php if ($settings['diversity_image']['url']): ?>
+                        <img
+                            class="curriculum__diversity-container2-image"
+                            src="<?php echo esc_url($settings['diversity_image']['url']); ?>"
+                            alt="<?php echo esc_attr($settings['diversity_image']['alt']); ?>">
+
+                    <?php endif; ?>
+                    <div class="curriculum__diversity-content-2"><?php echo wp_kses_post($settings['diversity_content_2']); ?></div>
+                </div>
             </div>
         </section>
 
@@ -266,7 +302,11 @@ class Elementor_Ruh_Curriculum extends Widget_Base
                 <?php if (!empty($settings['experiential_gallery'])): ?>
                     <div class="owl-carousel">
                         <?php foreach ($settings['experiential_gallery'] as $image): ?>
-                            <img class="curriculum__experiential-gallery-image" src="<?php echo esc_url($image['url']); ?>" alt="Gallery Image">
+                            <img
+                                class="curriculum__experiential-gallery-image"
+                                src="<?php echo esc_url($image['url']); ?>"
+                                alt="<?php echo esc_attr($image['alt']); ?>">
+
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
@@ -276,7 +316,10 @@ class Elementor_Ruh_Curriculum extends Widget_Base
         <section class="info-section container-fluid" data-aos="fade-up">
             <div class="info-section__container container">
                 <?php if (!empty($settings['cta_image']['url'])): ?>
-                    <img class="info-section__image" src="<?php echo esc_url($settings['cta_image']['url']); ?>" alt="">
+                    <img
+                        class="info-section__image"
+                        src="<?php echo esc_url($settings['cta_image']['url']); ?>"
+                        alt="<?php echo esc_attr($settings['cta_image']['alt']); ?>">
                 <?php endif; ?>
 
                 <div class="info-section__content">

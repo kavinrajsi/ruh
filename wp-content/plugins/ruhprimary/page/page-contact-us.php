@@ -1,9 +1,10 @@
 <?php
 
 /**
- * Description: An Elementor widget with a heading, CF7 form selector, and an Admissions info section with image.
- * Author: Your Name
- * Version: 1.1.0
+ * Description: A custom Elementor widget that displays a contact section with a customizable heading, a Contact Form 7 form selector, and an Admissions information block with optional image. Ideal for education websites or admission-focused landing pages.
+ * Author: ruhprimary
+ * Version: 1.0.0
+ * Text Domain: ruhprimary
  */
 
 use Elementor\Widget_Base;
@@ -114,43 +115,54 @@ class Elementor_Contact_Us_Page extends Widget_Base
 
     protected function render()
     {
-        $s = $this->get_settings_for_display();
+        $settings = $this->get_settings_for_display();
+?>
 
-        echo '<div class="contact-us-widget">';
+        <div class="contact-us-widget">
+            <div class="container">
 
-        echo '<div class="container">';
-        // Main Heading
-        if (!empty($s['main_heading'])) {
-            echo '<div>' . wp_kses_post($s['main_heading']) . '';
-        }
+                <?php if (!empty($settings['main_heading'])) : ?>
+                    <div>
+                        <?php echo wp_kses_post($settings['main_heading']); ?>
+                    </div>
+                <?php endif; ?>
 
-        // Divider Image (below heading)
-        if (!empty($s['divider_image']['url'])) {
-            echo '<div class="divider-image">';
-            echo '<img src="' . esc_url($s['divider_image']['url']) . '" alt="Divider">';
-            echo '</div></div>';
-        }
+                <?php if (!empty($settings['divider_image']['url'])) : ?>
+                    <div class="divider-image">
+                        <img
+                            src="<?php echo esc_url($settings['divider_image']['url']); ?>"
+                            alt="<?php echo esc_attr($settings['divider_image']['alt']); ?>">
 
-        // Contact Form
-        if (!empty($s['selected_form_id']) && intval($s['selected_form_id']) > 0) {
-            echo do_shortcode('[contact-form-7 id="' . intval($s['selected_form_id']) . '"]');
-        }
-        echo '</div>';
+                    </div>
+                <?php endif; ?>
 
-        // Admissions Section
-        if (!empty($s['admissions_text']) || !empty($s['admissions_image']['url'])) {
-            echo '<div class="admissions-section" data-aos="fade-up">';
-            echo '<div class="container">';
-            if (!empty($s['admissions_image']['url'])) {
-                echo '<img src="' . esc_url($s['admissions_image']['url']) . '" alt="Admissions Image">';
-            }
-            if (!empty($s['admissions_text'])) {
-                echo '<div class="admissions-text">' . wp_kses_post($s['admissions_text']) . '</div>';
-            }
-            echo '</div>';
-        }
+                <?php if (!empty($settings['selected_form_id']) && intval($settings['selected_form_id']) > 0) : ?>
+                    <?php echo do_shortcode('[contact-form-7 id="' . intval($settings['selected_form_id']) . '"]'); ?>
+                <?php endif; ?>
 
-        echo '</div>';
-        echo '</div>';
+            </div>
+
+            <?php if (!empty($settings['admissions_text']) || !empty($settings['admissions_image']['url'])) : ?>
+                <div class="admissions-section" data-aos="fade-up">
+                    <div class="container">
+                        <?php if (!empty($settings['admissions_image']['url'])) : ?>
+                            <img
+                                src="<?php echo esc_url($settings['admissions_image']['url']); ?>"
+                                alt="<?php echo esc_attr($settings['admissions_image']['alt']); ?>">
+
+                        <?php endif; ?>
+
+                        <?php if (!empty($settings['admissions_text'])) : ?>
+                            <div class="admissions-text">
+                                <?php echo wp_kses_post($settings['admissions_text']); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+        </div>
+
+<?php
     }
 }

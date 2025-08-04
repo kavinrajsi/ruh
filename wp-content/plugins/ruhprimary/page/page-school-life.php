@@ -1,11 +1,12 @@
 <?php
 
 /**
- * Description: A custom Elementor widget that builds a full About page layout with sections like "The Story", "Our Campuses", "Roles of Future", "Friends", and more.
- * Author: Your Name
+ * Description: A custom Elementor widget that renders the full "Life at RUH" page layout, including modular sections like Ruh’ler’s Life, Piazza, Playloft, Libraries, About, Sandpit, Dance Studio, and a CTA. Ideal for creating an engaging and informative campus life showcase using Elementor.
+ * Author: ruhprimary
  * Version: 1.0.0
- * Text Domain: curriculum-widget
+ * Text Domain: ruhprimary
  */
+
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -32,7 +33,7 @@ class Elementor_Life_At_RUH_Page extends Widget_Base
 
     public function get_categories()
     {
-        return ['fos']; // Replace with your Elementor category if needed
+        return ['fos'];
     }
 
     protected function register_controls()
@@ -68,16 +69,16 @@ class Elementor_Life_At_RUH_Page extends Widget_Base
 
     protected function render()
     {
-        $s = $this->get_settings_for_display();
+        $settings = $this->get_settings_for_display();
         echo '<div class="life-at-ruh-widget">';
-        $this->render_ruh_life($s);
-        $this->render_piazza($s);
-        $this->render_playloft($s);
-        $this->render_best_place($s);
-        $this->render_about($s);
-        $this->render_sandpit($s);
-        $this->render_dance($s);
-        $this->render_cta($s);
+        $this->render_ruh_life($settings);
+        $this->render_piazza($settings);
+        $this->render_playloft($settings);
+        $this->render_best_place($settings);
+        $this->render_about($settings);
+        $this->render_sandpit($settings);
+        $this->render_dance($settings);
+        $this->render_cta($settings);
         echo '</div>';
     }
 
@@ -134,74 +135,80 @@ class Elementor_Life_At_RUH_Page extends Widget_Base
         $this->end_controls_section();
     }
 
-    public function render_ruh_life($s)
+    public function render_ruh_life($settings)
     {
         echo "<section class='ruh_life-section ruh_life-section__detail'>";
         echo "<div class='container'>";
         echo "<div class='content'>";
-        if (!empty($s['ruh_life_title'])) {
-            $tag = !empty($s['ruh_life_title_tag']) ? $s['ruh_life_title_tag'] : 'h2';
-            echo '<' . $tag . '>' . ($s['ruh_life_title']) . '</' . $tag . '>';
+        if (!empty($settings['ruh_life_title'])) {
+            $tag = !empty($settings['ruh_life_title_tag']) ? $settings['ruh_life_title_tag'] : 'h2';
+            echo '<' . $tag . '>' . ($settings['ruh_life_title']) . '</' . $tag . '>';
         }
-        if (!empty($s['ruh_life_content'])) echo '<div>' . wp_kses_post($s['ruh_life_content']) . '</div>';
-        if (!empty($s['ruh_life_button_url']['url'])) echo '<a href="' . esc_url($s['ruh_life_button_url']['url']) . '" class="button">' . esc_html($s['ruh_life_button_text']) . '</a>';
+        if (!empty($settings['ruh_life_content'])) echo '<div>' . wp_kses_post($settings['ruh_life_content']) . '</div>';
+        if (!empty($settings['ruh_life_button_url']['url'])) echo '<a href="' . esc_url($settings['ruh_life_button_url']['url']) . '" class="button">' . esc_html($settings['ruh_life_button_text']) . '</a>';
         echo '</div>';
         echo "<div class='image'>";
-        if (!empty($s['ruh_life_image']['url'])) echo '<img src="' . esc_url($s['ruh_life_image']['url']) . '" alt="">';
+        if (!empty($settings['ruh_life_image']['url'])) {
+            echo '<img src="' . esc_url($settings['ruh_life_image']['url']) . '" alt="' . esc_attr($settings['ruh_life_image']['alt']) . '">';
+        }
         echo '</div>';
         echo '</div>';
         echo '</section>';
     }
 
-    public function render_piazza($s)
+    public function render_piazza($settings)
     {
         echo "<section class='piazza-section'>";
         echo "<div class='container'>";
         echo "<div class='image'>";
-        if (!empty($s['piazza_image']['url'])) echo '<img src="' . esc_url($s['piazza_image']['url']) . '" alt="">';
+        if (!empty($settings['piazza_image']['url'])) echo '<img src="' . esc_url($settings['piazza_image']['url']) . '" alt="' . esc_attr($settings['piazza_image']['alt']) . '">';
         echo "</div>";
         echo "<div class='content width-300'>";
-        if (!empty($s['piazza_title'])) {
-            $tag = !empty($s['piazza_title_tag']) ? $s['piazza_title_tag'] : 'h2';
-            echo '<' . $tag . '>' . esc_html($s['piazza_title']) . '</' . $tag . '>';
+        if (!empty($settings['piazza_title'])) {
+            $tag = !empty($settings['piazza_title_tag']) ? $settings['piazza_title_tag'] : 'h2';
+            echo '<' . $tag . '>' . esc_html($settings['piazza_title']) . '</' . $tag . '>';
         }
-        if (!empty($s['piazza_content'])) echo '<div>' . wp_kses_post($s['piazza_content']) . '</div>';
+        if (!empty($settings['piazza_content'])) echo '<div>' . wp_kses_post($settings['piazza_content']) . '</div>';
         echo "</div>";
         echo "</div>";
         echo "</section>";
     }
 
-    public function render_playloft($s)
+    public function render_playloft($settings)
     {
         echo "<section class='playloft-section'>";
         echo "<div class='container'>";
         echo "<div class='image'>";
-        if (!empty($s['playloft_image']['url'])) echo '<img src="' . esc_url($s['playloft_image']['url']) . '" alt="">';
+        if (!empty($settings['playloft_image']['url'])) echo '<img src="' . esc_url($settings['playloft_image']['url']) . '" alt="' . esc_attr($settings['playloft_image']['alt']) . '">';
         echo "</div>";
         echo "<div class='content width-686'>";
-        if (!empty($s['playloft_title'])) {
-            $tag = !empty($s['playloft_title_tag']) ? $s['playloft_title_tag'] : 'h2';
-            echo '<' . $tag . '>' . esc_html($s['playloft_title']) . '</' . $tag . '>';
+        if (!empty($settings['playloft_title'])) {
+            $tag = !empty($settings['playloft_title_tag']) ? $settings['playloft_title_tag'] : 'h2';
+            echo '<' . $tag . '>' . esc_html($settings['playloft_title']) . '</' . $tag . '>';
         }
-        if (!empty($s['playloft_content'])) echo '<div>' . wp_kses_post($s['playloft_content']) . '</div>';
+        if (!empty($settings['playloft_content'])) echo '<div>' . wp_kses_post($settings['playloft_content']) . '</div>';
         echo "</div>";
         echo "</div>";
         echo "</section>";
     }
 
-    public function render_best_place($s)
+    public function render_best_place($settings)
     {
         echo '<section class="best-place">';
         echo "<div class='container'>";
         foreach (['ey' => 'EY Library', 'py' => 'PY Library'] as $key => $label) {
-            if ($s["{$key}_title"] || $s["{$key}_content"] || $s["{$key}_image"]['url']) {
+            if ($settings["{$key}_title"] || $settings["{$key}_content"] || $settings["{$key}_image"]['url']) {
                 echo "<div class='library {$key}'>";
                 echo "<div class='image'>";
-                if (!empty($s["{$key}_image"]['url'])) echo '<img src="' . esc_url($s["{$key}_image"]['url']) . '" alt="">';
+                if (!empty($settings["{$key}_image"]['url'])) {
+                    $img = $settings["{$key}_image"];
+                    $alt = !empty($img['alt']) ? $img['alt'] : $label . ' Image';
+                    echo '<img src="' . esc_url($img['url']) . '" alt="' . esc_attr($alt) . '">';
+                }
                 echo "</div>";
                 echo "<div class='content'>";
-                if (!empty($s["{$key}_title"])) echo '<h2>' . esc_html($s["{$key}_title"]) . '</h2>';
-                if (!empty($s["{$key}_content"])) echo '<div>' . wp_kses_post($s["{$key}_content"]) . '</div>';
+                if (!empty($settings["{$key}_title"])) echo '<h2>' . esc_html($settings["{$key}_title"]) . '</h2>';
+                if (!empty($settings["{$key}_content"])) echo '<div>' . wp_kses_post($settings["{$key}_content"]) . '</div>';
                 echo "</div>";
                 echo '</div>';
             }
@@ -210,73 +217,73 @@ class Elementor_Life_At_RUH_Page extends Widget_Base
         echo '</section>';
     }
 
-    public function render_about($s)
+    public function render_about($settings)
     {
         echo "<section class='about-section'>";
         echo "<div class='container'>";
         echo "<div class='content'>";
-        if (!empty($s['about_title'])) {
-            $tag = !empty($s['about_title_tag']) ? $s['about_title_tag'] : 'h2';
-            echo '<' . $tag . '>' . esc_html($s['about_title']) . '</' . $tag . '>';
+        if (!empty($settings['about_title'])) {
+            $tag = !empty($settings['about_title_tag']) ? $settings['about_title_tag'] : 'h2';
+            echo '<' . $tag . '>' . esc_html($settings['about_title']) . '</' . $tag . '>';
         }
-        if (!empty($s['about_content'])) echo '<div>' . wp_kses_post($s['about_content']) . '</div>';
-        if (!empty($s['about_button_url']['url'])) echo '<a href="' . esc_url($s['about_button_url']['url']) . '" class="button">' . esc_html($s['about_button_text']) . '</a>';
+        if (!empty($settings['about_content'])) echo '<div>' . wp_kses_post($settings['about_content']) . '</div>';
+        if (!empty($settings['about_button_url']['url'])) echo '<a href="' . esc_url($settings['about_button_url']['url']) . '" class="button">' . esc_html($settings['about_button_text']) . '</a>';
         echo "</div>";
-        if (!empty($s['about_image']['url'])) echo '<img class="image" src="' . esc_url($s['about_image']['url']) . '" alt="">';
+        if (!empty($settings['about_image']['url'])) echo '<img class="image" src="' . esc_url($settings['about_image']['url']) . '" alt="' . esc_attr($settings['about_image']['alt']) . '">';
         echo "</div>";
         echo "</section>";
     }
 
-    public function render_sandpit($s)
+    public function render_sandpit($settings)
     {
         echo "<section class='sandpit-section'>";
         echo "<div class='container'>";
         echo "<div class='image'>";
-        if (!empty($s['sandpit_image']['url'])) echo '<img src="' . esc_url($s['sandpit_image']['url']) . '" alt="">';
+        if (!empty($settings['sandpit_image']['url'])) echo '<img src="' . esc_url($settings['sandpit_image']['url']) . '" alt="' . esc_attr($settings['sandpit_image']['alt']) . '">';
         echo "</div>";
         echo "<div class='content width-686'>";
-        if (!empty($s['sandpit_title'])) {
-            $tag = !empty($s['sandpit_title_tag']) ? $s['sandpit_title_tag'] : 'h2';
-            echo '<' . $tag . '>' . esc_html($s['sandpit_title']) . '</' . $tag . '>';
+        if (!empty($settings['sandpit_title'])) {
+            $tag = !empty($settings['sandpit_title_tag']) ? $settings['sandpit_title_tag'] : 'h2';
+            echo '<' . $tag . '>' . esc_html($settings['sandpit_title']) . '</' . $tag . '>';
         }
-        if (!empty($s['sandpit_content'])) echo '<div>' . wp_kses_post($s['sandpit_content']) . '</div>';
+        if (!empty($settings['sandpit_content'])) echo '<div>' . wp_kses_post($settings['sandpit_content']) . '</div>';
         echo "</div>";
         echo "</div>";
         echo "</section>";
     }
 
-    public function render_dance($s)
+    public function render_dance($settings)
     {
         echo "<section class='dance-section'>";
         echo "<div class='container'>";
         echo "<div class='image'>";
-        if (!empty($s['dance_image']['url'])) echo '<img src="' . esc_url($s['dance_image']['url']) . '" alt="">';
+        if (!empty($settings['dance_image']['url'])) echo '<img src="' . esc_url($settings['dance_image']['url']) . '" alt="' . esc_attr($settings['dance_image']['alt']) . '">';
         echo "</div>";
         echo "<div class='content width-300'>";
-        if (!empty($s['dance_title'])) {
-            $tag = !empty($s['dance_title_tag']) ? $s['dance_title_tag'] : 'h2';
-            echo '<' . $tag . '>' . esc_html($s['dance_title']) . '</' . $tag . '>';
+        if (!empty($settings['dance_title'])) {
+            $tag = !empty($settings['dance_title_tag']) ? $settings['dance_title_tag'] : 'h2';
+            echo '<' . $tag . '>' . esc_html($settings['dance_title']) . '</' . $tag . '>';
         }
-        if (!empty($s['dance_content'])) echo '<div>' . wp_kses_post($s['dance_content']) . '</div>';
+        if (!empty($settings['dance_content'])) echo '<div>' . wp_kses_post($settings['dance_content']) . '</div>';
         echo "</div>";
         echo "</div>";
         echo "</section>";
     }
 
-    public function render_cta($s)
+    public function render_cta($settings)
     {
         echo "<section class='info-section container-fluid'>";
         echo "<div class='info-section__container container'>";
 
-        if (!empty($s['cta_image']['url'])) echo '<img class="info-section__image" src="' . esc_url($s['cta_image']['url']) . '" alt="">';
+        if (!empty($settings['cta_image']['url'])) echo '<img class="info-section__image" src="' . esc_url($settings['cta_image']['url']) . '" alt="' . esc_attr($settings['cta_image']['alt']) . '">';
         echo "<div class='info-section__content'>";
-        if (!empty($s['cta_title'])) {
-            $tag = !empty($s['cta_title_tag']) ? $s['cta_title_tag'] : 'h2';
-            echo '<' . $tag . ' class="info-section__title">' . esc_html($s['cta_title']) . '</' . $tag . '>';
+        if (!empty($settings['cta_title'])) {
+            $tag = !empty($settings['cta_title_tag']) ? $settings['cta_title_tag'] : 'h2';
+            echo '<' . $tag . ' class="info-section__title">' . esc_html($settings['cta_title']) . '</' . $tag . '>';
         }
-        if (!empty($s['cta_content'])) echo '<div class="info-section__text">' . wp_kses_post($s['cta_content']) . '</div>';
-        if (!empty($s['cta_button_url']['url'])) echo '<a href="' . esc_url($s['cta_button_url']['url']) . '" class="info-section__link">' . esc_html($s['cta_button_text']) . '</a>';
-        echo "</div>"; 
+        if (!empty($settings['cta_content'])) echo '<div class="info-section__text">' . wp_kses_post($settings['cta_content']) . '</div>';
+        if (!empty($settings['cta_button_url']['url'])) echo '<a href="' . esc_url($settings['cta_button_url']['url']) . '" class="info-section__link">' . esc_html($settings['cta_button_text']) . '</a>';
+        echo "</div>";
         echo "</div>";
         echo "</section>";
     }
