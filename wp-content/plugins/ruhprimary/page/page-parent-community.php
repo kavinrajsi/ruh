@@ -335,12 +335,15 @@ class Elementor_Ruh_Parent_Community extends Widget_Base
                 <?php if (!empty($settings['coffee_gallery'])) : ?>
                     <div class="coffee-connections__gallery">
                         <div class="coffee-connections__gallery-track owl-carousel owl-theme">
-                            <?php foreach ($settings['coffee_gallery'] as $img) : ?>
+                            <?php foreach ($settings['coffee_gallery'] as $image) : ?>
+                                <?php
+                                $alt = !empty($image['alt']) ? $image['alt'] : 'Gallery Image'; // Fallback alt text
+                                ?>
                                 <div class="item coffee-connections__slide">
                                     <img
                                         class="coffee-connections__image"
-                                        src="<?php echo esc_url($img['url']); ?>"
-                                        alt="<?php echo esc_attr($img['alt']); ?>">
+                                        src="<?php echo esc_url($image['url']); ?>"
+                                        alt="<?php echo esc_attr($alt);  ?>">
 
                                 </div>
                             <?php endforeach; ?>

@@ -302,10 +302,13 @@ class Elementor_Ruh_Curriculum extends Widget_Base
                 <?php if (!empty($settings['experiential_gallery'])): ?>
                     <div class="owl-carousel">
                         <?php foreach ($settings['experiential_gallery'] as $image): ?>
+                            <?php
+                            $alt = !empty($image['alt']) ? $image['alt'] : 'Gallery Image'; // Fallback alt text
+                            ?>
                             <img
                                 class="curriculum__experiential-gallery-image"
                                 src="<?php echo esc_url($image['url']); ?>"
-                                alt="<?php echo esc_attr($image['alt']); ?>">
+                                alt="<?php echo esc_attr($alt);  ?>">
 
                         <?php endforeach; ?>
                     </div>

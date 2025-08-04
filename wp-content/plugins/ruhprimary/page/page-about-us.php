@@ -370,15 +370,16 @@ class Elementor_About_Us_Page extends Widget_Base
                                 </defs>
                             </svg></h2>
                     <?php endif; ?>
-                    <div class="about-page__gallery-imageWrapper">
-                        <?php foreach ($settings['friends_gallery'] as $img) : ?>
-                            <img
-                                class="about-page__gallery-image"
-                                src="<?= esc_url($img['url']); ?>"
-                                alt="<?= esc_attr($img['alt']); ?>">
+                    <?php foreach ($settings['friends_gallery'] as $image) : ?>
+                        <?php
+                        $alt = !empty($image['alt']) ? $image['alt'] : 'Gallery Image'; // Fallback alt text
+                        ?>
+                        <img
+                            class="about-page__gallery-image"
+                            src="<?= esc_url($image['url']); ?>"
+                            alt="<?= esc_attr($alt); ?>">
+                    <?php endforeach; ?>
 
-                        <?php endforeach; ?>
-                    </div>
                 </div>
             </div>
         <?php endif; ?>

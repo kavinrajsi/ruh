@@ -127,15 +127,6 @@ class Elementor_Contact_Us_Page extends Widget_Base
                     </div>
                 <?php endif; ?>
 
-                <?php if (!empty($settings['divider_image']['url'])) : ?>
-                    <div class="divider-image">
-                        <img
-                            src="<?php echo esc_url($settings['divider_image']['url']); ?>"
-                            alt="<?php echo esc_attr($settings['divider_image']['alt']); ?>">
-
-                    </div>
-                <?php endif; ?>
-
                 <?php if (!empty($settings['selected_form_id']) && intval($settings['selected_form_id']) > 0) : ?>
                     <?php echo do_shortcode('[contact-form-7 id="' . intval($settings['selected_form_id']) . '"]'); ?>
                 <?php endif; ?>
