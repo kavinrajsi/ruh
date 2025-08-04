@@ -408,7 +408,7 @@ body.no-scroll {
   left: 0;
   right: 0;
   padding-top: 44px;
-  z-index: 2;
+  z-index: 100;
 }
 .site-header__container {
   width: 100%;
@@ -981,7 +981,7 @@ body.no-scroll {
   /* Primary Brown */
   color: #913412;
   padding-bottom: 16px;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 .footer__nav-link .menu-item a {
@@ -1081,10 +1081,16 @@ body.no-scroll {
 }
 
 .footer__form-wrapper .wpcf7-form {
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  position: relative;
   gap: 16px;
 }
+.footer__form-wrapper .wpcf7-form p {
+  align-items: flex-start;
+}
 .footer__form-wrapper .wpcf7-submit {
+  cursor: pointer;
   background-color: #dc602a;
   border: 1px solid #dc602a;
 }

@@ -120,7 +120,7 @@
   /* Primary Brown */
   color: #913412;
   padding-bottom: 16px;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 .footer__nav-link .menu-item a {
   display: inline-block;
@@ -166,10 +166,16 @@
 }
 .footer__form-wrapper {
   .wpcf7-form {
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    position: relative;
     gap: 16px;
+    p{
+      align-items: flex-start;
+    }
   }
   .wpcf7-submit {
+    cursor: pointer;
     background-color: #dc602a;
     border: 1px solid #dc602a;
     @media (min-width: 768px) {
